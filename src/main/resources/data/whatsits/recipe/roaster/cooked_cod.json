@@ -22,6 +22,5 @@
     "id": "whatsits:cooked_cod",
     "count": 1
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

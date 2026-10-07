@@ -1,6 +1,5 @@
 package net.satisfy.farm_and_charm.core.block.crops;
 
-import net.satisfy.farm_and_charm.core.block.crops.ClimbingCropBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -41,10 +40,7 @@ public class TomatoCropHeadBlock extends ClimbingCropBlock implements Bonemealab
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState below = level.getBlockState(pos.below());
-        if (below.getBlock() instanceof TomatoCropBodyBlock) {
-            return true;
-        }
-        if (below.getBlock() instanceof TomatoCropHeadBlock) {
+        if (below.getBlock() instanceof TomatoCropHeadBlock || below.getBlock() instanceof TomatoCropBodyBlock) {
             return false;
         }
         return super.canSurvive(state, level, pos);

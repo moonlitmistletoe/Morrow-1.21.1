@@ -1,195 +1,195 @@
 {
   "values": {
-    "whatsits:kernels": {
+    "farm_and_charm:kernels": {
       "chance": 0.3
     },
-    "whatsits:corn": {
+    "farm_and_charm:corn": {
       "chance": 0.3
     },
-    "whatsits:oat_seeds": {
+    "farm_and_charm:oat_seeds": {
       "chance": 0.2
     },
-    "whatsits:oat": {
+    "farm_and_charm:oat": {
       "chance": 0.3
     },
-    "whatsits:barley_seeds": {
+    "farm_and_charm:barley_seeds": {
       "chance": 0.2
     },
-    "whatsits:barley": {
+    "farm_and_charm:barley": {
       "chance": 0.3
     },
-    "whatsits:lettuce_seeds": {
+    "farm_and_charm:lettuce_seeds": {
       "chance": 0.3
     },
-    "whatsits:lettuce": {
+    "farm_and_charm:lettuce": {
       "chance": 0.3
     },
-    "whatsits:onion": {
+    "farm_and_charm:onion": {
       "chance": 0.3
     },
-    "whatsits:tomato_seeds": {
+    "farm_and_charm:tomato_seeds": {
       "chance": 0.2
     },
-    "whatsits:tomato": {
+    "farm_and_charm:tomato": {
       "chance": 0.3
     },
-    "whatsits:rotten_tomato": {
+    "farm_and_charm:rotten_tomato": {
       "chance": 0.5
     },
-    "whatsits:strawberry_seeds": {
+    "farm_and_charm:strawberry_seeds": {
       "chance": 0.2
     },
-    "whatsits:strawberry": {
+    "farm_and_charm:strawberry": {
       "chance": 0.3
     },
-    "whatsits:wild_nettle": {
+    "farm_and_charm:wild_nettle": {
       "chance": 0.3
     },
-    "whatsits:wild_ribwort": {
+    "farm_and_charm:wild_ribwort": {
       "chance": 0.3
     },
-    "whatsits:wild_emmer": {
+    "farm_and_charm:wild_emmer": {
       "chance": 0.3
     },
-    "whatsits:wild_beetroots": {
+    "farm_and_charm:wild_beetroots": {
       "chance": 0.3
     },
-    "whatsits:wild_potatoes": {
+    "farm_and_charm:wild_potatoes": {
       "chance": 0.3
     },
-    "whatsits:wild_carrots": {
+    "farm_and_charm:wild_carrots": {
       "chance": 0.3
     },
-    "whatsits:wild_barley": {
+    "farm_and_charm:wild_barley": {
       "chance": 0.3
     },
-    "whatsits:wild_corn": {
+    "farm_and_charm:wild_corn": {
       "chance": 0.3
     },
-    "whatsits:wild_oat": {
+    "farm_and_charm:wild_oat": {
       "chance": 0.3
     },
-    "whatsits:wild_lettuce": {
+    "farm_and_charm:wild_lettuce": {
       "chance": 0.3
     },
-    "whatsits:wild_onions": {
+    "farm_and_charm:wild_onions": {
       "chance": 0.3
     },
-    "whatsits:wild_tomatoes": {
+    "farm_and_charm:wild_tomatoes": {
       "chance": 0.3
     },
-    "whatsits:wild_strawberries": {
+    "farm_and_charm:wild_strawberries": {
       "chance": 0.3
     },
-    "whatsits:fertilizer": {
+    "farm_and_charm:fertilizer": {
       "chance": 0.85
     },
-    "whatsits:butter": {
+    "farm_and_charm:butter": {
       "chance": 0.3
     },
-    "whatsits:yeast": {
+    "farm_and_charm:yeast": {
       "chance": 0.2
     },
-    "whatsits:flour": {
+    "farm_and_charm:flour": {
       "chance": 0.4
     },
-    "whatsits:dough": {
+    "farm_and_charm:dough": {
       "chance": 0.4
     },
-    "whatsits:raw_pasta": {
+    "farm_and_charm:raw_pasta": {
       "chance": 0.5
     },
-    "whatsits:minced_beef": {
+    "farm_and_charm:minced_beef": {
       "chance": 0.4
     },
-    "whatsits:lamb_ham": {
+    "farm_and_charm:lamb_ham": {
       "chance": 0.4
     },
-    "whatsits:chicken_parts": {
+    "farm_and_charm:chicken_parts": {
       "chance": 0.3
     },
-    "whatsits:bacon": {
+    "farm_and_charm:bacon": {
       "chance": 0.4
     },
-    "whatsits:farmer_salad": {
+    "farm_and_charm:farmer_salad": {
       "chance": 0.5
     },
-    "whatsits:oatmeal_with_strawberries": {
+    "farm_and_charm:oatmeal_with_strawberries": {
       "chance": 0.4
     },
-    "whatsits:simple_tomato_soup": {
+    "farm_and_charm:simple_tomato_soup": {
       "chance": 0.4
     },
-    "whatsits:barley_soup": {
+    "farm_and_charm:barley_soup": {
       "chance": 0.4
     },
-    "whatsits:onion_soup": {
+    "farm_and_charm:onion_soup": {
       "chance": 0.4
     },
-    "whatsits:potato_soup": {
+    "farm_and_charm:potato_soup": {
       "chance": 0.4
     },
-    "whatsits:goulash": {
+    "farm_and_charm:goulash": {
       "chance": 0.5
     },
-    "whatsits:pasta_with_onion_sauce": {
+    "farm_and_charm:pasta_with_onion_sauce": {
       "chance": 0.5
     },
-    "whatsits:corn_grits": {
+    "farm_and_charm:corn_grits": {
       "chance": 0.4
     },
-    "whatsits:barley_patties_with_potatoes": {
+    "farm_and_charm:barley_patties_with_potatoes": {
       "chance": 0.5
     },
-    "whatsits:beef_patty_with_vegetables": {
+    "farm_and_charm:beef_patty_with_vegetables": {
       "chance": 0.5
     },
-    "whatsits:sausage_with_oat_patty": {
+    "farm_and_charm:sausage_with_oat_patty": {
       "chance": 0.4
     },
-    "whatsits:roasted_chicken": {
+    "farm_and_charm:roasted_chicken": {
       "chance": 0.6
     },
-    "whatsits:roasted_corn": {
+    "farm_and_charm:roasted_corn": {
       "chance": 0.5
     },
-    "whatsits:cooked_salmon": {
+    "farm_and_charm:cooked_salmon": {
       "chance": 0.4
     },
-    "whatsits:cooked_cod": {
+    "farm_and_charm:cooked_cod": {
       "chance": 0.4
     },
-    "whatsits:chicken_wrapped_in_bacon": {
+    "farm_and_charm:chicken_wrapped_in_bacon": {
       "chance": 0.5
     },
-    "whatsits:lamb_with_corn": {
+    "farm_and_charm:lamb_with_corn": {
       "chance": 0.5
     },
-    "whatsits:bacon_with_eggs": {
+    "farm_and_charm:bacon_with_eggs": {
       "chance": 0.5
     },
-    "whatsits:oat_pancake": {
+    "farm_and_charm:oat_pancake": {
       "chance": 0.4
     },
-    "whatsits:farmers_breakfast": {
+    "farm_and_charm:farmers_breakfast": {
       "chance": 0.6
     },
-    "whatsits:baked_lamb_ham": {
+    "farm_and_charm:baked_lamb_ham": {
       "chance": 0.5
     },
-    "whatsits:potato_with_roast_meat": {
+    "farm_and_charm:potato_with_roast_meat": {
       "chance": 0.6
     },
-    "whatsits:stuffed_chicken": {
+    "farm_and_charm:stuffed_chicken": {
       "chance": 0.6
     },
-    "whatsits:stuffed_rabbit": {
+    "farm_and_charm:stuffed_rabbit": {
       "chance": 0.6
     },
-    "whatsits:farmers_bread": {
+    "farm_and_charm:farmers_bread": {
       "chance": 0.5
     },
-    "whatsits:grandmothers_strawberry_cake": {
+    "farm_and_charm:grandmothers_strawberry_cake": {
       "chance": 0.7
     }
   }

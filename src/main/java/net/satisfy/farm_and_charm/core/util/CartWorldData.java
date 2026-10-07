@@ -30,6 +30,7 @@ import net.satisfy.farm_and_charm.core.entity.AbstractCartEntity;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -86,7 +87,7 @@ public class CartWorldData extends SavedData {
     public void preTick(ServerLevel level) {
         this.horsePreTickPositions.clear();
 
-        ArrayList<AbstractCartEntity> cartsSnapshot = new ArrayList<>(Math.max(0, this.pulling.size()));
+        ArrayList<AbstractCartEntity> cartsSnapshot = new ArrayList<>(this.pulling.size());
         for (AbstractCartEntity cart : this.pulling.values()) {
             if (cart == null) {
                 continue;
@@ -125,10 +126,12 @@ public class CartWorldData extends SavedData {
         IntOpenHashSet currentPlayers = new IntOpenHashSet();
         IntOpenHashSet currentHorses = new IntOpenHashSet();
 
-        for (int pullId : this.pulling.keySet().toIntArray()) {
+        Iterator<Integer> iterator = this.pulling.keySet().iterator();
+        while (iterator.hasNext()) {
+            int pullId = iterator.next();
             AbstractCartEntity cart = this.pulling.get(pullId);
             if (cart == null || cart.shouldStopPulledTick()) {
-                this.pulling.remove(pullId);
+                iterator.remove();
                 setDirty();
                 continue;
             }
@@ -142,7 +145,7 @@ public class CartWorldData extends SavedData {
                 applyCartSlow(horse);
                 currentHorses.add(horse.getId());
 
-                Entity controller = cart.getCartDriver();
+                Entity controller = cart.getControllingPassenger();
                 boolean controlled = controller instanceof Player controllingPlayer && controllingPlayer.getVehicle() == cart;
 
                 if (controlled) {
@@ -275,16 +278,18 @@ public class CartWorldData extends SavedData {
     }
 
     public void tickClient(Level level) {
-        for (int pullId : this.pulling.keySet().toIntArray()) {
+        Iterator<Integer> iterator = this.pulling.keySet().iterator();
+        while (iterator.hasNext()) {
+            int pullId = iterator.next();
             AbstractCartEntity cart = this.pulling.get(pullId);
             if (cart == null || !cart.isAlive()) {
-                this.pulling.remove(pullId);
+                iterator.remove();
                 continue;
             }
 
             Entity puller = cart.getPulling();
             if (puller == null || !puller.isAlive()) {
-                this.pulling.remove(pullId);
+                iterator.remove();
                 continue;
             }
 
@@ -333,9 +338,11 @@ public class CartWorldData extends SavedData {
     }
 
     public void removePullingByCart(AbstractCartEntity cart) {
-        for (int pullId : this.pulling.keySet().toIntArray()) {
-            if (this.pulling.get(pullId) == cart) {
-                this.pulling.remove(pullId);
+        Iterator<Int2ObjectMap.Entry<AbstractCartEntity>> iterator = this.pulling.int2ObjectEntrySet().iterator();
+        while (iterator.hasNext()) {
+            Int2ObjectMap.Entry<AbstractCartEntity> entry = iterator.next();
+            if (entry.getValue() == cart) {
+                iterator.remove();
                 setDirty();
             }
         }

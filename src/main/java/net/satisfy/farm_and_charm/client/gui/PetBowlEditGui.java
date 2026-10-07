@@ -7,7 +7,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.satisfy.farm_and_charm.core.block.entity.PetBowlBlockEntity;
 import net.satisfy.farm_and_charm.core.network.PacketHandler;
-import net.satisfy.foundation.text.SetTextPacket;
+import net.satisfy.farm_and_charm.core.network.packet.SetTextPacket;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class PetBowlEditGui extends Screen {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        //this.renderBackground(graphics, mouseX, mouseY, partialTick);
+        this.renderBackground(graphics, mouseX, mouseY, partialTick);
         super.render(graphics, mouseX, mouseY, partialTick);
         graphics.drawCenteredString(this.font, this.title, this.width / 2, 20, 16777215);
     }

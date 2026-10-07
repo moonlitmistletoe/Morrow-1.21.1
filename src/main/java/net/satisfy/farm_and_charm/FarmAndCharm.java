@@ -1,9 +1,7 @@
 package net.satisfy.farm_and_charm;
 
 import net.minecraft.resources.ResourceLocation;
-import net.satisfy.farm_and_charm.core.event.CleaverEvents;
 import net.satisfy.farm_and_charm.core.event.VanillaItemPlacements;
-import net.satisfy.foundation.overlay.BlockInfoSync;
 import net.satisfy.farm_and_charm.core.network.PacketHandler;
 import net.satisfy.farm_and_charm.core.registry.*;
 import net.satisfy.farm_and_charm.core.util.CartInteractionHooks;
@@ -18,7 +16,7 @@ public class FarmAndCharm {
     public static void init() {
         MobEffectRegistry.init();
         ObjectRegistry.init();
-        FeatureRegistry.init();
+        ParticleTypeRegistry.init();
         VanillaItemPlacements.init();
         EntityTypeRegistry.init();
         TabRegistry.init();
@@ -28,6 +26,5 @@ public class FarmAndCharm {
         VillagerTradeRegistryHandler.init();
         PacketHandler.init();
         CartInteractionHooks.init();
-        CleaverEvents.init();
     }
 }

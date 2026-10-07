@@ -1,7 +1,6 @@
 package net.satisfy.farm_and_charm.core.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -17,7 +16,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -118,9 +116,8 @@ public class PlowCartEntity extends AbstractCartEntity {
     }
 
     private void handlePlowServer() {
-        BlockPos groundPos = this.getOnPos();
-        Direction sidePos = Direction.fromYRot(this.getYRot()).getClockWise();
-        BlockPos[] positions = new BlockPos[]{groundPos, groundPos.relative(sidePos)};
+        BlockPos currentPos = this.blockPosition();
+        BlockPos[] positions = new BlockPos[]{currentPos.below(), currentPos.below().east()};
 
         for (BlockPos blockPos : positions) {
             BlockState blockState = this.level().getBlockState(blockPos);
@@ -138,8 +135,7 @@ public class PlowCartEntity extends AbstractCartEntity {
                 BlockPos abovePos = blockPos.above();
                 BlockState aboveState = this.level().getBlockState(abovePos);
 
-                boolean isClearablePlant = aboveState.is(BlockTags.REPLACEABLE) || aboveState.getBlock() instanceof BushBlock;
-                if (!aboveState.isAir() && isClearablePlant && !(aboveState.getBlock() instanceof CropBlock)) {
+                if (!aboveState.isAir() && aboveState.is(BlockTags.REPLACEABLE) && !(aboveState.getBlock() instanceof CropBlock)) {
                     this.level().destroyBlock(abovePos, true);
                     this.triggerPlowEffect(abovePos);
                 }

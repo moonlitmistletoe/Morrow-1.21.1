@@ -22,6 +22,5 @@
     "id": "whatsits:chicken_wrapped_in_bacon",
     "count": 1
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

@@ -1,6 +1,5 @@
 package net.satisfy.farm_and_charm.neoforge.client;
 
-import net.satisfy.foundation.neoforge.client.FoundationArmorExtensions;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -14,17 +13,13 @@ import net.satisfy.farm_and_charm.client.FarmAndCharmClient;
 import net.satisfy.farm_and_charm.client.gui.CookingPotGui;
 import net.satisfy.farm_and_charm.client.gui.RoasterGui;
 import net.satisfy.farm_and_charm.client.gui.StoveGui;
-import net.satisfy.foundation.particle.DyeSplashParticle;
-import net.satisfy.foundation.particle.FeatherParticle;
-import net.satisfy.foundation.particle.FireflyParticle;
-import net.satisfy.foundation.particle.SoupBubbleParticle;
-import net.satisfy.foundation.particle.SoupCookingBubbleParticle;
-import net.satisfy.foundation.particle.SoupSteamParticle;
-import net.satisfy.foundation.particle.WaterDripParticle;
-import net.satisfy.foundation.particle.WaterSplashParticle;
+import net.satisfy.farm_and_charm.client.particle.SoupBubbleParticle;
+import net.satisfy.farm_and_charm.client.particle.SoupCookingBubbleParticle;
+import net.satisfy.farm_and_charm.client.particle.SoupSteamParticle;
 import net.satisfy.farm_and_charm.core.registry.ObjectRegistry;
-import net.satisfy.foundation.registry.FoundationParticles;
+import net.satisfy.farm_and_charm.core.registry.ParticleTypeRegistry;
 import net.satisfy.farm_and_charm.core.registry.ScreenhandlerTypeRegistry;
+import net.satisfy.farm_and_charm.neoforge.client.extensions.DungareesLeggingsExtensions;
 
 @SuppressWarnings("removal")
 @EventBusSubscriber(modid = FarmAndCharm.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -42,6 +37,9 @@ public class FarmAndCharmClientForge {
 
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ParticleTypeRegistry.SOUP_BUBBLE.get(), SoupBubbleParticle.Provider::new);
+        event.registerSpriteSet(ParticleTypeRegistry.SOUP_STEAM.get(), SoupSteamParticle.Provider::new);
+        event.registerSpriteSet(ParticleTypeRegistry.SOUP_COOKING_BUBBLE.get(), SoupCookingBubbleParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -53,6 +51,6 @@ public class FarmAndCharmClientForge {
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerItem(FoundationArmorExtensions.INSTANCE, ObjectRegistry.DUNGAREES.get());
+        event.registerItem(new DungareesLeggingsExtensions(), ObjectRegistry.DUNGAREES.get());
     }
 }

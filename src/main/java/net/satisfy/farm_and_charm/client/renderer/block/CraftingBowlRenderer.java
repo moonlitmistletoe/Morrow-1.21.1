@@ -17,27 +17,18 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.satisfy.farm_and_charm.platform.PlatformHelper;
 import net.satisfy.farm_and_charm.FarmAndCharm;
 import net.satisfy.farm_and_charm.client.model.CraftingBowlModel;
 import net.satisfy.farm_and_charm.core.block.CraftingBowlBlock;
 import net.satisfy.farm_and_charm.core.block.entity.CraftingBowlBlockEntity;
 
 public class CraftingBowlRenderer implements BlockEntityRenderer<CraftingBowlBlockEntity> {
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(FarmAndCharm.MOD_ID, "textures/entity/crafting_bowl.png");
-    private static final float TILT_ANGLE = 4.0F;
-    private static final float DOUGH_SURFACE = 17.0F / 16.0F;
-    private static final float DOUGH_DEPTH = 6.0F / 16.0F;
-    private static final float DOUGH_SLOSH = 6.0F;
-    private static final float DOUGH_BOB = 0.015F;
     private final ModelPart bowl;
-    private final ModelPart dough;
     private final ModelPart swing;
 
     public CraftingBowlRenderer(BlockEntityRendererProvider.Context context) {
         ModelPart root = context.bakeLayer(CraftingBowlModel.LAYER_LOCATION);
         this.bowl = root.getChild("bowl");
-        this.dough = root.getChild("dough");
         this.swing = root.getChild("swing");
     }
 
@@ -51,38 +42,18 @@ public class CraftingBowlRenderer implements BlockEntityRenderer<CraftingBowlBlo
         pose.pushPose();
         pose.mulPose(Axis.XP.rotationDegrees(180));
         pose.translate(0.5f, -1.5f, -0.5f);
-        float whiskAngle = be.getInterpolatedWhiskAngle(f);
-        float tilt = !PlatformHelper.animationsEnabled() ? 0.0F : be.getWhiskSpeed() / CraftingBowlBlockEntity.WHISK_MAX_SPEED * TILT_ANGLE;
-        if (tilt > 0F) {
-            pose.translate(0f, 1.5f, 0f);
-            pose.mulPose(Axis.XP.rotationDegrees((float) Math.cos(whiskAngle) * tilt));
-            pose.mulPose(Axis.ZP.rotationDegrees((float) Math.sin(whiskAngle) * tilt));
-            pose.translate(0f, -1.5f, 0f);
-        }
 
-        VertexConsumer vc = buf.getBuffer(RenderType.entityTranslucent(TEXTURE));
+        ResourceLocation tex = be.getStirringProgress() >= CraftingBowlBlock.STIRS_NEEDED
+                ? ResourceLocation.fromNamespaceAndPath(FarmAndCharm.MOD_ID, "textures/entity/crafting_bowl_full.png")
+                : ResourceLocation.fromNamespaceAndPath(FarmAndCharm.MOD_ID, "textures/entity/crafting_bowl.png");
+
+        VertexConsumer vc = buf.getBuffer(RenderType.entityTranslucent(tex));
 
         bowl.render(pose, vc, light, overlay);
-        this.renderDough(be, level, f, whiskAngle, pose, vc, light, overlay);
-        pose.mulPose(Axis.YP.rotation(whiskAngle));
+        pose.mulPose(Axis.YP.rotation(be.getInterpolatedWhiskAngle(f)));
         swing.render(pose, vc, light, overlay);
 
         this.renderItems(pose, buf, be.getItems(), light, overlay);
-        pose.popPose();
-    }
-
-    private void renderDough(CraftingBowlBlockEntity be, Level level, float partialTick, float whiskAngle, PoseStack pose, VertexConsumer vc, int light, int overlay) {
-        float fill = be.getDoughFill();
-        if (fill <= 0.0F) return;
-        float speed = !PlatformHelper.animationsEnabled() ? 0.0F : be.getWhiskSpeed() / CraftingBowlBlockEntity.WHISK_MAX_SPEED;
-        double time = level.getGameTime() + partialTick;
-        float surface = DOUGH_SURFACE + (1.0F - fill) * DOUGH_DEPTH + (float) Math.sin(time * 0.6) * DOUGH_BOB * speed;
-        pose.pushPose();
-        pose.translate(0f, surface, 0f);
-        pose.mulPose(Axis.XP.rotationDegrees((float) Math.cos(whiskAngle) * DOUGH_SLOSH * speed));
-        pose.mulPose(Axis.ZP.rotationDegrees((float) Math.sin(whiskAngle) * DOUGH_SLOSH * speed));
-        pose.translate(0f, -DOUGH_SURFACE, 0f);
-        dough.render(pose, vc, light, overlay);
         pose.popPose();
     }
 

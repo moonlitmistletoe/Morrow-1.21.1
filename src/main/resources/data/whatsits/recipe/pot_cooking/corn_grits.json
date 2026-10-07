@@ -20,6 +20,5 @@
     "id": "whatsits:corn_grits",
     "count": 1
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

@@ -20,6 +20,5 @@
     "id": "whatsits:yeast",
     "count": 12
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

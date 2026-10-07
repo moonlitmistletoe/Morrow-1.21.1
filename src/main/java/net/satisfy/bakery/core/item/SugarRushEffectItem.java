@@ -9,10 +9,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.satisfy.bakery.core.registry.MobEffectRegistry;
-import net.satisfy.foundation.food.EffectFoodItem;
+import net.satisfy.farm_and_charm.core.item.food.EffectItem;
 import org.jetbrains.annotations.NotNull;
 
-public class SugarRushEffectItem extends EffectFoodItem {
+public class SugarRushEffectItem extends EffectItem {
 
     private final RegistrySupplier<MobEffect> effect;
     private final int duration;

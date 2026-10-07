@@ -5,9 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -39,12 +37,10 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.farm_and_charm.core.block.entity.ChickenCoopBlockEntity;
 import net.satisfy.farm_and_charm.core.registry.ObjectRegistry;
-import net.satisfy.foundation.registry.FoundationParticles;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
-import net.satisfy.farm_and_charm.platform.PlatformHelper;
 
 public class ChickenCoopBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -87,10 +83,9 @@ public class ChickenCoopBlock extends BaseEntityBlock {
             if (be instanceof ChickenCoopBlockEntity coop) {
                 ChickenCoopBlockEntity.tick(lvl, pos, coop);
                 int eggCount = coop.getEggCount();
-                int stage = eggCount <= 0 ? 0 : Math.min(3, (eggCount * 3 + PlatformHelper.getChickenCoopMaxEggs() - 1) / PlatformHelper.getChickenCoopMaxEggs());
-                BlockState blockState = lvl.getBlockState(pos);
-                if (blockState.getBlock() instanceof ChickenCoopBlock && blockState.getValue(EGGS) != stage) {
-                    lvl.setBlock(pos, blockState.setValue(EGGS, stage), Block.UPDATE_CLIENTS);
+                int stage = eggCount >= 7 ? 3 : eggCount >= 4 ? 2 : eggCount >= 1 ? 1 : 0;
+                if (lvl.getBlockState(pos).getValue(EGGS) != stage) {
+                    lvl.setBlock(pos, lvl.getBlockState(pos).setValue(EGGS, stage), Block.UPDATE_CLIENTS);
                 }
             }
         };
@@ -139,9 +134,6 @@ public class ChickenCoopBlock extends BaseEntityBlock {
                     level.playSound(null, pos, SoundEvents.ANVIL_FALL, player.getSoundSource(), 1.0F, 1.1F);
                     level.playSound(null, pos, SoundEvents.CHICKEN_HURT, player.getSoundSource(), 0.325F, 0.825F);
                     level.playSound(null, pos, SoundEvents.BEEHIVE_EXIT, player.getSoundSource(), 0.7F, 1.1F);
-                    if (level instanceof ServerLevel serverLevel) {
-                        serverLevel.sendParticles(ColorParticleOption.create(FoundationParticles.FEATHER.get(), 0xFFFFFFFF), pos.getX() + 0.5, pos.getY() + 0.8, pos.getZ() + 0.5, 10 + level.random.nextInt(6), 0.4, 0.2, 0.4, 0.0);
-                    }
                     return ItemInteractionResult.SUCCESS;
                 }
 

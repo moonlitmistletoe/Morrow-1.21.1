@@ -20,7 +20,8 @@ public class ConnectivityHandler {
         formMulti(be.getType(), be.getLevel(), cache, frontier);
     }
 
-    private static <T extends BlockEntity & IMultiBlockEntityContainer> void formMulti(BlockEntityType<?> type, BlockGetter level, SearchCache<T> cache, Deque<T> frontier) {
+    private static <T extends BlockEntity & IMultiBlockEntityContainer> void formMulti(BlockEntityType<?> type,
+                                                                                       BlockGetter level, SearchCache<T> cache, Deque<T> frontier) {
         PriorityQueue<Pair<Integer, T>> creationQueue = makeCreationQueue();
         Set<BlockPos> visited = new HashSet<>();
         T first = frontier.peekFirst();
@@ -154,7 +155,7 @@ public class ConnectivityHandler {
 
                     BlockPos conPos = controller.getBlockPos();
                     if (!conPos.equals(origin)) {
-                        if (axis == Direction.Axis.Y) {
+                        if (axis == Direction.Axis.Y) { // vertical multi, like a FluidTank
                             if (conPos.getX() < origin.getX())
                                 break Search;
                             if (conPos.getZ() < origin.getZ())
@@ -163,7 +164,7 @@ public class ConnectivityHandler {
                                 break Search;
                             if (conPos.getZ() + otherWidth > origin.getZ() + width)
                                 break Search;
-                        } else {
+                        } else { // horizontal multi, like an ItemVault
                             if (axis == Direction.Axis.Z && conPos.getX() < origin.getX())
                                 break Search;
                             if (conPos.getY() < origin.getY())

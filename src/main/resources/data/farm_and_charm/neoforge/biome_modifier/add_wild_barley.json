@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#whatsits:spawns_wild_barley",
-  "features": "whatsits:wild_barley_chance",
+  "biomes": "#farm_and_charm:spawns_wild_barley",
+  "features": "farm_and_charm:wild_barley_chance",
   "step": "vegetal_decoration"
 }

@@ -1,9 +1,5 @@
 package net.satisfy.farm_and_charm.core.block.entity;
 
-import net.satisfy.farm_and_charm.core.util.StoredExperience;
-import net.satisfy.foundation.menu.ExperienceSource;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.phys.Vec3;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,18 +28,16 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.satisfy.farm_and_charm.client.gui.handler.CookingPotGuiHandler;
 import net.satisfy.farm_and_charm.core.block.CookingPotBlock;
-import net.satisfy.foundation.food.IngredientEffectCarrier;
-import net.satisfy.foundation.food.IngredientEffects;
+import net.satisfy.farm_and_charm.core.item.food.EffectFood;
+import net.satisfy.farm_and_charm.core.item.food.EffectFoodHelper;
 import net.satisfy.farm_and_charm.core.recipe.CookingPotRecipe;
-import net.satisfy.foundation.recipe.RecipeUnlockManager;
+import net.satisfy.farm_and_charm.core.recipe.RecipeUnlockManager;
 import net.satisfy.farm_and_charm.core.registry.EntityTypeRegistry;
 import net.satisfy.farm_and_charm.core.registry.RecipeTypeRegistry;
 import net.satisfy.farm_and_charm.core.registry.TagRegistry;
-import net.satisfy.foundation.util.ImplementedInventory;
+import net.satisfy.farm_and_charm.core.world.ImplementedInventory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,7 +46,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTicker<CookingPotBlockEntity>, ImplementedInventory, MenuProvider, ExperienceSource, Container {
+public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTicker<CookingPotBlockEntity>, ImplementedInventory, MenuProvider, Container {
     private static final int FIRST_INGREDIENT_SLOT = 0;
     private static final int LAST_INGREDIENT_SLOT = 5;
     private static final int CONTAINER_SLOT = 6;
@@ -61,7 +55,6 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
     private static final int MAX_COOKING_TIME = 900;
     private final NonNullList<ItemStack> inventory = NonNullList.withSize(MAX_CAPACITY, ItemStack.EMPTY);
     private int cookingTime;
-    private final StoredExperience experience = new StoredExperience();
     private boolean isBeingBurned;
     private UUID ownerUuid;
     private final ContainerData delegate = new ContainerData() {
@@ -86,19 +79,7 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
     };
 
     public CookingPotBlockEntity(BlockPos pos, BlockState state) {
-        this(EntityTypeRegistry.COOKING_POT_BLOCK_ENTITY.get(), pos, state);
-    }
-
-    protected CookingPotBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        super(type, pos, state);
-    }
-
-    protected BooleanProperty getLitProperty() {
-        return CookingPotBlock.LIT;
-    }
-
-    protected BooleanProperty getCookingProperty() {
-        return CookingPotBlock.COOKING;
+        super(EntityTypeRegistry.COOKING_POT_BLOCK_ENTITY.get(), pos, state);
     }
 
     public static int getMaxCookingTime() {
@@ -115,11 +96,6 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
     }
 
     @Override
-    public void dropExperience(ServerLevel level, Vec3 pos) {
-        experience.award(level, pos);
-    }
-
-    @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadAdditional(tag, provider);
         NonNullList<ItemStack> loaded = NonNullList.withSize(MAX_CAPACITY, ItemStack.EMPTY);
@@ -128,7 +104,6 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
             this.inventory.set(i, loaded.get(i));
         }
         cookingTime = tag.getInt("CookingTime");
-        experience.load(tag);
         if (tag.hasUUID("OwnerUUID")) {
             ownerUuid = tag.getUUID("OwnerUUID");
         }
@@ -139,7 +114,6 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
         super.saveAdditional(tag, provider);
         ContainerHelper.saveAllItems(tag, inventory, provider);
         tag.putInt("CookingTime", cookingTime);
-        experience.save(tag);
         if (ownerUuid != null) {
             tag.putUUID("OwnerUUID", ownerUuid);
         }
@@ -165,32 +139,16 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
         return false;
     }
 
-    protected int getExtraOutputCount(ItemStack output) {
-        return 0;
-    }
-
-    @Nullable
-    protected Player getOwner() {
-        if (ownerUuid == null || level == null || level.getServer() == null) return null;
-        return level.getServer().getPlayerList().getPlayer(ownerUuid);
-    }
-
     private void craft(Recipe<?> recipe, RegistryAccess access) {
         if (!canCraft(recipe, access)) return;
 
         ItemStack recipeOutput = generateOutputItem(recipe, access);
         ItemStack outputSlotStack = getItem(OUTPUT_SLOT);
-        int room = recipeOutput.getMaxStackSize() - outputSlotStack.getCount() - recipeOutput.getCount();
-        recipeOutput.grow(Math.max(0, Math.min(getExtraOutputCount(recipeOutput), room)));
 
         if (outputSlotStack.isEmpty()) {
             setItem(OUTPUT_SLOT, recipeOutput);
         } else {
             outputSlotStack.grow(recipeOutput.getCount());
-        }
-
-        if (recipe instanceof CookingPotRecipe cookingPotRecipe) {
-            experience.add(cookingPotRecipe.getExperience());
         }
 
         recipe.getIngredients().forEach(ingredient -> {
@@ -218,25 +176,17 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
             }
         });
 
-        if (recipe instanceof CookingPotRecipe cookingRecipe && cookingRecipe.isContainerRequired()) {
-            ItemStack containerSlotStack = getItem(CONTAINER_SLOT);
-            if (!containerSlotStack.isEmpty()) {
-                ItemStack containerRemainder = containerSlotStack.getItem().hasCraftingRemainingItem()
-                        ? new ItemStack(Objects.requireNonNull(containerSlotStack.getItem().getCraftingRemainingItem()))
-                        : ItemStack.EMPTY;
-
-                containerSlotStack.shrink(1);
-
-                if (!containerRemainder.isEmpty()) {
-                    if (containerSlotStack.isEmpty()) {
-                        setItem(CONTAINER_SLOT, containerRemainder);
-                    } else {
-                        boolean inserted = tryInsertRemainder(containerRemainder);
-                        if (!inserted) {
-                            if (level != null) {
-                                Block.popResource(level, worldPosition, containerRemainder);
-                            }
-                        }
+        ItemStack containerSlotStack = getItem(CONTAINER_SLOT);
+        if (!containerSlotStack.isEmpty() && containerSlotStack.getItem().hasCraftingRemainingItem()) {
+            ItemStack containerRemainder = new ItemStack(Objects.requireNonNull(containerSlotStack.getItem().getCraftingRemainingItem()));
+            containerSlotStack.shrink(1);
+            if (containerSlotStack.isEmpty()) {
+                setItem(CONTAINER_SLOT, containerRemainder);
+            } else {
+                boolean inserted = tryInsertRemainder(containerRemainder);
+                if (!inserted) {
+                    if (level != null) {
+                        Block.popResource(level, worldPosition, containerRemainder);
                     }
                 }
             }
@@ -287,9 +237,9 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
 
     private ItemStack generateOutputItem(Recipe<?> recipe, RegistryAccess access) {
         ItemStack outputStack = recipe.getResultItem(access).copy();
-        if (outputStack.getItem() instanceof IngredientEffectCarrier) {
-            for (MobEffectInstance inst : IngredientEffects.collectMergedSortedEffects(this, FIRST_INGREDIENT_SLOT, LAST_INGREDIENT_SLOT)) {
-                IngredientEffects.addEffect(outputStack, new Pair<>(inst, 1.0f));
+        if (outputStack.getItem() instanceof EffectFood) {
+            for (MobEffectInstance inst : EffectFoodHelper.collectMergedSortedEffects(this, FIRST_INGREDIENT_SLOT, LAST_INGREDIENT_SLOT)) {
+                EffectFoodHelper.addEffect(outputStack, new Pair<>(inst, 1.0f));
             }
         }
         return outputStack;
@@ -303,8 +253,8 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
         if (world.isClientSide()) return;
         boolean wasBeingBurned = isBeingBurned;
         isBeingBurned = isBeingBurned();
-        if (wasBeingBurned != isBeingBurned || state.getValue(getLitProperty()) != isBeingBurned) {
-            world.setBlock(pos, state.setValue(getLitProperty(), isBeingBurned), Block.UPDATE_ALL);
+        if (wasBeingBurned != isBeingBurned || state.getValue(CookingPotBlock.LIT) != isBeingBurned) {
+            world.setBlock(pos, state.setValue(CookingPotBlock.LIT, isBeingBurned), Block.UPDATE_ALL);
         }
         if (!isBeingBurned) {
             return;
@@ -317,8 +267,8 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
                 ServerPlayer owner = Objects.requireNonNull(world.getServer()).getPlayerList().getPlayer(ownerUuid);
                 if (owner == null || RecipeUnlockManager.isRecipeLocked(owner, BuiltInRegistries.RECIPE_TYPE.getKey(recipe.get().getType()))) {
                     cookingTime = 0;
-                    if (state.getValue(getCookingProperty())) {
-                        world.setBlock(pos, state.setValue(getCookingProperty(), false), Block.UPDATE_ALL);
+                    if (state.getValue(CookingPotBlock.COOKING)) {
+                        world.setBlock(pos, state.setValue(CookingPotBlock.COOKING, false), Block.UPDATE_ALL);
                     }
                     return;
                 }
@@ -331,13 +281,13 @@ public class CookingPotBlockEntity extends BlockEntity implements BlockEntityTic
                 cookingTime = 0;
                 craft(recipe.get(), access);
             }
-            if (!state.getValue(getCookingProperty())) {
-                world.setBlock(pos, state.setValue(getCookingProperty(), true), Block.UPDATE_ALL);
+            if (!state.getValue(CookingPotBlock.COOKING)) {
+                world.setBlock(pos, state.setValue(CookingPotBlock.COOKING, true), Block.UPDATE_ALL);
             }
         } else {
             cookingTime = 0;
-            if (state.getValue(getCookingProperty())) {
-                world.setBlock(pos, state.setValue(getCookingProperty(), false), Block.UPDATE_ALL);
+            if (state.getValue(CookingPotBlock.COOKING)) {
+                world.setBlock(pos, state.setValue(CookingPotBlock.COOKING, false), Block.UPDATE_ALL);
             }
         }
     }

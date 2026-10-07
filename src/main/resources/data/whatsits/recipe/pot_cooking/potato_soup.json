@@ -17,6 +17,5 @@
     "id": "whatsits:potato_soup",
     "count": 1
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

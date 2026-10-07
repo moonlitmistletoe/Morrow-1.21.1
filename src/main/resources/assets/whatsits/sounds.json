@@ -40,13 +40,5 @@
     "sounds": [
       "whatsits:cart_moving"
     ]
-  },
-  "well_pump": {
-    "subtitle": "sound.farm_and_charm.well_pump",
-    "sounds": [
-      "whatsits:well_pump_squeak_0",
-      "whatsits:well_pump_squeak_1",
-      "whatsits:well_pump_squeak_2"
-    ]
   }
 }

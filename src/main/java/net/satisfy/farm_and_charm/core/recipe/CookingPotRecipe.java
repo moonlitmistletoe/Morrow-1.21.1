@@ -22,10 +22,8 @@ public class CookingPotRecipe implements Recipe<RecipeInput> {
     private final ItemStack containerItem;
     private final ItemStack output;
     private final boolean requiresLearning;
-    private final float experience;
 
-    public CookingPotRecipe(NonNullList<Ingredient> inputs, boolean containerRequired, ItemStack containerItem, ItemStack output, boolean requiresLearning, float experience) {
-        this.experience = experience;
+    public CookingPotRecipe(NonNullList<Ingredient> inputs, boolean containerRequired, ItemStack containerItem, ItemStack output, boolean requiresLearning) {
         this.inputs = inputs;
         this.containerRequired = containerRequired;
         this.containerItem = containerItem;
@@ -93,10 +91,6 @@ public class CookingPotRecipe implements Recipe<RecipeInput> {
         return true;
     }
 
-    public float getExperience() {
-        return this.experience;
-    }
-
     public static class Serializer implements RecipeSerializer<CookingPotRecipe> {
         public static final MapCodec<CookingPotRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                         Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredients").flatXmap(list -> {
@@ -109,8 +103,7 @@ public class CookingPotRecipe implements Recipe<RecipeInput> {
                         Codec.BOOL.fieldOf("requireContainer").forGetter(CookingPotRecipe::isContainerRequired),
                         ItemStack.CODEC.fieldOf("container").forGetter(CookingPotRecipe::getContainerItem),
                         ItemStack.CODEC.fieldOf("result").forGetter(recipe -> recipe.output),
-                        Codec.BOOL.fieldOf("requiresLearning").forGetter(CookingPotRecipe::requiresLearning),
-                        Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(CookingPotRecipe::getExperience)
+                        Codec.BOOL.fieldOf("requiresLearning").forGetter(CookingPotRecipe::requiresLearning)
                 ).apply(instance, CookingPotRecipe::new)
         );
         public static final StreamCodec<RegistryFriendlyByteBuf, CookingPotRecipe> STREAM_CODEC =
@@ -124,8 +117,7 @@ public class CookingPotRecipe implements Recipe<RecipeInput> {
             ItemStack containerItem = ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf);
             ItemStack itemStack = ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf);
             boolean requiresLearning = registryFriendlyByteBuf.readBoolean();
-            float experience = registryFriendlyByteBuf.readFloat();
-            return new CookingPotRecipe(nonNullList, containerRequired, containerItem, itemStack, requiresLearning, experience);
+            return new CookingPotRecipe(nonNullList, containerRequired, containerItem, itemStack, requiresLearning);
         }
 
         public static void toNetwork(RegistryFriendlyByteBuf registryFriendlyByteBuf, CookingPotRecipe recipe) {
@@ -138,7 +130,6 @@ public class CookingPotRecipe implements Recipe<RecipeInput> {
             ItemStack.STREAM_CODEC.encode(registryFriendlyByteBuf, recipe.containerItem);
             ItemStack.STREAM_CODEC.encode(registryFriendlyByteBuf, recipe.output);
             registryFriendlyByteBuf.writeBoolean(recipe.requiresLearning);
-            registryFriendlyByteBuf.writeFloat(recipe.experience);
         }
 
         @Override

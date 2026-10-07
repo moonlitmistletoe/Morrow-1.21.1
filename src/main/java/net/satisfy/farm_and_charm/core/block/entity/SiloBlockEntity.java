@@ -1,14 +1,10 @@
 package net.satisfy.farm_and_charm.core.block.entity;
 
-import net.satisfy.foundation.util.LibUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.ContainerHelper;
@@ -21,7 +17,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,8 +25,9 @@ import net.satisfy.farm_and_charm.core.block.SiloBlock;
 import net.satisfy.farm_and_charm.core.recipe.SiloRecipe;
 import net.satisfy.farm_and_charm.core.registry.EntityTypeRegistry;
 import net.satisfy.farm_and_charm.core.util.ConnectivityHandler;
+import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import net.satisfy.farm_and_charm.core.util.IMultiBlockEntityContainer;
-import net.satisfy.foundation.util.ImplementedInventory;
+import net.satisfy.farm_and_charm.core.world.ImplementedInventory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,18 +65,6 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
             itemEntity.setDeltaMovement(level.random.triangle(direction.getStepX() * 0.4, 0.11485000171139836), level.random.triangle(-0.2, 0.11485000171139836), level.random.triangle(direction.getStepZ() * 0.4, 0.11485000171139836));
             level.addFreshEntity(itemEntity);
         }
-    }
-
-    public void requestConnectivityUpdate() {
-        if (level == null || level.isClientSide) {
-            return;
-        }
-        SiloBlockEntity siloController = getControllerBE();
-        if (siloController == null) {
-            return;
-        }
-        siloController.updateConnectivity = true;
-        siloController.setChanged();
     }
 
     @Override
@@ -135,30 +119,21 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
 
         BlockState state = getBlockState();
         if (SiloBlock.isSilo(state)) {
-            BlockState updatedState = state.setValue(SiloBlock.BOTTOM, true)
-                    .setValue(SiloBlock.TOP, true)
-                    .setValue(SiloBlock.SHAPE, SiloBlock.Shape.NONE);
-            if (!state.equals(updatedState)) {
-                level.setBlock(worldPosition, updatedState, 23);
-            }
+            state = state.setValue(SiloBlock.BOTTOM, true);
+            state = state.setValue(SiloBlock.TOP, true);
+            state = state.setValue(SiloBlock.SHAPE, SiloBlock.Shape.NONE);
+            level.setBlock(worldPosition, state, 23);
         }
     }
 
     @Override
     public void tick(Level level, BlockPos blockPos, BlockState blockState, SiloBlockEntity blockEntity) {
-        if (level.isClientSide) {
-            return;
-        }
-        if (this.level == null) {
+        if (this.level == null)
             this.level = level;
-        }
-        if (updateConnectivity) {
+        if (updateConnectivity)
             updateConnectivity();
-        }
-        if (isController()) {
-            dry();
-            tryDropFinish(blockState);
-        }
+        dry();
+        tryDropFinish(blockState);
     }
 
     public void updateConnectivity() {
@@ -181,7 +156,7 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     }
 
     public ItemStack tryRemoveItem() {
-        for (int slot = MAX_CAPACITY + this.getCapacity() - 1; slot >= MAX_CAPACITY; --slot) {
+        for (int slot = MAX_CAPACITY + this.getCapacity(); slot > MAX_CAPACITY; --slot) {
             ItemStack stack = this.getItem(slot);
             if (!stack.isEmpty())
                 return this.removeItem(slot, stack.getCount());
@@ -192,85 +167,56 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     @Override
     public void notifyMultiUpdated() {
         if (level == null) return;
-
-        BlockState currentState = this.getBlockState();
-        if (SiloBlock.isSilo(currentState)) {
-            BlockState updatedState = currentState.setValue(SiloBlock.BOTTOM, getController().getY() == getBlockPos().getY())
-                    .setValue(SiloBlock.TOP, getController().getY() + height - 1 == getBlockPos().getY());
-
+        BlockState state = this.getBlockState();
+        if (SiloBlock.isSilo(state)) {
+            state = state.setValue(SiloBlock.BOTTOM, getController().getY() == getBlockPos().getY());
+            state = state.setValue(SiloBlock.TOP, getController().getY() + height - 1 == getBlockPos().getY());
             BlockState controllerState = level.getBlockState(getController());
             if (controllerState.hasProperty(BlockStateProperties.OPEN)) {
-                updatedState = updatedState.setValue(SiloBlock.OPEN, controllerState.getValue(BlockStateProperties.OPEN));
+                state = state.setValue(SiloBlock.OPEN, controllerState.getValue(BlockStateProperties.OPEN));
             }
             if (controllerState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
-                updatedState = updatedState.setValue(BlockStateProperties.HORIZONTAL_FACING, controllerState.getValue(BlockStateProperties.HORIZONTAL_FACING));
+                state = state.setValue(BlockStateProperties.HORIZONTAL_FACING, controllerState.getValue(BlockStateProperties.HORIZONTAL_FACING));
             }
-
-            if (!currentState.equals(updatedState)) {
-                level.setBlock(worldPosition, updatedState, 2);
-            }
+            level.setBlock(worldPosition, state, 6);
         }
-
         if (isController()) {
             updateShape();
         }
     }
 
     public void updateShape() {
-        forEachSiloBlock((pos, blockState, xOffset, zOffset) -> {
-            SiloBlock.Shape shape = computeShape(xOffset, zOffset);
-            if (blockState.getValue(SiloBlock.SHAPE) != shape) {
-                level.setBlock(pos, blockState.setValue(SiloBlock.SHAPE, shape), 2);
-            }
-        });
-    }
-
-    private SiloBlock.Shape computeShape(int xOffset, int zOffset) {
-        if (width == 2) {
-            return xOffset == 0
-                    ? (zOffset == 0 ? SiloBlock.Shape.NORTH_WEST : SiloBlock.Shape.SOUTH_WEST)
-                    : (zOffset == 0 ? SiloBlock.Shape.NORTH_EAST : SiloBlock.Shape.SOUTH_EAST);
-        }
-        if (width == 3) {
-            return switch (xOffset) {
-                case 0 ->
-                        zOffset == 0 ? SiloBlock.Shape.NORTH_WEST : zOffset == 2 ? SiloBlock.Shape.SOUTH_WEST : SiloBlock.Shape.WEST;
-                case 1 ->
-                        zOffset == 0 ? SiloBlock.Shape.NORTH : zOffset == 2 ? SiloBlock.Shape.SOUTH : SiloBlock.Shape.NONE;
-                case 2 ->
-                        zOffset == 0 ? SiloBlock.Shape.NORTH_EAST : zOffset == 2 ? SiloBlock.Shape.SOUTH_EAST : SiloBlock.Shape.EAST;
-                default -> SiloBlock.Shape.NONE;
-            };
-        }
-        return SiloBlock.Shape.NONE;
-    }
-
-    private void forEachSiloBlock(SiloBlockAction action) {
-        if (level == null) {
-            return;
-        }
         for (int yOffset = 0; yOffset < height; yOffset++) {
             for (int xOffset = 0; xOffset < width; xOffset++) {
                 for (int zOffset = 0; zOffset < width; zOffset++) {
                     BlockPos pos = this.worldPosition.offset(xOffset, yOffset, zOffset);
-                    BlockState blockState = level.getBlockState(pos);
-                    if (SiloBlock.isSilo(blockState)) {
-                        action.accept(pos, blockState, xOffset, zOffset);
-                    }
+                    assert this.level != null;
+                    BlockState blockState = this.level.getBlockState(pos);
+                    if (!SiloBlock.isSilo(blockState))
+                        continue;
+                    SiloBlock.Shape shape = SiloBlock.Shape.NONE;
+                    if (width == 2)
+                        shape = xOffset == 0 ? zOffset == 0 ? SiloBlock.Shape.NORTH_WEST : SiloBlock.Shape.SOUTH_WEST
+                                : zOffset == 0 ? SiloBlock.Shape.NORTH_EAST : SiloBlock.Shape.SOUTH_EAST;
+                    if (width == 3)
+                        shape = switch (xOffset) {
+                            case 0 ->
+                                    zOffset == 0 ? SiloBlock.Shape.NORTH_WEST : zOffset == 2 ? SiloBlock.Shape.SOUTH_WEST : SiloBlock.Shape.WEST;
+                            case 1 ->
+                                    zOffset == 0 ? SiloBlock.Shape.NORTH : zOffset == 2 ? SiloBlock.Shape.SOUTH : SiloBlock.Shape.NONE;
+                            case 2 ->
+                                    zOffset == 0 ? SiloBlock.Shape.NORTH_EAST : zOffset == 2 ? SiloBlock.Shape.SOUTH_EAST : SiloBlock.Shape.EAST;
+                            default -> SiloBlock.Shape.NONE;
+                        };
+                    level.setBlockAndUpdate(pos, blockState.setValue(SiloBlock.SHAPE, shape));
                 }
             }
         }
     }
 
-    @FunctionalInterface
-    private interface SiloBlockAction {
-        void accept(BlockPos pos, BlockState blockState, int xOffset, int zOffset);
-    }
-
     private void dry() {
         for (int fresh = 0; fresh < this.getCapacity(); fresh++) {
             ItemStack freshStack = this.getItem(fresh);
-            assert level != null;
             Optional<RecipeHolder<SiloRecipe>> recipe = SiloBlock.getDryItemRecipe(level, freshStack);
             if (recipe.isPresent() && !freshStack.isEmpty()) {
                 int dryTime = this.times[fresh];
@@ -283,8 +229,10 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
                             this.setItem(finish, SiloBlock.isDryItem(level, finishStack) ? outputStack : finishStack);
                             dryTime = 0;
 
-                            level.playSound(null, worldPosition, SoundEvents.COMPOSTER_FILL_SUCCESS,
-                                    net.minecraft.sounds.SoundSource.BLOCKS, 0.7f, 1.0f);
+                            if (level != null && !level.isClientSide) {
+                                level.playSound(null, worldPosition, SoundEvents.COMPOSTER_FILL_SUCCESS,
+                                        net.minecraft.sounds.SoundSource.BLOCKS, 0.7f, 1.0f);
+                            }
 
                             break;
                         }
@@ -294,6 +242,7 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
             }
         }
     }
+
 
     private void tryDropFinish(BlockState blockState) {
         if (this.level == null || !blockState.getValue(SiloBlock.OPEN))
@@ -319,14 +268,20 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     }
 
     public void open(boolean open) {
-        if (!this.isController() || level == null)
+        if (!this.isController())
             return;
-
-        forEachSiloBlock((pos, blockState, xOffset, zOffset) -> {
-            if (blockState.getValue(SiloBlock.OPEN) != open) {
-                level.setBlock(pos, blockState.setValue(SiloBlock.OPEN, open), 2);
+        for (int yOffset = 0; yOffset < height; yOffset++) {
+            for (int xOffset = 0; xOffset < width; xOffset++) {
+                for (int zOffset = 0; zOffset < width; zOffset++) {
+                    BlockPos pos = this.worldPosition.offset(xOffset, yOffset, zOffset);
+                    assert this.level != null;
+                    BlockState blockState = this.level.getBlockState(pos);
+                    if (!SiloBlock.isSilo(blockState))
+                        continue;
+                    level.setBlockAndUpdate(pos, blockState.setValue(SiloBlock.OPEN, open));
+                }
             }
-        });
+        }
     }
 
     @Override
@@ -382,7 +337,7 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     protected void saveAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
         super.saveAdditional(compoundTag, provider);
         if (this.controller != null)
-            LibUtil.putBlockPos(compoundTag, this.controller);
+            GeneralUtil.putBlockPos(compoundTag, this.controller);
         compoundTag.putBoolean("Update", this.updateConnectivity);
         compoundTag.putInt("Width", this.width);
         compoundTag.putInt("Height", this.height);
@@ -393,7 +348,7 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     @Override
     protected void loadAdditional(CompoundTag compoundTag, HolderLookup.Provider provider) {
         super.loadAdditional(compoundTag, provider);
-        this.controller = LibUtil.readBlockPos(compoundTag);
+        this.controller = GeneralUtil.readBlockPos(compoundTag);
         this.updateConnectivity = !compoundTag.contains("Update") || compoundTag.getBoolean("Update");
         this.width = compoundTag.contains("Width") ? compoundTag.getInt("Width") : 1;
         this.height = compoundTag.contains("Height") ? compoundTag.getInt("Height") : 1;
@@ -403,27 +358,10 @@ public class SiloBlockEntity extends BlockEntity implements IMultiBlockEntityCon
     }
 
     @Override
-    public void setChanged() {
-        super.setChanged();
-        if (level != null && !level.isClientSide) {
-            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
-        }
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    @Override
-    public @NotNull CompoundTag getUpdateTag(HolderLookup.Provider provider) {
-        return this.saveWithoutMetadata(provider);
-    }
-
-    @Override
     public @NotNull Component getDisplayName() {
         return Component.empty();
     }
+
 
     @Nullable
     @Override

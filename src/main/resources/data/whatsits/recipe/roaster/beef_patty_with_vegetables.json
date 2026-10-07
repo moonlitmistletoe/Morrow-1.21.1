@@ -28,6 +28,5 @@
     "id": "whatsits:beef_patty_with_vegetables",
     "count": 2
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

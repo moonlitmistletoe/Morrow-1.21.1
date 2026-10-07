@@ -28,6 +28,5 @@
     "id": "whatsits:barley_patties_with_potatoes",
     "count": 2
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }

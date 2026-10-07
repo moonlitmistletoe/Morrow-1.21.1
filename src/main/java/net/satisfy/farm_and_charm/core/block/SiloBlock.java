@@ -1,6 +1,5 @@
 package net.satisfy.farm_and_charm.core.block;
 
-import net.satisfy.foundation.block.FacingBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -45,6 +44,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Optional;
 
+@SuppressWarnings({"deprecation", "unused"})
 public class SiloBlock extends FacingBlock implements EntityBlock {
     public static final BooleanProperty TOP = BooleanProperty.create("top");
     public static final BooleanProperty BOTTOM = BooleanProperty.create("bottom");
@@ -124,6 +124,7 @@ public class SiloBlock extends FacingBlock implements EntityBlock {
         return isSilo(itemStack) || player.isDiscrete() ? ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION : ItemInteractionResult.CONSUME;
     }
 
+
     @Override
     public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {
         if (oldState.getBlock() == state.getBlock())
@@ -133,19 +134,7 @@ public class SiloBlock extends FacingBlock implements EntityBlock {
 
         BlockEntity be = world.getBlockEntity(pos);
         if (be instanceof SiloBlockEntity siloBlockEntity)
-            siloBlockEntity.requestConnectivityUpdate();
-    }
-
-    @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean movedByPiston) {
-        if (level.isClientSide) {
-            return;
-        }
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof SiloBlockEntity siloBlockEntity) {
-            siloBlockEntity.requestConnectivityUpdate();
-        }
-        super.neighborChanged(state, level, pos, block, fromPos, movedByPiston);
+            siloBlockEntity.updateConnectivity();
     }
 
     @Override
@@ -187,15 +176,13 @@ public class SiloBlock extends FacingBlock implements EntityBlock {
         builder.add(TOP, BOTTOM, OPEN, SHAPE, FACING);
     }
 
+    @SuppressWarnings("unchecked")
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level tickerLevel, BlockState state, BlockEntityType<T> type) {
-        if (tickerLevel.isClientSide) {
-            return null;
-        }
-        return (level, pos, blockState, blockEntity) -> {
-            if (blockEntity instanceof SiloBlockEntity silo) {
-                silo.tick(level, pos, blockState, silo);
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState state, BlockEntityType<T> type) {
+        return (world1, pos, state1, blockEntity) -> {
+            if (blockEntity instanceof BlockEntityTicker<?>) {
+                ((BlockEntityTicker<T>) blockEntity).tick(world, pos, state1, blockEntity);
             }
         };
     }

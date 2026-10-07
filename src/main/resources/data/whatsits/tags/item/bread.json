@@ -1,10 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#c:foods/bread",
-    {
-      "id": "#c:bread",
-      "required": false
-    }
+    "#c:bread",
+    "minecraft:bread"
   ]
 }

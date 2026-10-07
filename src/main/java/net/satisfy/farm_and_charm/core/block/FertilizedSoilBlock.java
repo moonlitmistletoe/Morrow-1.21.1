@@ -84,7 +84,6 @@ public class FertilizedSoilBlock extends Block {
                     itemStack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(itemStack));
                 }
                 level.playSound(null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
-                FertilizedFarmlandBlock.spawnDirtParticles(level, pos, state);
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

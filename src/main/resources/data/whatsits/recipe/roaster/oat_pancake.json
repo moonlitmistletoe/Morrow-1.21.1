@@ -28,6 +28,5 @@
     "id": "whatsits:oat_pancake",
     "count": 3
   },
-  "requiresLearning": false,
-  "experience": 0.35
+  "requiresLearning": false
 }
