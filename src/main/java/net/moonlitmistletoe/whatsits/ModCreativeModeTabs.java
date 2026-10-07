@@ -30,7 +30,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACKBERRY_SEED);
                         output.accept(ModItems.BLUEBERRY_SEED);
                         output.accept(ModItems.COFFEE_SEED);
-                        output.accept(ModItems.STRAWBERRY_SEED);
 
                         // =========================
                         // Whatsits food
@@ -42,7 +41,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLUEBERRY);
                         output.accept(ModItems.CHERRY);
                         output.accept(ModItems.COFFEE_BEANS);
-                        output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.RAW_COW_RIBS);
                         output.accept(ModItems.HANDCUFFS);
 
