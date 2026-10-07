@@ -176,11 +176,6 @@ public class ModItems {
                 () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_COW_RIBS))
         );
 
-        APPLE_PIE_SLICE = ITEMS.register(
-                "apple_pie_slice",
-                () -> new Item(new Item.Properties().food(ModFoodProperties.APPLE_PIE_SLICE))
-        );
-
         CHERRY_PIE = ITEMS.register(
                 "cherry_pie",
                 () -> new Item(new Item.Properties().food(ModFoodProperties.CHERRY_PIE))
