@@ -60,6 +60,13 @@ jobs:
               if p.exists():
                   shutil.rmtree(p)
 
+          rm -rf src/main/java/net/satisfy/bakery/platform
+          rm -rf src/main/java/net/satisfy/bakery/client/gui
+          rm -rf src/main/java/net/satisfy/bakery/client/renderer
+          rm -rf src/main/java/net/satisfy/bakery/core/block/entity
+          rm -f src/main/java/net/satisfy/bakery/core/registry/MobEffectRegistry.java
+          rm -f src/main/java/net/satisfy/bakery/core/registry/StorageTypeRegistry.java
+
           # Bakery itself is now a component of Morrow, not a second mod.
           p = root / "Bakery.java"
           p.write_text('''package net.satisfy.bakery;
@@ -182,6 +189,17 @@ jobs:
               s = p.read_text()
               s = s.replace("bus = EventBusSubscriber.Bus.MOD", "bus = EventBusSubscriber.Bus.MOD")
               p.write_text(s)
+
+          # Remove the old hand-written Bakery creative-tab entries from Morrow.
+          tab = Path("src/main/java/net/moonlitmistletoe/whatsits/ModCreativeModeTabs.java")
+          if tab.exists():
+              t = tab.read_text()
+              start = t.find("// Bakery food")
+              if start >= 0:
+                  end = t.rfind("                    })")
+                  if end > start:
+                      t = t[:start] + t[end:]
+              tab.write_text(t)
 
           # Remove item language entries. Block translations remain.
           lang = Path("src/main/resources/assets/whatsits/lang/en_us.json")
