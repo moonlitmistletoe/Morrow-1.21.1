@@ -148,7 +148,6 @@ jobs:
           # The original cake registrations referenced removed item suppliers.
           body = "\n".join(block_lines)
           body = re.sub(r'ObjectRegistry\.[A-Z0-9_]+_SLICE', 'null', body)
-          body = re.sub(r'\(\s*ObjectRegistry\.[A-Z0-9_]+\s*\\)', '(null)', body)
 
           footer = '''
               public static void init() {
