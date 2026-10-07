@@ -3,7 +3,7 @@ package net.satisfy.bakery.platform.neoforge;
 import net.satisfy.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import net.satisfy.bakery.platform.PlatformHelper;
 
-public class PlatformHelperImpl extends PlatformHelper {
+public class PlatformHelperImpl {
 
     // Banner / Tooltip
     public static boolean shouldGiveEffect() {
