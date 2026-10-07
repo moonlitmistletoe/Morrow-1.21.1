@@ -60,12 +60,14 @@ jobs:
               if p.exists():
                   shutil.rmtree(p)
 
-          rm -rf src/main/java/net/satisfy/bakery/platform
-          rm -rf src/main/java/net/satisfy/bakery/client/gui
-          rm -rf src/main/java/net/satisfy/bakery/client/renderer
-          rm -rf src/main/java/net/satisfy/bakery/core/block/entity
-          rm -f src/main/java/net/satisfy/bakery/core/registry/MobEffectRegistry.java
-          rm -f src/main/java/net/satisfy/bakery/core/registry/StorageTypeRegistry.java
+          for rel in ["platform", "client/gui", "client/renderer", "core/block/entity"]:
+              p = root / rel
+              if p.exists():
+                  shutil.rmtree(p)
+          for rel in ["core/registry/MobEffectRegistry.java", "core/registry/StorageTypeRegistry.java"]:
+              p = root / rel
+              if p.exists():
+                  p.unlink()
 
           # Bakery itself is now a component of Morrow, not a second mod.
           p = root / "Bakery.java"
