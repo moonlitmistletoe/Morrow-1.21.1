@@ -23,14 +23,12 @@ public class ModItems {
     public static final DeferredItem<Item> BLACKBERRY_SEED;
     public static final DeferredItem<Item> BLUEBERRY_SEED;
     public static final DeferredItem<Item> COFFEE_SEED;
-    public static final DeferredItem<Item> STRAWBERRY_SEED;
     public static final DeferredItem<Item> EGG_YOLK;
     public static final DeferredItem<Item> AVOCADO;
     public static final DeferredItem<Item> BLACKBERRY;
     public static final DeferredItem<Item> BLUEBERRY;
     public static final DeferredItem<Item> CHERRY;
     public static final DeferredItem<Item> COFFEE_BEANS;
-    public static final DeferredItem<Item> STRAWBERRY;
     public static final DeferredItem<Item> RAW_COW_RIBS;
     public static final DeferredItem<Item> APPLE_JUICE;
     public static final DeferredItem<Item> CHERRY_JUICE;
@@ -76,11 +74,6 @@ public class ModItems {
                 () -> new ItemNameBlockItem((Block) ModBlocks.COFFEE_CROP.get(), new Item.Properties())
         );
 
-        STRAWBERRY_SEED = ITEMS.register(
-                "strawberry_seed",
-                () -> new ItemNameBlockItem((Block) ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties())
-        );
-
         EGG_YOLK = ITEMS.register(
                 "egg_yolk",
                 () -> new Item(new Item.Properties().food(ModFoodProperties.EGG_YOLK))
@@ -109,11 +102,6 @@ public class ModItems {
         COFFEE_BEANS = ITEMS.register(
                 "coffee_beans",
                 () -> new Item(new Item.Properties())
-        );
-
-        STRAWBERRY = ITEMS.register(
-                "strawberry",
-                () -> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY))
         );
 
         RAW_COW_RIBS = ITEMS.register(
