@@ -74,6 +74,13 @@ jobs:
               if p.exists():
                   p.unlink()
 
+          for p in list((root / "core/block").rglob("*.java")):
+              if "core.block.entity" in p.read_text(errors="ignore"):
+                  p.unlink()
+          p = root / "neoforge/client/BakeryClientNeoForge.java"
+          if p.exists():
+              p.unlink()
+
           # Remove Bakery blocks whose behavior still produces Bakery items, plus their item/network layers.
           for p in list((root / "core/block").rglob("*.java")):
               if "ObjectRegistry." in p.read_text(errors="ignore"):
