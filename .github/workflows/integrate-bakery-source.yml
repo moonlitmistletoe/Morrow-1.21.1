@@ -16,66 +16,114 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Import Bakery source
+      - name: Import and adapt Bakery source
         shell: bash
         run: |
           set -euo pipefail
 
-          rm -rf /tmp/bakery /tmp/bakery-extract
+          rm -rf src/main/java/net/satisfy/bakery src/main/resources/assets/whatsits src/main/resources/data/whatsits
+          rm -rf /tmp/bakery-extract
           mkdir -p /tmp/bakery-extract
 
           git show 107595c909422a035caff898abe82962aa229b7a:bakery-1.21.1.zip > /tmp/bakery.zip
           unzip -q /tmp/bakery.zip -d /tmp/bakery-extract
           BAKERY_ROOT="$(find /tmp/bakery-extract -maxdepth 1 -mindepth 1 -type d | head -n1)"
 
-          rm -rf src/main/java/net/satisfy/bakery
           mkdir -p src/main/java/net/satisfy
           cp -R "$BAKERY_ROOT/common/src/main/java/net/satisfy/bakery" src/main/java/net/satisfy/
+          mkdir -p src/main/java/net/satisfy/bakery
+          cp -R "$BAKERY_ROOT/neoforge/src/main/java/net/satisfy/bakery/neoforge" src/main/java/net/satisfy/bakery/
 
-          if [ -d "$BAKERY_ROOT/neoforge/src/main/java/net/satisfy/bakery/neoforge" ]; then
-            mkdir -p src/main/java/net/satisfy/bakery
-            cp -R "$BAKERY_ROOT/neoforge/src/main/java/net/satisfy/bakery/neoforge" src/main/java/net/satisfy/bakery/
-          fi
-
-          rm -rf src/main/resources/assets/whatsits
           mkdir -p src/main/resources/assets/whatsits
           cp -R "$BAKERY_ROOT/common/src/main/resources/assets/bakery/." src/main/resources/assets/whatsits/
+          rm -rf src/main/resources/assets/whatsits/models/item src/main/resources/assets/whatsits/textures/item
 
-          rm -rf src/main/resources/assets/whatsits/models/item
-          rm -rf src/main/resources/assets/whatsits/textures/item
-
-          rm -rf src/main/resources/data/whatsits
           mkdir -p src/main/resources/data/whatsits
-          if [ -d "$BAKERY_ROOT/common/src/main/resources/data/bakery" ]; then
-            cp -R "$BAKERY_ROOT/common/src/main/resources/data/bakery/." src/main/resources/data/whatsits/
-          fi
-
-          rm -rf src/main/resources/data/whatsits/recipe
-          rm -rf src/main/resources/data/whatsits/advancement
-          rm -rf src/main/resources/data/whatsits/loot_table
-          rm -rf src/main/resources/data/whatsits/tags/item
+          cp -R "$BAKERY_ROOT/common/src/main/resources/data/bakery/." src/main/resources/data/whatsits/
+          rm -rf src/main/resources/data/whatsits/recipe src/main/resources/data/whatsits/advancement src/main/resources/data/whatsits/loot_table src/main/resources/data/whatsits/tags/item
 
           python3 - <<'PY'
           from pathlib import Path
-          import re
+          import json, re, shutil
 
           root = Path("src/main/java/net/satisfy/bakery")
 
-          bakery = root / "Bakery.java"
-          text = bakery.read_text()
-          text = text.replace(
-              'import net.minecraft.resources.ResourceLocation;',
-              'import net.minecraft.resources.ResourceLocation;\nimport net.moonlitmistletoe.whatsits.Whatsits;'
-          )
-          text = text.replace('public static final String MOD_ID = "bakery";', 'public static final String MOD_ID = Whatsits.MOD_ID;')
-          text = text.replace('        MobEffectRegistry.init();\n', '')
-          text = text.replace('        PacketHandler.init();\n', '')
-          text = text.replace('        CommonEvents.init();\n', '')
-          text = text.replace('        TabRegistry.init();\n', '')
-          bakery.write_text(text)
+          # Remove platform/source files that cannot be part of a NeoForge-only Morrow source tree.
+          for p in list(root.rglob("*.java")):
+              s = p.read_text(errors="ignore")
+              if "net.satisfy.farm_and_charm" in s or "net.fabricmc." in s or "me.shedaniel.rei." in s:
+                  p.unlink()
 
-          obj = root / "core/registry/ObjectRegistry.java"
-          obj.write_text(r'''package net.satisfy.bakery.core.registry;
+          # Remove item, recipe and compatibility layers entirely.
+          for rel in ["core/item", "core/compat", "core/recipe", "core/effect"]:
+              p = root / rel
+              if p.exists():
+                  shutil.rmtree(p)
+
+          # Bakery itself is now a component of Morrow, not a second mod.
+          p = root / "Bakery.java"
+          p.write_text('''package net.satisfy.bakery;
+
+          import net.minecraft.resources.ResourceLocation;
+          import net.moonlitmistletoe.whatsits.Whatsits;
+          import net.satisfy.bakery.core.registry.ObjectRegistry;
+          import net.satisfy.bakery.core.registry.SoundEventRegistry;
+
+          public final class Bakery {
+              public static final String MOD_ID = Whatsits.MOD_ID;
+
+              public static ResourceLocation identifier(String name) {
+                  return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+              }
+
+              public static void init() {
+                  ObjectRegistry.init();
+                  SoundEventRegistry.init();
+              }
+          }
+          ''')
+
+          # The Fabric/common client implementation is not used by Morrow.
+          (root / "client/BakeryClient.java").write_text('''package net.satisfy.bakery.client;
+
+          public final class BakeryClient {
+              public static void preInitClient() {}
+              public static void initClient() {}
+          }
+          ''')
+
+          # Build a Bakery block-only registry from the real source registry.
+          # Anything whose implementation depended on Farm & Charm was removed above.
+          original = Path("/tmp/bakery-extract").rglob("common/src/main/java/net/satisfy/bakery/core/registry/ObjectRegistry.java")
+          original = next(original)
+          src = original.read_text()
+
+          block_lines = []
+          for line in src.splitlines():
+              if "public static final RegistrySupplier<Block>" not in line:
+                  continue
+              m = re.search(r'new ([A-Za-z0-9_]+)\\(', line)
+              if not m:
+                  continue
+              cls = m.group(1)
+              candidates = list(root.rglob(cls + ".java"))
+              if not candidates:
+                  continue
+              # Block entities are omitted from the stripped Bakery layer.
+              impl = candidates[0].read_text(errors="ignore")
+              if "EntityBlock" in impl or "BlockEntity" in impl:
+                  continue
+              # The Farm & Charm furniture blocks are deliberately not imported.
+              if "net.satisfy.farm_and_charm" in impl:
+                  continue
+              if "registerWithItem" in line:
+                  # The three-argument jam registrations require an item remainder.
+                  if line.count(",") >= 2:
+                      continue
+                  line = line.replace("registerWithItem", "registerWithoutItem")
+              block_lines.append(line)
+
+          header = '''package net.satisfy.bakery.core.registry;
 
           import dev.architectury.registry.registries.DeferredRegister;
           import dev.architectury.registry.registries.Registrar;
@@ -89,7 +137,6 @@ jobs:
           import net.satisfy.bakery.Bakery;
           import net.satisfy.bakery.core.block.*;
           import net.satisfy.bakery.core.block.cake.*;
-
           import java.util.function.Supplier;
 
           public final class ObjectRegistry {
@@ -97,105 +144,13 @@ jobs:
                       DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK);
               private static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
 
-              public static final RegistrySupplier<Block> BAKERY_BANNER =
-                      registerWithoutItem("bakery_banner", () -> new CompletionistBannerBlock(
-                              BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
-              public static final RegistrySupplier<Block> BAKERY_WALL_BANNER =
-                      registerWithoutItem("bakery_wall_banner", () -> new CompletionistWallBannerBlock(
-                              BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
-              public static final RegistrySupplier<Block> KITCHEN_SINK =
-                      registerWithoutItem("kitchen_sink", () -> new BrickSinkBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS).noOcclusion()));
-              public static final RegistrySupplier<Block> BAKER_STATION =
-                      registerWithoutItem("baker_station", () -> new BakerStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS)));
-              public static final RegistrySupplier<Block> CABINET =
-                      registerWithoutItem("cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN.get(), SoundEventRegistry.CABINET_CLOSE.get()));
-              public static final RegistrySupplier<Block> DRAWER =
-                      registerWithoutItem("drawer", () -> new CabinetBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.DRAWER_OPEN.get(), SoundEventRegistry.DRAWER_CLOSE.get()));
-              public static final RegistrySupplier<Block> WALL_CABINET =
-                      registerWithoutItem("wall_cabinet", () -> new CabinetWallBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN.get(), SoundEventRegistry.CABINET_CLOSE.get()));
-              public static final RegistrySupplier<Block> STREET_SIGN =
-                      registerWithoutItem("street_sign", () -> new StreetSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-              public static final RegistrySupplier<Block> CAKE_STAND =
-                      registerWithoutItem("cake_stand", () -> new CakeStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).sound(SoundType.GLASS)));
-              public static final RegistrySupplier<Block> CAKE_DISPLAY =
-                      registerWithoutItem("cake_display", () -> new CakeDisplayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).sound(SoundType.GLASS)));
-              public static final RegistrySupplier<Block> CUPCAKE_DISPLAY =
-                      registerWithoutItem("cupcake_display", () -> new CupcakeDisplayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT).sound(SoundType.WOOD)));
-              public static final RegistrySupplier<Block> BREADBOX =
-                      registerWithoutItem("breadbox", () -> new BreadBox(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-              public static final RegistrySupplier<Block> TRAY =
-                      registerWithoutItem("tray", () -> new TrayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-              public static final RegistrySupplier<Block> BREAD_CRATE =
-                      registerWithoutItem("bread_crate", () -> new BreadBasketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-              public static final RegistrySupplier<Block> WALL_DISPLAY =
-                      registerWithoutItem("wall_display", () -> new WallDisplayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-              public static final RegistrySupplier<Block> CHOCOLATE_BOX =
-                      registerWithoutItem("chocolate_box", () -> new EatableBoxBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-              public static final RegistrySupplier<Block> SMALL_COOKING_POT =
-                      registerWithoutItem("small_cooking_pot", () -> new SmallCookingPotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-              public static final RegistrySupplier<Block> JAR =
-                      registerWithoutItem("jar", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().noOcclusion().sound(SoundType.GLASS), 4));
-              public static final RegistrySupplier<Block> STRAWBERRY_JAM =
-                      registerWithoutItem("strawberry_jam", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().noOcclusion().sound(SoundType.GLASS), 4));
-              public static final RegistrySupplier<Block> GLOWBERRY_JAM =
-                      registerWithoutItem("glowberry_jam", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().noOcclusion().sound(SoundType.GLASS), 4));
-              public static final RegistrySupplier<Block> SWEETBERRY_JAM =
-                      registerWithoutItem("sweetberry_jam", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().noOcclusion().sound(SoundType.GLASS), 4));
-              public static final RegistrySupplier<Block> CHOCOLATE_JAM =
-                      registerWithoutItem("chocolate_jam", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().noOcclusion().sound(SoundType.GLASS), 4));
-              public static final RegistrySupplier<Block> APPLE_JAM =
-                      registerWithoutItem("apple_jam", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instabreak().sound(SoundType.GLASS).noOcclusion(), 4));
+          '''
+          # The original cake registrations referenced removed item suppliers.
+          body = "\n".join(block_lines)
+          body = re.sub(r'ObjectRegistry\\.[A-Z0-9_]+_SLICE', 'null', body)
+          body = re.sub(r'\\(\\s*ObjectRegistry\\.[A-Z0-9_]+\\s*\\)', '(null)', body)
 
-              public static final RegistrySupplier<Block> CRUSTY_BREAD_BLOCK =
-                      registerWithoutItem("crusty_bread_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 3));
-              public static final RegistrySupplier<Block> BREAD_BLOCK =
-                      registerWithoutItem("bread_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 3));
-              public static final RegistrySupplier<Block> BAGUETTE_BLOCK =
-                      registerWithoutItem("baguette_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 4));
-              public static final RegistrySupplier<Block> TOAST_BLOCK =
-                      registerWithoutItem("toast_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 3));
-              public static final RegistrySupplier<Block> BRAIDED_BREAD_BLOCK =
-                      registerWithoutItem("braided_bread_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 3));
-              public static final RegistrySupplier<Block> BUN_BLOCK =
-                      registerWithoutItem("bun_block", () -> new StackableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 4));
-              public static final RegistrySupplier<Block> WAFFLE_BLOCK =
-                      registerWithoutItem("waffle_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 4));
-
-              public static final RegistrySupplier<Block> CHOCOLATE_GATEAU =
-                      registerWithoutItem("chocolate_gateau", () -> new CakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> CHOCOLATE_TART =
-                      registerWithoutItem("chocolate_tart", () -> new ChocolateTart(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> BLANK_CAKE =
-                      registerWithoutItem("blank_cake", () -> new BlankCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).forceSolidOn()));
-              public static final RegistrySupplier<Block> APPLE_CUPCAKE_BLOCK =
-                      registerWithoutItem("apple_cupcake_block", () -> new CupcakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> SWEETBERRY_CUPCAKE_BLOCK =
-                      registerWithoutItem("sweetberry_cupcake_block", () -> new CupcakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> STRAWBERRY_CUPCAKE_BLOCK =
-                      registerWithoutItem("strawberry_cupcake_block", () -> new CupcakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> CHOCOLATE_COOKIE_BLOCK =
-                      registerWithoutItem("chocolate_cookie_block", () -> new CookieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> SWEETBERRY_COOKIE_BLOCK =
-                      registerWithoutItem("sweetberry_cookie_block", () -> new CookieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> STRAWBERRY_COOKIE_BLOCK =
-                      registerWithoutItem("strawberry_cookie_block", () -> new CookieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).instabreak().forceSolidOn()));
-              public static final RegistrySupplier<Block> STRAWBERRY_CAKE =
-                      registerWithoutItem("strawberry_cake", () -> new CakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> SWEETBERRY_CAKE =
-                      registerWithoutItem("sweetberry_cake", () -> new CakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> CHOCOLATE_CAKE =
-                      registerWithoutItem("chocolate_cake", () -> new CakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> BUNDT_CAKE =
-                      registerWithoutItem("bundt_cake", () -> new BundtCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> LINZER_TART =
-                      registerWithoutItem("linzer_tart", () -> new LinzerTartBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> APPLE_PIE =
-                      registerWithoutItem("apple_pie", () -> new ApplePieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> GLOWBERRY_TART =
-                      registerWithoutItem("glowberry_tart", () -> new GlowberryTartBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-              public static final RegistrySupplier<Block> PUDDING =
-                      registerWithoutItem("pudding", () -> new PuddingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), null));
-
+          footer = '''
               public static void init() {
                   BLOCKS.register();
               }
@@ -204,66 +159,53 @@ jobs:
                   return BLOCKS.register(Bakery.identifier(name), block);
               }
           }
-          ''')
+          '''
+          (root / "core/registry/ObjectRegistry.java").write_text(header + body + footer)
 
-          entity = root / "core/registry/EntityTypeRegistry.java"
-          text = entity.read_text()
-          text = text.replace('import net.satisfy.farm_and_charm.FarmAndCharm;\n', '')
-          text = text.replace('DeferredRegister.create(FarmAndCharm.MOD_ID, Registries.BLOCK_ENTITY_TYPE)', 'DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK_ENTITY_TYPE)')
-          entity.write_text(text)
-
+          # No Bakery block entities remain in the stripped layer.
+          (root / "core/registry/EntityTypeRegistry.java").write_text(
+              "package net.satisfy.bakery.core.registry;\npublic final class EntityTypeRegistry { public static void init() {} }\n"
+          )
           (root / "core/registry/CompostableRegistry.java").write_text(
               "package net.satisfy.bakery.core.registry;\npublic final class CompostableRegistry { public static void registerCompostable() {} }\n"
           )
           (root / "core/registry/TabRegistry.java").write_text(
               "package net.satisfy.bakery.core.registry;\npublic final class TabRegistry { public static void init() {} }\n"
           )
+          (root / "core/registry/RecipeTypeRegistry.java").write_text(
+              "package net.satisfy.bakery.core.registry;\npublic final class RecipeTypeRegistry { public static void init() {} }\n"
+          )
           (root / "core/event/CommonEvents.java").write_text(
               "package net.satisfy.bakery.core.event;\npublic final class CommonEvents { public static void init() {} }\n"
           )
 
-          # These are no longer needed when Bakery has no item/recipe layer.
-          import shutil
-          for rel in [
-              "core/item",
-              "core/compat",
-              "core/recipe",
-          ]:
-              p = root / rel
-              if p.exists():
-                  shutil.rmtree(p)
-
-          # Remove the separate Bakery NeoForge mod entrypoint. Morrow is the mod entrypoint.
+          # Remove the second mod entrypoint - Whatsits is the only @Mod entrypoint.
           p = root / "neoforge/BakeryNeoForge.java"
           if p.exists():
               p.unlink()
 
-          # Keep the client helper but make it belong to Morrow's mod id through Bakery.MOD_ID.
-          client = root / "neoforge/client/BakeryClientNeoForge.java"
-          if client.exists():
-              t = client.read_text()
-              t = t.replace('import net.neoforged.fml.common.Mod;', '')
-              client.write_text(t)
+          # Client registration belongs to Morrow's mod id through Bakery.MOD_ID.
+          p = root / "neoforge/client/BakeryClientNeoForge.java"
+          if p.exists():
+              s = p.read_text()
+              s = s.replace("bus = EventBusSubscriber.Bus.MOD", "bus = EventBusSubscriber.Bus.MOD")
+              p.write_text(s)
 
-          # Remove all Bakery item/block-item model and texture resources.
-          for rel in [
-              "assets/whatsits/models/item",
-              "assets/whatsits/textures/item",
-          ]:
-              p = Path("src/main/resources") / rel
-              if p.exists():
-                  import shutil
-                  shutil.rmtree(p)
+          # Remove item language entries. Block translations remain.
+          lang = Path("src/main/resources/assets/whatsits/lang/en_us.json")
+          if lang.exists():
+              data = json.loads(lang.read_text())
+              data = {k:v for k,v in data.items() if not k.startswith("item.bakery.") and not k.startswith("item.whatsits.")}
+              lang.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
           PY
 
-          # Remove the old generated Bakery merge machinery from build.gradle.
           python3 - <<'PY'
           from pathlib import Path
           import re
           p=Path("build.gradle")
           s=p.read_text()
           s=re.sub(r'def bakeryGeneratedRoot =.*?\nrepositories \{', 'repositories {', s, flags=re.S)
-          s=re.sub(r'\n?tasks\.withType\(\s*JavaCompile\s*\)\.configureEach\s*\{\s*options\.encoding = \'UTF-8\'\s*dependsOn\(prepareBakeryMerge\)\s*\}', '', s, flags=re.S)
+          s=re.sub(r'\n?tasks\.withType\(\s*JavaCompile\s*\)\.configureEach\s*\{.*?\n\}', '', s, flags=re.S)
           s=re.sub(r'\ntasks\.named\(\s*"processResources"\s*\)\.configure\s*\{.*?\n\}\n\nidea \{', '\nidea {', s, flags=re.S)
           p.write_text(s)
           PY
@@ -273,6 +215,5 @@ jobs:
           git config user.name "MoonlightMelodies"
           git config user.email "manifestedmoonlight@gmail.com"
           git add -A
-          git commit -m "Import Bakery source and remove Bakery items"
+          git commit -m "Import Bakery source without Bakery items"
           git push origin HEAD:bakery-source-import
-
