@@ -205,7 +205,13 @@ jobs:
           tab = Path("src/main/java/net/moonlitmistletoe/whatsits/ModCreativeModeTabs.java")
           if tab.exists():
               t = tab.read_text()
-              t = re.sub(r'\\s*output\\.accept\\(\\s*net\\.satisfy\\.bakery\\.core\\.registry\\.ObjectRegistry\\.[A-Z0-9_]+\\.get\\(\\)\\s*\\);', '', t, flags=re.S)
+              while "net.satisfy.bakery.core.registry.ObjectRegistry." in t:
+                  pos = t.find("net.satisfy.bakery.core.registry.ObjectRegistry.")
+                  start = t.rfind("output.accept(", 0, pos)
+                  end = t.find(");", pos)
+                  if start < 0 or end < 0:
+                      break
+                  t = t[:start] + t[end + 2:]
               tab.write_text(t)
 
           # Remove item language entries. Block translations remain.
