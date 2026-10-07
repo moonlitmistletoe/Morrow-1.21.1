@@ -1,0 +1,7 @@
+{
+  "parent": "block/dirt_path",
+  "textures": {
+    "top": "whatsits:block/trampled_packed_dirt_top",
+    "side": "whatsits:block/trampled_packed_dirt_side"
+  }
+}

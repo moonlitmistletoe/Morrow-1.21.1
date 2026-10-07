@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#whatsits:spawns_wild_crops",
+  "features": "whatsits:wild_lettuce_chance",
+  "step": "vegetal_decoration"
+}

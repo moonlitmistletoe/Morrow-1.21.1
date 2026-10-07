@@ -1,0 +1,22 @@
+{
+  "type": "whatsits:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "whatsits:tomato"
+    },
+    {
+      "tag": "whatsits:onion"
+    },
+    {
+      "tag": "whatsits:cabbage"
+    },
+    {
+      "tag": "whatsits:strawberry"
+    }
+  ],
+  "result": {
+    "id": "whatsits:farmer_salad",
+    "count": 2
+  },
+  "experience": 0.2
+}

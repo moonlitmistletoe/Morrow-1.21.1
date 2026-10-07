@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#whatsits:spawns_abandoned_field_taiga",
+  "features": "whatsits:abandoned_field_taiga",
+  "step": "vegetal_decoration"
+}

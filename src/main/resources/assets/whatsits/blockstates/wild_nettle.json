@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "whatsits:block/wild_nettle",
+        "weight": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "whatsits:block/template_bag",
+  "textures": {
+    "3": "whatsits:block/bag_side_knot",
+    "4": "whatsits:block/bag_bottom",
+    "7": "whatsits:block/bag_side",
+    "8": "whatsits:block/bag_top_potato",
+    "particle": "whatsits:block/bag_top_potato"
+  }
+}

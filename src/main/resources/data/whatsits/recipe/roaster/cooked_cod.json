@@ -1,0 +1,27 @@
+{
+  "type": "whatsits:roaster",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "whatsits:cabbage"
+    },
+    {
+      "item": "minecraft:cod"
+    },
+    {
+      "tag": "whatsits:butter"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:cooked_cod",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

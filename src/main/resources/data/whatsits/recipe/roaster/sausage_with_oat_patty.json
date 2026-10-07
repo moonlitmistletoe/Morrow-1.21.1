@@ -1,0 +1,33 @@
+{
+  "type": "whatsits:roaster",
+  "ingredients": [
+    {
+      "tag": "whatsits:oat"
+    },
+    {
+      "tag": "whatsits:butter"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "whatsits:minced_beef"
+    },
+    {
+      "item": "whatsits:minced_beef"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:sausage_with_oat_patty",
+    "count": 2
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

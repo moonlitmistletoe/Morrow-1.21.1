@@ -1,8 +1,17 @@
 {
   "replace": false,
   "values": [
-    "#c:allows_cooking",
+    "whatsits:stove",
+    "minecraft:redstone_block",
     "minecraft:magma_block",
-    "minecraft:lava_cauldron"
+    "#minecraft:campfires",
+    {
+      "id": "farmersdelight:stove",
+      "required": false
+    },
+    {
+      "id": "meadow:stove_tiles_wood",
+      "required": false
+    }
   ]
 }

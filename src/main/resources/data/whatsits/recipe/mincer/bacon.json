@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:porkchop"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:bacon",
+    "count": 2
+  },
+  "experience": 0.2
+}

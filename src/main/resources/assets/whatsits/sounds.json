@@ -1,38 +1,52 @@
 {
-  "cake_cut": {
-    "subtitle": "sound.bakery.cake_cut",
+  "cooking_pot_boiling": {
+    "subtitle": "sound.farm_and_charm.cooking_pot_boiling",
     "sounds": [
-      "whatsits:cake_cut"
+      "whatsits:cooking_pot_boiling"
     ]
   },
-  "drawer_open": {
-    "subtitle": "sound.bakery.drawer_open",
+  "crafting_bowl_stirring": {
+    "subtitle": "sound.farm_and_charm.crafting_bowl_stirring",
     "sounds": [
-      "whatsits:drawer_open"
+      "whatsits:crafting_bowl_stirring"
     ]
   },
-  "drawer_close": {
-    "subtitle": "sound.bakery.drawer_close",
+  "mincer_cranking": {
+    "subtitle": "sound.farm_and_charm.mincer_cranking",
     "sounds": [
-      "whatsits:drawer_close"
+      "whatsits:mincer_cranking"
     ]
   },
-  "cabinet_open": {
-    "subtitle": "sound.bakery.cabinet_open",
+  "roaster_cooking": {
+    "subtitle": "sound.farm_and_charm.roaster_cooking",
     "sounds": [
-      "whatsits:cabinet_open"
+      "whatsits:roaster_cooking"
     ]
   },
-  "cabinet_close": {
-    "subtitle": "sound.bakery.cabinet_close",
+  "stove_crackling": {
+    "subtitle": "sound.farm_and_charm.stove_crackling",
     "sounds": [
-      "whatsits:cabinet_close"
+      "whatsits:stove_crackling"
     ]
   },
-  "cooking_pot_hit": {
-    "subtitle": "sound.bakery.cooking_pot_hit",
+  "water_sprinkler": {
+    "subtitle": "sound.farm_and_charm.water_sprinkler",
     "sounds": [
-      "whatsits:cooking_pot_hit"
+      "whatsits:water_sprinkler"
+    ]
+  },
+  "cart_moving": {
+    "subtitle": "sound.farm_and_charm.cart_moving",
+    "sounds": [
+      "whatsits:cart_moving"
+    ]
+  },
+  "well_pump": {
+    "subtitle": "sound.farm_and_charm.well_pump",
+    "sounds": [
+      "whatsits:well_pump_squeak_0",
+      "whatsits:well_pump_squeak_1",
+      "whatsits:well_pump_squeak_2"
     ]
   }
 }

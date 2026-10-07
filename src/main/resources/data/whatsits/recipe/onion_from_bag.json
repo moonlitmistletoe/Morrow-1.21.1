@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "whatsits:onion_bag"
+    }
+  ],
+  "result": {
+    "id": "whatsits:onion",
+    "count": 9
+  }
+}

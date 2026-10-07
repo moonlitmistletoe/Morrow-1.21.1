@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "tag": "whatsits:wheat"
+  },
+  "recipe_type": "STONE",
+  "result": {
+    "id": "whatsits:flour",
+    "count": 4
+  },
+  "experience": 0.2
+}

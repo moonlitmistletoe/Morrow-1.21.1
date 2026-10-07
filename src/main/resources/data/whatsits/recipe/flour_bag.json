@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "whatsits:flour"
+    }
+  },
+  "result": {
+    "id": "whatsits:flour_bag",
+    "count": 1
+  }
+}

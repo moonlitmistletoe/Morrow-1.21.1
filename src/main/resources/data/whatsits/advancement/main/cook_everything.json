@@ -1,0 +1,177 @@
+{
+  "parent": "whatsits:main/place_cooking_pot",
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "whatsits:goulash"
+    },
+    "title": {
+      "translate": "advancement.farm_and_charm.cook_everything"
+    },
+    "description": {
+      "translate": "advancement.farm_and_charm.cook_everything.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "criteria": {
+    "whatsits:barley_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:barley_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:corn_grits": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:corn_grits"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:strawberry_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:strawberry_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:nettle_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:nettle_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:ribwort_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:ribwort_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:goulash": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:goulash"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:onion_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:onion_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:potato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:potato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:simple_tomato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:simple_tomato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:yeast": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:yeast"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "whatsits:barley_soup"
+    ],
+    [
+      "whatsits:corn_grits"
+    ],
+    [
+      "whatsits:strawberry_tea"
+    ],
+    [
+      "whatsits:nettle_tea"
+    ],
+    [
+      "whatsits:ribwort_tea"
+    ],
+    [
+      "whatsits:goulash"
+    ],
+    [
+      "whatsits:onion_soup"
+    ],
+    [
+      "whatsits:potato_soup"
+    ],
+    [
+      "whatsits:simple_tomato_soup"
+
+    ],
+    [
+      "whatsits:yeast"
+    ]
+  ]
+}

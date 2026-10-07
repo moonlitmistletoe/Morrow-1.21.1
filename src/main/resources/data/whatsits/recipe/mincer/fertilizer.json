@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "recipe_type": "STONE",
+  "result": {
+    "id": "whatsits:fertilizer",
+    "count": 1
+  },
+  "experience": 0.2
+}

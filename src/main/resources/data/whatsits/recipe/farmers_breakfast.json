@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "whatsits:bread"
+    },
+    {
+      "item": "whatsits:bacon_with_eggs"
+    },
+    {
+      "item": "whatsits:roasted_corn"
+    }
+  ],
+  "result": {
+    "id": "whatsits:farmers_breakfast",
+    "count": 1
+  }
+}

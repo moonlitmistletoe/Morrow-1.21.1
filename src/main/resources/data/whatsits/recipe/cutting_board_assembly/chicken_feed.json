@@ -1,0 +1,18 @@
+{
+  "type": "whatsits:cutting_board_assembly",
+  "ingredients": [
+    {
+      "tag": "whatsits:wheat"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    }
+  ],
+  "result": {
+    "id": "whatsits:chicken_feed",
+    "count": 3
+  }
+}

@@ -2,7 +2,7 @@
   "parent": "whatsits:main/root",
   "display": {
     "icon": {
-      "id": "farm_and_charm:yeast"
+      "id": "whatsits:yeast"
     },
     "title": {
       "translate": "advancement.bakery.get_yeast"
@@ -24,7 +24,7 @@
       "conditions": {
         "items": [
           {
-            "items": ["farm_and_charm:yeast"]
+            "items": ["whatsits:yeast"]
           }
         ]
       }

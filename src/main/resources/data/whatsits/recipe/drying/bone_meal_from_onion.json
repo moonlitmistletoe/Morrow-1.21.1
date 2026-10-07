@@ -1,0 +1,11 @@
+{
+  "type": "whatsits:drying",
+  "ingredient": {
+    "item": "whatsits:onion"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "minecraft:bone_meal",
+    "count": 1
+  }
+}

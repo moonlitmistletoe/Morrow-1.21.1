@@ -1,0 +1,18 @@
+{
+  "type": "whatsits:cutting_board_assembly",
+  "ingredients": [
+    {
+      "tag": "whatsits:wheat"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "result": {
+    "id": "whatsits:horse_fodder",
+    "count": 1
+  }
+}

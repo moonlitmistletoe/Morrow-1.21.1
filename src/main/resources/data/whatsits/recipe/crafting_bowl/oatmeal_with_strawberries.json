@@ -1,0 +1,19 @@
+{
+  "type": "whatsits:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "whatsits:milk"
+    },
+    {
+      "tag": "whatsits:oat"
+    },
+    {
+      "tag": "whatsits:strawberry"
+    }
+  ],
+  "result": {
+    "id": "whatsits:oatmeal_with_strawberries",
+    "count": 2
+  },
+  "experience": 0.2
+}

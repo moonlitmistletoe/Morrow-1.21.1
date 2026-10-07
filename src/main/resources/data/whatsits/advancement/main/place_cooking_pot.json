@@ -1,11 +1,11 @@
 {
   "parent": "whatsits:main/place_stove",
   "criteria": {
-    "small_cooking_pot": {
+    "cooking_pot": {
       "conditions": {
         "location": [
           {
-            "block": "whatsits:small_cooking_pot",
+            "block": "whatsits:cooking_pot",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -16,21 +16,22 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.bakery.place_small_cooking_pot.desc"
+      "translate": "advancement.farm_and_charm.place_cooking_pot.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:small_cooking_pot"
+      "count": 1,
+      "id": "whatsits:cooking_pot"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.bakery.place_small_cooking_pot"
+      "translate": "advancement.farm_and_charm.place_cooking_pot"
     }
   },
   "requirements": [
     [
-      "small_cooking_pot"
+      "cooking_pot"
     ]
   ],
   "sends_telemetry_event": true

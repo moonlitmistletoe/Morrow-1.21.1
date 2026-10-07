@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:deepslate_redstone_ore"
+  },
+  "recipe_type": "METAL",
+  "result": {
+    "id": "minecraft:redstone",
+    "count": 6
+  },
+  "experience": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "type": "whatsits:cutting_board_assembly",
+  "ordered": true,
+  "ingredients": [
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "whatsits:barley"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "result": {
+    "id": "whatsits:rope",
+    "count": 6
+  }
+}

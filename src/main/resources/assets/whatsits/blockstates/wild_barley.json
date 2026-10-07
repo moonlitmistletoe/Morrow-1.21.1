@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "whatsits:block/wild_barley_1",
+        "weight": 1
+      },
+      {
+        "model": "whatsits:block/wild_barley_2",
+        "weight": 1
+      }
+    ]
+  }
+}

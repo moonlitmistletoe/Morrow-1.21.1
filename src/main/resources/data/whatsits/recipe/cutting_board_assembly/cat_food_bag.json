@@ -1,0 +1,24 @@
+{
+  "type": "whatsits:cutting_board_assembly",
+  "ingredients": [
+    {
+      "item": "whatsits:cat_food"
+    },
+    {
+      "item": "whatsits:cat_food"
+    },
+    {
+      "item": "whatsits:cat_food"
+    },
+    {
+      "item": "whatsits:cat_food"
+    }
+  ],
+  "finisher": {
+    "item": "minecraft:paper"
+  },
+  "result": {
+    "id": "whatsits:cat_food_bag",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "grape_bag",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "whatsits:strawberry"
+    }
+  },
+  "result": {
+    "id": "whatsits:strawberry_bag",
+    "count": 1
+  }
+}

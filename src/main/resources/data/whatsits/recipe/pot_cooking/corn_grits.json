@@ -1,0 +1,25 @@
+{
+  "type": "whatsits:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "whatsits:corn"
+    },
+    {
+      "tag": "whatsits:corn"
+    },
+    {
+      "tag": "whatsits:flour"
+    }
+  ],
+  "requireContainer": true,
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:corn_grits",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

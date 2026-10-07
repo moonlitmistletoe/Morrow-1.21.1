@@ -1,0 +1,11 @@
+{
+  "type": "whatsits:cutting_board",
+  "ingredient": {
+    "item": "minecraft:peony"
+  },
+  "result": {
+    "id": "minecraft:pink_dye",
+    "count": 4
+  },
+  "experience": 0.1
+}

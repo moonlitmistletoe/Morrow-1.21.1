@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:dark_oak_wood"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_dark_oak_wood",
+    "count": 1
+  },
+  "experience": 0.2
+}

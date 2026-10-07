@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "whatsits:block/strawberries_stage2"
+  }
+}

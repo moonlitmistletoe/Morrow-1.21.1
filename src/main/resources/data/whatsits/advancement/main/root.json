@@ -1,29 +1,31 @@
 {
   "display": {
     "icon": {
-      "id": "whatsits:cake_dough"
+      "count": 1,
+      "id": "whatsits:scarecrow"
     },
     "title": {
-      "translate": "advancement.bakery.root"
+      "translate": "advancement.farm_and_charm.root"
     },
     "description": {
-      "translate": "advancement.bakery.root.desc"
+      "translate": "advancement.farm_and_charm.root.desc"
     },
     "frame": "task",
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "minecraft:textures/block/bricks.png"
+    "background": "whatsits:textures/block/fertilized_soil.png"
   },
   "criteria": {
-    "seeds": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {}
+    "example_criterion": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "position": {
+          "x": {
+            "min": 1000000
+          }
+        }
+      }
     }
-  },
-  "requirements": [
-    [
-      "seeds"
-    ]
-  ]
+  }
 }

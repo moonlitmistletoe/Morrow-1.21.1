@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "whatsits:strawberry_bag"
+    }
+  },
+  "result": {
+    "id": "whatsits:strawberry",
+    "count": 9
+  }
+}

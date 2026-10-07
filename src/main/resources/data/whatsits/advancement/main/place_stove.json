@@ -1,11 +1,11 @@
 {
-  "parent": "whatsits:main/get_yeast",
+  "parent": "whatsits:main/root",
   "criteria": {
     "stove": {
       "conditions": {
         "location": [
           {
-            "block": "farm_and_charm:stove",
+            "block": "whatsits:stove",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -14,18 +14,19 @@
     }
   },
   "display": {
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "description": {
-      "translate": "advancement.bakery.place_stove.desc"
+      "translate": "advancement.farm_and_charm.place_stove.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "farm_and_charm:stove"
+      "count": 1,
+      "id": "whatsits:stove"
     },
-    "show_toast": false,
+    "show_toast": true,
     "title": {
-      "translate": "advancement.bakery.place_stove"
+      "translate": "advancement.farm_and_charm.place_stove"
     }
   },
   "requirements": [

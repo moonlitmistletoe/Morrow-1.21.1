@@ -11,10 +11,10 @@
       "item": "minecraft:carrot"
     },
     {
-      "tag": "farm_and_charm:cabbage"
+      "tag": "whatsits:cabbage"
     },
     {
-      "tag": "farm_and_charm:tomato"
+      "tag": "whatsits:tomato"
     }
   ],
   "result": {

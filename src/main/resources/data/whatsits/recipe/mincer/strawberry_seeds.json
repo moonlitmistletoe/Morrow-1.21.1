@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "whatsits:strawberry"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:strawberry_seeds",
+    "count": 4
+  },
+  "experience": 0.2
+}

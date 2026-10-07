@@ -1,0 +1,20 @@
+{
+  "type": "whatsits:stove",
+  "ingredients": [
+    {
+      "tag": "whatsits:pasta"
+    },
+    {
+      "item": "whatsits:chicken_parts"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "result": {
+    "id": "whatsits:roasted_chicken",
+    "count": 3
+  },
+  "experience": 0.3,
+  "requiresLearning": false
+}

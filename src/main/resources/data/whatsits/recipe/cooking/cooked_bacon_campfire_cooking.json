@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": {
+    "item": "whatsits:bacon"
+  },
+  "result": {
+    "id": "whatsits:cooked_bacon"
+  },
+  "experience": 0.35,
+  "cookingtime": 600
+}

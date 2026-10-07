@@ -1,0 +1,8 @@
+{
+  "parent": "whatsits:block/template_tea_stage0",
+  "textures": {
+    "0": "whatsits:block/jug",
+    "tea": "whatsits:block/ribwort_tea",
+    "particle": "whatsits:block/jug"
+  }
+}

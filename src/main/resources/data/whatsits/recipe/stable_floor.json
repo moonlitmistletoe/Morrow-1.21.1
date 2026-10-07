@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "whatsits:packed_dirt"
+    }
+  },
+  "result": {
+    "id": "whatsits:stable_floor",
+    "count": 4
+  }
+}

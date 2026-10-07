@@ -1,0 +1,11 @@
+{
+  "type": "whatsits:drying",
+  "ingredient": {
+    "item": "minecraft:podzol"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:fertilized_soil",
+    "count": 1
+  }
+}

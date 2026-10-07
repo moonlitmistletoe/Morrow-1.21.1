@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:acacia_log"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_acacia_log",
+    "count": 1
+  },
+  "experience": 0.2
+}

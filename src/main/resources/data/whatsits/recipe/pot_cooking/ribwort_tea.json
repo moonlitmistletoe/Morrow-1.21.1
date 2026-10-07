@@ -1,0 +1,25 @@
+{
+  "type": "whatsits:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "whatsits:water_bottles"
+    },
+    {
+      "item": "whatsits:wild_ribwort"
+    },
+    {
+      "item": "whatsits:wild_ribwort"
+    }
+  ],
+  "requireContainer": true,
+  "container": {
+    "id": "minecraft:glass_bottle",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:ribwort_tea",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

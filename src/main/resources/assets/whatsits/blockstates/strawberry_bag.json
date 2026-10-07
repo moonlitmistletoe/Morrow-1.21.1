@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "whatsits:block/strawberry_bag",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "whatsits:block/strawberry_bag"
+    },
+    "facing=south": {
+      "model": "whatsits:block/strawberry_bag",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "whatsits:block/strawberry_bag",
+      "y": 270
+    }
+  }
+}

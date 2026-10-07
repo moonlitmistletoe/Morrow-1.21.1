@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "whatsits:tomato"
+    }
+  ],
+  "result": {
+    "id": "whatsits:tomato_seeds",
+    "count": 3
+  }
+}

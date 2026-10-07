@@ -1,0 +1,19 @@
+{
+  "type": "whatsits:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "whatsits:flour"
+    },
+    {
+      "item": "whatsits:yeast"
+    },
+    {
+      "tag": "whatsits:water_bottles"
+    }
+  ],
+  "result": {
+    "id": "whatsits:dough",
+    "count": 5
+  },
+  "experience": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "whatsits:block/tool_rack",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "whatsits:block/tool_rack"
+    },
+    "facing=south": {
+      "model": "whatsits:block/tool_rack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "whatsits:block/tool_rack",
+      "y": 270
+    }
+  }
+}

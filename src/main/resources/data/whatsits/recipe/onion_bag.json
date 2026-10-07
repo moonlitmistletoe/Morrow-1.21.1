@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "whatsits:onion"
+    }
+  },
+  "result": {
+    "id": "whatsits:onion_bag",
+    "count": 1
+  }
+}

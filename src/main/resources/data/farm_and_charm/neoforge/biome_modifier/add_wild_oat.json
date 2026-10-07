@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#whatsits:spawns_wild_oat",
+  "features": "whatsits:wild_oat_chance",
+  "step": "vegetal_decoration"
+}

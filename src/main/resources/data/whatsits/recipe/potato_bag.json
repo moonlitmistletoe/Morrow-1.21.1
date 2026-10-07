@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "grape_bag",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:potato"
+    }
+  },
+  "result": {
+    "id": "whatsits:potato_bag",
+    "count": 1
+  }
+}

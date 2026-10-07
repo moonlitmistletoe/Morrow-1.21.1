@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#c:bread"
+    "#c:foods/bread",
+    {
+      "id": "#c:bread",
+      "required": false
+    }
   ]
 }

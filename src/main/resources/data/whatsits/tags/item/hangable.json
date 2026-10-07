@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#c:tools",
+    "minecraft:spyglass",
+    "whatsits:cooking_pot",
+    "whatsits:roaster"
+  ]
+}

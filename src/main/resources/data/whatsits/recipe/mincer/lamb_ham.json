@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:mutton"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:lamb_ham",
+    "count": 1
+  },
+  "experience": 0.2
+}

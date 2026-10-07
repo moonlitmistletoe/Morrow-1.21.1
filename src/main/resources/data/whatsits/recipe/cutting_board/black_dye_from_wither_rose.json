@@ -1,0 +1,11 @@
+{
+  "type": "whatsits:cutting_board",
+  "ingredient": {
+    "item": "minecraft:wither_rose"
+  },
+  "result": {
+    "id": "minecraft:black_dye",
+    "count": 2
+  },
+  "experience": 0.1
+}

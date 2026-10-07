@@ -1,0 +1,11 @@
+{
+  "type": "whatsits:drying",
+  "recipe_type": "MEAT",
+  "ingredient": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "result": {
+    "id": "whatsits:fertilizer",
+    "count": 1
+  }
+}

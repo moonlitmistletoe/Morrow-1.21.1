@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "whatsits:tomato"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:tomato_seeds",
+    "count": 4
+  },
+  "experience": 0.2
+}

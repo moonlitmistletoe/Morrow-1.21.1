@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "whatsits:strawberry"
+    }
+  ],
+  "result": {
+    "id": "whatsits:strawberry_seeds",
+    "count": 1
+  }
+}

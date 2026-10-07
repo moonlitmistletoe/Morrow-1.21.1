@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "minecraft:crimson_hyphae"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_crimson_hyphae",
+    "count": 1
+  },
+  "experience": 0.2
+}

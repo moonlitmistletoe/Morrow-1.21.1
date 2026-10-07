@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "U": {
+      "item": "whatsits:silo_wood"
+    }
+  },
+  "pattern": [
+    "###",
+    "#U#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "whatsits:silo_copper"
+  }
+}

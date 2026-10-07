@@ -1,0 +1,9 @@
+{
+  "parent": "whatsits:block/template_window_sill",
+  "textures": {
+    "0": "block/flower_pot",
+    "1": "block/dirt",
+    "2": "whatsits:block/window_sill",
+    "particle": "whatsits:block/window_sill"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "whatsits:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "whatsits:bread"
+    },
+    {
+      "tag": "whatsits:onion"
+    },
+    {
+      "tag": "whatsits:onion"
+    }
+  ],
+  "requireContainer": true,
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:onion_soup",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

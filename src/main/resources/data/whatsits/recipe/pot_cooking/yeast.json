@@ -1,0 +1,25 @@
+{
+  "type": "whatsits:pot_cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "whatsits:water_bottles"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "requireContainer": true,
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "whatsits:yeast",
+    "count": 12
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}

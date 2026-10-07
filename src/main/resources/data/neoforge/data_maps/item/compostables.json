@@ -1,0 +1,196 @@
+{
+  "values": {
+    "whatsits:kernels": {
+      "chance": 0.3
+    },
+    "whatsits:corn": {
+      "chance": 0.3
+    },
+    "whatsits:oat_seeds": {
+      "chance": 0.2
+    },
+    "whatsits:oat": {
+      "chance": 0.3
+    },
+    "whatsits:barley_seeds": {
+      "chance": 0.2
+    },
+    "whatsits:barley": {
+      "chance": 0.3
+    },
+    "whatsits:lettuce_seeds": {
+      "chance": 0.3
+    },
+    "whatsits:lettuce": {
+      "chance": 0.3
+    },
+    "whatsits:onion": {
+      "chance": 0.3
+    },
+    "whatsits:tomato_seeds": {
+      "chance": 0.2
+    },
+    "whatsits:tomato": {
+      "chance": 0.3
+    },
+    "whatsits:rotten_tomato": {
+      "chance": 0.5
+    },
+    "whatsits:strawberry_seeds": {
+      "chance": 0.2
+    },
+    "whatsits:strawberry": {
+      "chance": 0.3
+    },
+    "whatsits:wild_nettle": {
+      "chance": 0.3
+    },
+    "whatsits:wild_ribwort": {
+      "chance": 0.3
+    },
+    "whatsits:wild_emmer": {
+      "chance": 0.3
+    },
+    "whatsits:wild_beetroots": {
+      "chance": 0.3
+    },
+    "whatsits:wild_potatoes": {
+      "chance": 0.3
+    },
+    "whatsits:wild_carrots": {
+      "chance": 0.3
+    },
+    "whatsits:wild_barley": {
+      "chance": 0.3
+    },
+    "whatsits:wild_corn": {
+      "chance": 0.3
+    },
+    "whatsits:wild_oat": {
+      "chance": 0.3
+    },
+    "whatsits:wild_lettuce": {
+      "chance": 0.3
+    },
+    "whatsits:wild_onions": {
+      "chance": 0.3
+    },
+    "whatsits:wild_tomatoes": {
+      "chance": 0.3
+    },
+    "whatsits:wild_strawberries": {
+      "chance": 0.3
+    },
+    "whatsits:fertilizer": {
+      "chance": 0.85
+    },
+    "whatsits:butter": {
+      "chance": 0.3
+    },
+    "whatsits:yeast": {
+      "chance": 0.2
+    },
+    "whatsits:flour": {
+      "chance": 0.4
+    },
+    "whatsits:dough": {
+      "chance": 0.4
+    },
+    "whatsits:raw_pasta": {
+      "chance": 0.5
+    },
+    "whatsits:minced_beef": {
+      "chance": 0.4
+    },
+    "whatsits:lamb_ham": {
+      "chance": 0.4
+    },
+    "whatsits:chicken_parts": {
+      "chance": 0.3
+    },
+    "whatsits:bacon": {
+      "chance": 0.4
+    },
+    "whatsits:farmer_salad": {
+      "chance": 0.5
+    },
+    "whatsits:oatmeal_with_strawberries": {
+      "chance": 0.4
+    },
+    "whatsits:simple_tomato_soup": {
+      "chance": 0.4
+    },
+    "whatsits:barley_soup": {
+      "chance": 0.4
+    },
+    "whatsits:onion_soup": {
+      "chance": 0.4
+    },
+    "whatsits:potato_soup": {
+      "chance": 0.4
+    },
+    "whatsits:goulash": {
+      "chance": 0.5
+    },
+    "whatsits:pasta_with_onion_sauce": {
+      "chance": 0.5
+    },
+    "whatsits:corn_grits": {
+      "chance": 0.4
+    },
+    "whatsits:barley_patties_with_potatoes": {
+      "chance": 0.5
+    },
+    "whatsits:beef_patty_with_vegetables": {
+      "chance": 0.5
+    },
+    "whatsits:sausage_with_oat_patty": {
+      "chance": 0.4
+    },
+    "whatsits:roasted_chicken": {
+      "chance": 0.6
+    },
+    "whatsits:roasted_corn": {
+      "chance": 0.5
+    },
+    "whatsits:cooked_salmon": {
+      "chance": 0.4
+    },
+    "whatsits:cooked_cod": {
+      "chance": 0.4
+    },
+    "whatsits:chicken_wrapped_in_bacon": {
+      "chance": 0.5
+    },
+    "whatsits:lamb_with_corn": {
+      "chance": 0.5
+    },
+    "whatsits:bacon_with_eggs": {
+      "chance": 0.5
+    },
+    "whatsits:oat_pancake": {
+      "chance": 0.4
+    },
+    "whatsits:farmers_breakfast": {
+      "chance": 0.6
+    },
+    "whatsits:baked_lamb_ham": {
+      "chance": 0.5
+    },
+    "whatsits:potato_with_roast_meat": {
+      "chance": 0.6
+    },
+    "whatsits:stuffed_chicken": {
+      "chance": 0.6
+    },
+    "whatsits:stuffed_rabbit": {
+      "chance": 0.6
+    },
+    "whatsits:farmers_bread": {
+      "chance": 0.5
+    },
+    "whatsits:grandmothers_strawberry_cake": {
+      "chance": 0.7
+    }
+  }
+}

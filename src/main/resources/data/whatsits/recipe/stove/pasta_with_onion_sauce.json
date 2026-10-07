@@ -1,0 +1,20 @@
+{
+  "type": "whatsits:stove",
+  "ingredients": [
+    {
+      "tag": "whatsits:onion"
+    },
+    {
+      "tag": "whatsits:onion"
+    },
+    {
+      "tag": "whatsits:pasta"
+    }
+  ],
+  "result": {
+    "id": "whatsits:pasta_with_onion_sauce",
+    "count": 4
+  },
+  "experience": 0.4,
+  "requiresLearning": false
+}

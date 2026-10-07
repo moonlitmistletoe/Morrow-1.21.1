@@ -5,9 +5,9 @@
 		"1": "whatsits:block/small_cooking_pan_top",
 		"2": "whatsits:block/small_cooking_pan_bottom",
 		"3": "whatsits:block/small_cooking_pan_side",
-		"4": "farm_and_charm:block/cooking_pot_soup",
-		"5": "farm_and_charm:block/grating_top",
-		"6": "farm_and_charm:block/grating_side",
+		"4": "whatsits:block/cooking_pot_soup",
+		"5": "whatsits:block/grating_top",
+		"6": "whatsits:block/grating_side",
 		"particle": "whatsits:block/small_cooking_pan_bottom"
 	},
 	"elements": [

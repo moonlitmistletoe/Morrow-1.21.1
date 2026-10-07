@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "whatsits:block/oat_ball_top",
+    "side": "whatsits:block/oat_ball_side"
+  }
+}

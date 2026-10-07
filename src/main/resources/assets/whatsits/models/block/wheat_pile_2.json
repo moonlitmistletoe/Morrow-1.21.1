@@ -1,0 +1,7 @@
+{
+  "parent": "whatsits:block/template_pile",
+  "textures": {
+    "0": "whatsits:block/wheat_pile_2",
+    "particle": "whatsits:block/wheat_pile_2"
+  }
+}

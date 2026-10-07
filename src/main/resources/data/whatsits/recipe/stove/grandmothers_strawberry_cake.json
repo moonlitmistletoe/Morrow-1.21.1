@@ -1,0 +1,20 @@
+{
+  "type": "whatsits:stove",
+  "ingredients": [
+    {
+      "tag": "whatsits:dough"
+    },
+    {
+      "tag": "whatsits:strawberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "whatsits:grandmothers_strawberry_cake",
+    "count": 2
+  },
+  "experience": 0.35,
+  "requiresLearning": false
+}

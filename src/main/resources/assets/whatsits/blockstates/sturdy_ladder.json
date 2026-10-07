@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "whatsits:block/sturdy_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "whatsits:block/sturdy_ladder"
+    },
+    "facing=south": {
+      "model": "whatsits:block/sturdy_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "whatsits:block/sturdy_ladder",
+      "y": 270
+    }
+  }
+}

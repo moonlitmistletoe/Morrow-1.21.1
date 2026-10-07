@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "farm_and_charm:yeast"
+      "whatsits:yeast"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "farm_and_charm:yeast"
+        "recipe": "whatsits:yeast"
       }
     }
   },

@@ -1,0 +1,120 @@
+package net.satisfy.farm_and_charm.client.model;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.util.Mth;
+import net.satisfy.farm_and_charm.FarmAndCharm;
+import net.satisfy.farm_and_charm.core.entity.PlowCartEntity;
+
+public class PlowCartModel<T extends PlowCartEntity> extends EntityModel<T> {
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(FarmAndCharm.identifier("plow"), "main");
+
+    private final ModelPart cart;
+    private final ModelPart right_wheel;
+    private final ModelPart left_wheel;
+
+    private final ModelPart plow_r1;
+    private final ModelPart plow_r2;
+    private final ModelPart plow_r3;
+    private final ModelPart plow_r4;
+
+    public PlowCartModel(ModelPart root) {
+        this.cart = root.getChild("cart");
+        this.right_wheel = root.getChild("right_wheel");
+        this.left_wheel = root.getChild("left_wheel");
+
+        this.plow_r1 = this.cart.getChild("plow_r1");
+        this.plow_r2 = this.cart.getChild("plow_r2");
+        this.plow_r3 = this.cart.getChild("plow_r3");
+        this.plow_r4 = this.cart.getChild("plow_r4");
+    }
+
+    @SuppressWarnings("unused")
+    public static LayerDefinition createBodyLayer() {
+        MeshDefinition meshdefinition = new MeshDefinition();
+        PartDefinition partdefinition = meshdefinition.getRoot();
+
+        PartDefinition cart = partdefinition.addOrReplaceChild("cart", CubeListBuilder.create()
+                        .texOffs(153, 44).addBox(-11.0F, 0.5F, 4.9167F, 22.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
+                        .texOffs(159, 8).addBox(-2.0F, 0.5F, -27.0833F, 4.0F, 4.0F, 32.0F, new CubeDeformation(0.0F))
+                        .texOffs(88, 0).addBox(5.0F, 2.5F, 10.9167F, 3.0F, 3.0F, 18.0F, new CubeDeformation(0.0F))
+                        .texOffs(88, 0).addBox(-8.0F, 2.5F, 10.9167F, 3.0F, 3.0F, 18.0F, new CubeDeformation(0.0F)),
+                PartPose.offset(0.0F, 12.5F, 10.0833F));
+
+        cart.addOrReplaceChild("plow_r1", CubeListBuilder.create()
+                        .texOffs(173, 61).addBox(-12.0F, -4.0F, 4.0F, 16.0F, 8.0F, 0.0F, new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(-0.4142F, 8.0F, -28.9706F, 0.0F, -0.7854F, 0.0F));
+
+        cart.addOrReplaceChild("plow_r2", CubeListBuilder.create()
+                        .texOffs(173, 61).addBox(-4.0F, -4.0F, 4.0F, 16.0F, 8.0F, 0.0F, new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(-0.4142F, 8.0F, -28.9706F, 0.0F, 0.7854F, 0.0F));
+
+        cart.addOrReplaceChild("plow_r3", CubeListBuilder.create()
+                        .texOffs(173, 61).addBox(-12.0F, -4.0F, 4.0F, 16.0F, 8.0F, 0.0F, new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(-0.4142F, 8.0F, -12.9706F, 0.0F, -0.7854F, 0.0F));
+
+        cart.addOrReplaceChild("plow_r4", CubeListBuilder.create()
+                        .texOffs(173, 61).addBox(-4.0F, -4.0F, 4.0F, 16.0F, 8.0F, 0.0F, new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(-0.4142F, 8.0F, -12.9706F, 0.0F, 0.7854F, 0.0F));
+
+        partdefinition.addOrReplaceChild("right_wheel", CubeListBuilder.create()
+                        .texOffs(76, 43).addBox(-1.5F, -8.0F, -8.0F, 3.0F, 16.0F, 16.0F, new CubeDeformation(0.0F)),
+                PartPose.offset(12.5F, 16.0F, 18.0F));
+
+        partdefinition.addOrReplaceChild("left_wheel", CubeListBuilder.create()
+                        .texOffs(76, 43).addBox(-1.5F, -8.0F, -8.0F, 3.0F, 16.0F, 16.0F, new CubeDeformation(0.0F)),
+                PartPose.offset(-12.5F, 16.0F, 18.0F));
+
+        return LayerDefinition.create(meshdefinition, 256, 256);
+    }
+
+    @Override
+    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        float partialTick = ageInTicks - entity.tickCount;
+        if (partialTick < 0.0F) {
+            partialTick = 0.0F;
+        } else if (partialTick > 1.0F) {
+            partialTick = 1.0F;
+        }
+
+        float wheelRotation = entity.getWheelRotation(partialTick);
+        this.right_wheel.xRot = wheelRotation;
+        this.left_wheel.xRot = wheelRotation;
+
+        boolean plowVisible = entity.isPlowEnabled();
+        this.plow_r1.visible = plowVisible;
+        this.plow_r2.visible = plowVisible;
+        this.plow_r3.visible = plowVisible;
+        this.plow_r4.visible = plowVisible;
+
+        float wobbleYaw = 0.0F;
+
+        int hurtTime = entity.getHurtTime();
+        if (hurtTime > 0) {
+            float damage = Mth.clamp(entity.getDamage() / 40.0F, 0.0F, 1.0F);
+            int hurtDir = entity.getHurtDir();
+            float time = hurtTime - partialTick;
+            wobbleYaw = Mth.sin(time * 2.2F) * time * 0.004F * hurtDir * damage;
+        }
+
+        this.cart.yRot = wobbleYaw;
+        this.right_wheel.yRot = wobbleYaw;
+        this.left_wheel.yRot = wobbleYaw;
+    }
+
+    @Override
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+        this.cart.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+        this.right_wheel.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+        this.left_wheel.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "whatsits:wild_ribwort",
+    "whatsits:wild_nettle",
+    "whatsits:wild_emmer",
+    "whatsits:wild_corn",
+    "whatsits:wild_barley",
+    "whatsits:wild_oat",
+    "whatsits:wild_carrots",
+    "whatsits:wild_beetroots",
+    "whatsits:wild_potatoes",
+    "whatsits:wild_tomatoes",
+    "whatsits:wild_lettuce",
+    "whatsits:wild_onions",
+    "whatsits:wild_strawberries"
+  ]
+}

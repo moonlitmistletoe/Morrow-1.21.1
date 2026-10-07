@@ -1,0 +1,8 @@
+
+{
+  "parent": "whatsits:block/template_cross_crop_supported",
+  "textures": {
+    "4": "whatsits:block/tomato_bottom_stage_2",
+    "particle": "whatsits:block/tomato_bottom_stage_2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "whatsits:strawberry",
+    {
+      "id": "#c:strawberries",
+      "required": false
+    }
+  ]
+}

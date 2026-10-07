@@ -1,0 +1,12 @@
+{
+  "type": "whatsits:mincer",
+  "ingredient": {
+    "item": "whatsits:lettuce"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "whatsits:lettuce_seeds",
+    "count": 4
+  },
+  "experience": 0.2
+}
