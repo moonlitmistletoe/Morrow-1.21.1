@@ -48,6 +48,9 @@ public class Whatsits {
 
         new Scabbards(modEventBus, modContainer);
 
+        // Register the merged Farm & Charm content first, since Bakery uses its classes.
+        FarmAndCharm.init();
+
         // Register the merged Bakery food/cake content.
         Bakery.init();
 
