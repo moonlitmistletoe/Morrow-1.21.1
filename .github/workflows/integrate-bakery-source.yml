@@ -55,7 +55,7 @@ jobs:
                   p.unlink()
 
           # Remove item, recipe and compatibility layers entirely.
-          for rel in ["core/item", "core/compat", "core/recipe", "core/effect"]:
+          for rel in ["core/item", "core/compat", "core/recipe", "core/effect", "core/block/entity", "client/renderer", "platform"]:
               p = root / rel
               if p.exists():
                   shutil.rmtree(p)
@@ -99,29 +99,22 @@ jobs:
           src = original.read_text()
 
           block_lines = []
-          for line in src.splitlines():
-              if "public static final RegistrySupplier<Block>" not in line:
-                  continue
-              m = re.search(r'new ([A-Za-z0-9_]+)\(', line)
+          for part in src.split("public static final RegistrySupplier<Block>")[1:]:
+              decl = "public static final RegistrySupplier<Block>" + part.split(";", 1)[0] + ";"
+              m = re.search(r"new ([A-Za-z0-9_]+)", decl)
               if not m:
                   continue
               cls = m.group(1)
               candidates = list(root.rglob(cls + ".java"))
               if not candidates:
                   continue
-              # Block entities are omitted from the stripped Bakery layer.
               impl = candidates[0].read_text(errors="ignore")
               if "EntityBlock" in impl or "BlockEntity" in impl:
                   continue
-              # The Farm & Charm furniture blocks are deliberately not imported.
               if "net.satisfy.farm_and_charm" in impl:
                   continue
-              if "registerWithItem" in line:
-                  # The three-argument jam registrations require an item remainder.
-                  if line.count(",") >= 2:
-                      continue
-                  line = line.replace("registerWithItem", "registerWithoutItem")
-              block_lines.append(line)
+              decl = decl.replace("registerWithItem", "registerWithoutItem")
+              block_lines.append(decl)
 
           header = '''package net.satisfy.bakery.core.registry;
 
@@ -154,7 +147,7 @@ jobs:
                   BLOCKS.register();
               }
 
-              public static <T extends Block> RegistrySupplier<T> registerWithoutItem(String name, Supplier<T> block) {
+              public static <T extends Block> RegistrySupplier<T> registerWithoutItem(String name, Supplier<T> block, Object... ignored) {
                   return BLOCKS.register(Bakery.identifier(name), block);
               }
           }
