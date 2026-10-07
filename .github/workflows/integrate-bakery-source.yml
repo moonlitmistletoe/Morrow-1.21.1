@@ -201,15 +201,19 @@ jobs:
 
           python3 - <<'PY'
           from pathlib import Path
-          import re
           p=Path("build.gradle")
           s=p.read_text()
-          s=re.sub(r'def bakeryGeneratedRoot =.*?\nrepositories \{', 'repositories {', s, flags=re.S)
-          s=re.sub(r'\n?tasks\.withType\(\s*JavaCompile\s*\)\.configureEach\s*\{.*?\n\}', '', s, flags=re.S)
-          s=re.sub(r'\ntasks\.named\(\s*"processResources"\s*\)\.configure\s*\{.*?\n\}\n\nidea \{', '\nidea {', s, flags=re.S)
+          start=s.find("def bakeryGeneratedRoot =")
+          if start >= 0:
+              end=s.find("repositories {", start)
+              s=s[:start]+s[end:]
+          start=s.find("tasks.withType(")
+          if start >= 0:
+              end=s.find("idea {", start)
+              if end >= 0:
+                  s=s[:start]+"idea {"+s[end+len("idea {"):]
           p.write_text(s)
           PY
-
           ./gradlew --no-daemon compileJava
 
           git config user.name "MoonlightMelodies"
