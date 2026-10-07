@@ -23,8 +23,8 @@ import net.satisfy.bakery.core.item.SmallCookingPotItem;
 import net.satisfy.bakery.core.item.SugarRushEffectItem;
 import net.satisfy.bakery.platform.PlatformHelper;
 import net.satisfy.farm_and_charm.core.block.*;
-import net.satisfy.farm_and_charm.core.item.food.EffectBlockItem;
-import net.satisfy.farm_and_charm.core.item.food.EffectItem;
+import net.satisfy.foundation.food.PlaceableEffectFoodItem;
+import net.satisfy.foundation.food.EffectFoodItem;
 import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 
 import java.util.function.Consumer;
@@ -75,8 +75,8 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> WAFFLE_BLOCK = registerWithoutItem("waffle_block", () -> new StackableEatableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), 4));
     public static final RegistrySupplier<Item> CAKE_DOUGH = registerItem("cake_dough", () -> new Item(getSettings().food(Foods.SWEET_BERRIES)));
     public static final RegistrySupplier<Item> SWEET_DOUGH = registerItem("sweet_dough", () -> new Item(getSettings().food(Foods.SWEET_BERRIES)));
-    public static final RegistrySupplier<Item> CROISSANT = registerItem("croissant", () -> new EffectItem(getFoodItemSettings(PlatformHelper.getCroissantNutrition(), PlatformHelper.getCroissantSaturation(), MobEffectRegistry.VITALITY, 900), 400, false));
-    public static final RegistrySupplier<Item> CRUSTY_BREAD = registerItem("crusty_bread", () -> new EffectBlockItem(CRUSTY_BREAD_BLOCK.get(), getFoodItemSettings(PlatformHelper.getCrustyBreadNutrition(), PlatformHelper.getCrustyBreadSaturation(), MobEffectRegistry.VITALITY, 4800)));
+    public static final RegistrySupplier<Item> CROISSANT = registerItem("croissant", () -> new EffectFoodItem(getFoodItemSettings(PlatformHelper.getCroissantNutrition(), PlatformHelper.getCroissantSaturation(), MobEffectRegistry.VITALITY, 900), 400, false));
+    public static final RegistrySupplier<Item> CRUSTY_BREAD = registerItem("crusty_bread", () -> new PlaceableEffectFoodItem(CRUSTY_BREAD_BLOCK.get(), getFoodItemSettings(PlatformHelper.getCrustyBreadNutrition(), PlatformHelper.getCrustyBreadSaturation(), MobEffectRegistry.VITALITY, 4800)));
     public static final RegistrySupplier<Item> BREAD = registerItem("bread", () -> new EffectBlockItem(BREAD_BLOCK.get(), getFoodItemSettings(PlatformHelper.getBreadNutrition(), PlatformHelper.getBreadSaturation(), MobEffectRegistry.VITALITY, 4200)));
     public static final RegistrySupplier<Item> BAGUETTE = registerItem("baguette", () -> new EffectBlockItem(BAGUETTE_BLOCK.get(), getFoodItemSettings(PlatformHelper.getBaguetteNutrition(), PlatformHelper.getBaguetteSaturation(), MobEffectRegistry.VITALITY, 4200)));
     public static final RegistrySupplier<Item> TOAST = registerItem("toast", () -> new EffectBlockItem(TOAST_BLOCK.get(), getFoodItemSettings(PlatformHelper.getToastNutrition(), PlatformHelper.getToastSaturation(), MobEffectRegistry.VITALITY, 5400)));

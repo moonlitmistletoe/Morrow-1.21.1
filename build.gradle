@@ -21,6 +21,10 @@ sourceSets.main.resources {
 
 repositories {
     maven {
+        url = 'https://maven.fabricmc.net/'
+    }
+
+    maven {
         url = 'https://maven.architectury.dev'
     }
 
@@ -150,6 +154,8 @@ dependencies {
     implementation "curse.maven:farmers-delight-398521:8765184"
 
     implementation "dev.architectury:architectury-neoforge:13.0.11"
+
+    compileOnly "net.fabricmc:fabric-loader:0.16.10"
 
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
 
