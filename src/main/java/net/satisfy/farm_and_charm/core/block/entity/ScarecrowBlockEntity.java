@@ -57,7 +57,7 @@ public class ScarecrowBlockEntity extends BlockEntity {
             BlockState targetState = serverLevel.getBlockState(targetPos);
 
             if (targetState.getBlock() instanceof CropBlock crop && !crop.isMaxAge(targetState)) {
-                crop.randomTick(targetState, serverLevel, targetPos, serverLevel.random);
+                ((net.satisfy.farm_and_charm.neoforge.core.mixin.CropBlockInvoker) (Object) crop).morrow$randomTick(targetState, serverLevel, targetPos, serverLevel.random);
                 serverLevel.gameEvent(GameEvent.BLOCK_CHANGE, targetPos, GameEvent.Context.of(targetState));
                 return;
             }
