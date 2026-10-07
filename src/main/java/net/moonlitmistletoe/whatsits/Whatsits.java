@@ -2,6 +2,7 @@ package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.satisfy.bakery.Bakery;
+import net.satisfy.farm_and_charm.FarmAndCharm;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
