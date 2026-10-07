@@ -1,0 +1,21 @@
+{
+  "tooltip.foundation.canbeplaced": "Kann platziert werden",
+  "tooltip.foundation.hold_shift": "Halte %s für mehr Informationen",
+  "tooltip.foundation.recipe_unlocker.already_unlocked": "Du hast dieses Rezept bereits erlernt!",
+  "tooltip.foundation.recipe_unlocker.recipe_suffix": " Rezept",
+  "tooltip.foundation.recipe_unlocker.unlocked.prefix": "Rezept freigeschaltet:",
+  "tooltip.foundation.recipe_unlocker.unlocks": "Schaltet frei: %s",
+  "tooltip.foundation.canbeplacedwall": "Kann an Wände gehängt werden",
+  "gui.foundation.wall_decoration.edit": "Beschriften",
+  "tooltip.foundation.set_bonus": "Set-Bonus (volles Set):",
+  "gui.foundation.recipe_book.ingredients": "Zutaten:",
+  "rarity.foundation.common": "Gewöhnlich",
+  "rarity.foundation.uncommon": "Ungewöhnlich",
+  "rarity.foundation.rare": "Selten",
+  "rarity.foundation.epic": "Episch",
+  "rarity.foundation.mythic": "Mythisch",
+  "rarity.foundation.legendary": "Legendär",
+  "rarity.foundation.celestial": "Himmlisch",
+  "rarity.foundation.divine": "Göttlich",
+  "rarity.foundation.eternal": "Ewig"
+}

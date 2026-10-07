@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.satisfy.foundation.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "CreativeModeInventoryScreenMixin",
+    "GuiMixin",
+    "TooltipRenderUtilMixin"
+  ],
+  "mixins": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
