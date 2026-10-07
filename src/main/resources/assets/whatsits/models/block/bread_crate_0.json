@@ -2,8 +2,8 @@
 	"format_version": "1.21.11",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"6": "bakery:block/rattan_block",
-		"particle": "bakery:block/rattan_block"
+		"6": "whatsits:block/rattan_block",
+		"particle": "whatsits:block/rattan_block"
 	},
 	"elements": [
 		{

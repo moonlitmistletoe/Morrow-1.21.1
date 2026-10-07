@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "W#W",
+    "WWW"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:chest"
+    },
+    "W": {
+      "item": "whatsits:chocolate_truffle"
+    }
+  },
+  "result": {
+    "id": "whatsits:chocolate_box",
+    "count": 1
+  }
+}

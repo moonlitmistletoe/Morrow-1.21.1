@@ -1,0 +1,15 @@
+{
+  "type": "whatsits:blank_cake_interaction",
+  "stage": "COOKIE",
+  "ingredient": {
+    "item": "whatsits:strawberry_jam"
+  },
+  "result": {
+    "set_block": "whatsits:strawberry_cookie_block",
+    "give_item": "whatsits:jar",
+    "consume_one": true,
+    "sound": "minecraft:slime_block_place",
+    "particles": true
+  },
+  "priority": 10
+}

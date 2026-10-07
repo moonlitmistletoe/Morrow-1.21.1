@@ -2,10 +2,10 @@
 	"format_version": "1.21.11",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"1": "bakery:block/small_cooking_pan_top",
-		"2": "bakery:block/small_cooking_pan_bottom",
-		"3": "bakery:block/small_cooking_pan_side",
-		"particle": "bakery:block/small_cooking_pan_bottom"
+		"1": "whatsits:block/small_cooking_pan_top",
+		"2": "whatsits:block/small_cooking_pan_bottom",
+		"3": "whatsits:block/small_cooking_pan_side",
+		"particle": "whatsits:block/small_cooking_pan_bottom"
 	},
 	"elements": [
 		{

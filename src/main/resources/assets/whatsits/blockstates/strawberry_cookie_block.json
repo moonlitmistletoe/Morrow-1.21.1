@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "bakery:block/strawberry_cookie_block"
+      "model": "whatsits:block/strawberry_cookie_block"
     }
   }
 }

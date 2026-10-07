@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "bakery:block/tray_0",
-		"2": "bakery:block/tray_1",
-		"particle": "bakery:block/tray_0"
+		"1": "whatsits:block/tray_0",
+		"2": "whatsits:block/tray_1",
+		"particle": "whatsits:block/tray_0"
 	},
 	"elements": [
 		{

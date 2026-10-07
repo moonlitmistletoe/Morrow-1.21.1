@@ -1,11 +1,11 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/cake_display_tray",
-		"1": "bakery:block/cake_display_bottom",
-		"2": "bakery:block/cake_display_side",
-		"3": "bakery:block/cake_display_front",
-		"particle": "bakery:block/cake_display_tray"
+		"0": "whatsits:block/cake_display_tray",
+		"1": "whatsits:block/cake_display_bottom",
+		"2": "whatsits:block/cake_display_side",
+		"3": "whatsits:block/cake_display_front",
+		"particle": "whatsits:block/cake_display_tray"
 	},
 	"elements": [
 		{

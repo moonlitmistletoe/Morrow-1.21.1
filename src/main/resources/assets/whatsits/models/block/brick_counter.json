@@ -3,9 +3,9 @@
 	"credit": "Made by Satisfy",
 	"textures": {
 		"bottom": "minecraft:block/bricks",
-		"side": "bakery:block/baker_station_side",
-		"top": "bakery:block/cabinet_top",
-		"particle": "bakery:block/baker_station_side"
+		"side": "whatsits:block/baker_station_side",
+		"top": "whatsits:block/cabinet_top",
+		"particle": "whatsits:block/baker_station_side"
 	},
 	"elements": [
 		{

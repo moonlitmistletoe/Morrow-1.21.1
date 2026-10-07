@@ -2,9 +2,9 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/cupcake_display",
-		"2": "bakery:block/brick_sink_side",
-		"particle": "bakery:block/cupcake_display"
+		"0": "whatsits:block/cupcake_display",
+		"2": "whatsits:block/brick_sink_side",
+		"particle": "whatsits:block/cupcake_display"
 	},
 	"elements": [
 		{

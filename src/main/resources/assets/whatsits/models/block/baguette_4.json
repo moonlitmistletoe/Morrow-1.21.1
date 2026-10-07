@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/baguette",
-		"particle": "bakery:block/baguette"
+		"0": "whatsits:block/baguette",
+		"particle": "whatsits:block/baguette"
 	},
 	"elements": [
 		{

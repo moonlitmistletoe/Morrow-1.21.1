@@ -1,0 +1,175 @@
+{
+  "parent": "whatsits:main/place_baker_station",
+  "display": {
+    "icon": {
+      "id": "whatsits:apple_cupcake"
+    },
+    "title": {
+      "translate": "advancement.bakery.get_all_caked_goods"
+    },
+    "description": {
+      "translate": "advancement.bakery.get_all_caked_goods.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 150
+  },
+  "criteria": {
+    "whatsits:strawberry_cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:strawberry_cake"
+            ]
+          }
+        ]
+      }
+    },
+    "minecraft:cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:cake"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:chocolate_cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:chocolate_cake"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:sweetberry_cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:sweetberry_cake"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:strawberry_glazed_cookie": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:strawberry_glazed_cookie"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:chocolate_glazed_cookie": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:chocolate_glazed_cookie"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:sweetberry_glazed_cookie": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:sweetberry_glazed_cookie"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:apple_cupcake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:apple_cupcake"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:sweetberry_cupcake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:sweetberry_cupcake"
+            ]
+          }
+        ]
+      }
+    },
+    "whatsits:strawberry_cupcake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "whatsits:strawberry_cupcake"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "whatsits:strawberry_cake"
+    ],
+    [
+      "minecraft:cake"
+    ],
+    [
+      "whatsits:chocolate_cake"
+    ],
+    [
+      "whatsits:sweetberry_cake"
+    ],
+    [
+      "whatsits:strawberry_glazed_cookie"
+    ],
+    [
+      "whatsits:chocolate_glazed_cookie"
+    ],
+    [
+      "whatsits:sweetberry_glazed_cookie"
+    ],
+    [
+      "whatsits:apple_cupcake"
+    ],
+    [
+      "whatsits:sweetberry_cupcake"
+    ],
+    [
+      "whatsits:strawberry_cupcake"
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "bakery:block/bakery_banner"
+      "model": "whatsits:block/bakery_banner"
     }
   }
 }

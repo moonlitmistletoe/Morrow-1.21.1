@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "whatsits:item/grilled_salmon_sandwich"
+  }
+}

@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"1": "bakery:block/chocolate_box",
-		"particle": "bakery:block/chocolate_box"
+		"1": "whatsits:block/chocolate_box",
+		"particle": "whatsits:block/chocolate_box"
 	},
 	"elements": [
 		{

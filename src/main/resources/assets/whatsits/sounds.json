@@ -2,37 +2,37 @@
   "cake_cut": {
     "subtitle": "sound.bakery.cake_cut",
     "sounds": [
-      "bakery:cake_cut"
+      "whatsits:cake_cut"
     ]
   },
   "drawer_open": {
     "subtitle": "sound.bakery.drawer_open",
     "sounds": [
-      "bakery:drawer_open"
+      "whatsits:drawer_open"
     ]
   },
   "drawer_close": {
     "subtitle": "sound.bakery.drawer_close",
     "sounds": [
-      "bakery:drawer_close"
+      "whatsits:drawer_close"
     ]
   },
   "cabinet_open": {
     "subtitle": "sound.bakery.cabinet_open",
     "sounds": [
-      "bakery:cabinet_open"
+      "whatsits:cabinet_open"
     ]
   },
   "cabinet_close": {
     "subtitle": "sound.bakery.cabinet_close",
     "sounds": [
-      "bakery:cabinet_close"
+      "whatsits:cabinet_close"
     ]
   },
   "cooking_pot_hit": {
     "subtitle": "sound.bakery.cooking_pot_hit",
     "sounds": [
-      "bakery:cooking_pot_hit"
+      "whatsits:cooking_pot_hit"
     ]
   }
 }

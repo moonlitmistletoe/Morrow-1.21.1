@@ -2,8 +2,8 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"particle": "bakery:block/faucet",
-		"faucet": "bakery:block/faucet"
+		"particle": "whatsits:block/faucet",
+		"faucet": "whatsits:block/faucet"
 	},
 	"elements": [
 		{

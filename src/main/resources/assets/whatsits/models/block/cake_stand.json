@@ -2,10 +2,10 @@
 	"format_version": "1.21.6",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"1": "bakery:block/cake_stand_plate",
-		"2": "bakery:block/cake_stand_glass_top",
-		"3": "bakery:block/cake_stand_glass_side",
-		"particle": "bakery:block/cake_stand_glass_side"
+		"1": "whatsits:block/cake_stand_plate",
+		"2": "whatsits:block/cake_stand_glass_top",
+		"3": "whatsits:block/cake_stand_glass_side",
+		"particle": "whatsits:block/cake_stand_glass_side"
 	},
 	"elements": [
 		{

@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"2": "bakery:block/strawberry_cookie",
-		"particle": "bakery:block/strawberry_cookie"
+		"2": "whatsits:block/strawberry_cookie",
+		"particle": "whatsits:block/strawberry_cookie"
 	},
 	"elements": [
 		{

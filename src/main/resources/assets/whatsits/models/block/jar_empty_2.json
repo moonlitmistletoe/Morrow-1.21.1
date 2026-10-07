@@ -2,8 +2,8 @@
 	"format_version": "1.21.11",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/jar_empty",
-		"particle": "bakery:block/jar_empty"
+		"0": "whatsits:block/jar_empty",
+		"particle": "whatsits:block/jar_empty"
 	},
 	"elements": [
 		{

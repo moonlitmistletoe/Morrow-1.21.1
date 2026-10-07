@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "whatsits:bread"
+    },
+    {
+      "tag": "whatsits:cooked_beef"
+    },
+    {
+      "tag": "farm_and_charm:cabbage"
+    }
+  ],
+  "result": {
+    "id": "whatsits:sandwich",
+    "count": 2
+  }
+}

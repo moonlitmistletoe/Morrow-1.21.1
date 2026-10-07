@@ -2,10 +2,10 @@
 	"format_version": "1.21.11",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"side": "bakery:block/cabinet_top_connected_side",
-		"back": "bakery:block/cabinet_side",
-		"particle": "bakery:block/cabinet_top_connected_middle",
-		"bottom": "bakery:block/cabinet_top_connected_middle"
+		"side": "whatsits:block/cabinet_top_connected_side",
+		"back": "whatsits:block/cabinet_side",
+		"particle": "whatsits:block/cabinet_top_connected_middle",
+		"bottom": "whatsits:block/cabinet_top_connected_middle"
 	},
 	"elements": [
 		{

@@ -2,10 +2,10 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"2": "bakery:block/baguette",
-		"3": "bakery:block/crusty_bread",
-		"6": "bakery:block/rattan_block",
-		"particle": "bakery:block/rattan_block"
+		"2": "whatsits:block/baguette",
+		"3": "whatsits:block/crusty_bread",
+		"6": "whatsits:block/rattan_block",
+		"particle": "whatsits:block/rattan_block"
 	},
 	"elements": [
 		{

@@ -2,10 +2,10 @@
 	"format_version": "1.21.11",
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/cake_display_tray_middle",
-		"1": "bakery:block/cabinet_top_connected_middle",
-		"2": "bakery:block/cake_display_front_middle",
-		"particle": "bakery:block/cake_display_tray_middle"
+		"0": "whatsits:block/cake_display_tray_middle",
+		"1": "whatsits:block/cabinet_top_connected_middle",
+		"2": "whatsits:block/cake_display_front_middle",
+		"particle": "whatsits:block/cake_display_tray_middle"
 	},
 	"elements": [
 		{

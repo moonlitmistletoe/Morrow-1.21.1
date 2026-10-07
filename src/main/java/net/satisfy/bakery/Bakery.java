@@ -1,19 +1,26 @@
 package net.satisfy.bakery;
 
 import net.minecraft.resources.ResourceLocation;
-import net.moonlitmistletoe.whatsits.Whatsits;
-import net.satisfy.bakery.core.registry.ObjectRegistry;
-import net.satisfy.bakery.core.registry.SoundEventRegistry;
+import net.satisfy.bakery.core.event.CommonEvents;
+import net.satisfy.bakery.core.network.PacketHandler;
+import net.satisfy.bakery.core.registry.*;
 
-public final class Bakery {
-    public static final String MOD_ID = Whatsits.MOD_ID;
+public class Bakery {
+    public static final String MOD_ID = net.moonlitmistletoe.whatsits.Whatsits.MOD_ID;
 
     public static ResourceLocation identifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 
     public static void init() {
+        MobEffectRegistry.init();
         ObjectRegistry.init();
+        EntityTypeRegistry.init();
+        RecipeTypeRegistry.init();
+        PacketHandler.init();
+        CommonEvents.init();
+        TabRegistry.init();
         SoundEventRegistry.init();
     }
 }
+

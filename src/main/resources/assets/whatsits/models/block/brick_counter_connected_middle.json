@@ -3,9 +3,9 @@
 	"credit": "Made by Satisfy",
 	"textures": {
 		"bottom": "block/bricks",
-		"particle": "bakery:block/baker_station_side",
-		"side": "bakery:block/baker_station_side",
-		"top": "bakery:block/cabinet_top_connected_middle"
+		"particle": "whatsits:block/baker_station_side",
+		"side": "whatsits:block/baker_station_side",
+		"top": "whatsits:block/cabinet_top_connected_middle"
 	},
 	"elements": [
 		{
