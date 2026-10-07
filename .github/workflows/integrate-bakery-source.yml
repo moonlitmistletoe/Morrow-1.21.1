@@ -102,7 +102,7 @@ jobs:
           for line in src.splitlines():
               if "public static final RegistrySupplier<Block>" not in line:
                   continue
-              m = re.search(r'new ([A-Za-z0-9_]+)\\(', line)
+              m = re.search(r'new ([A-Za-z0-9_]+)\(', line)
               if not m:
                   continue
               cls = m.group(1)
@@ -147,8 +147,8 @@ jobs:
           '''
           # The original cake registrations referenced removed item suppliers.
           body = "\n".join(block_lines)
-          body = re.sub(r'ObjectRegistry\\.[A-Z0-9_]+_SLICE', 'null', body)
-          body = re.sub(r'\\(\\s*ObjectRegistry\\.[A-Z0-9_]+\\s*\\)', '(null)', body)
+          body = re.sub(r'ObjectRegistry\.[A-Z0-9_]+_SLICE', 'null', body)
+          body = re.sub(r'\(\s*ObjectRegistry\.[A-Z0-9_]+\s*\\)', '(null)', body)
 
           footer = '''
               public static void init() {
