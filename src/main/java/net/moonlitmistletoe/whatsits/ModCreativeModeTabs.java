@@ -95,177 +95,101 @@ public class ModCreativeModeTabs {
                         // Bakery tools
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.ROLLING_PIN.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_KNIFE.get()
-                        );
+                        
 
                         // =========================
                         // Bakery food
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CAKE_DOUGH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEET_DOUGH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CROISSANT.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SANDWICH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.VEGETABLE_SANDWICH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GRILLED_SALMON_SANDWICH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GRILLED_BACON_SANDWICH.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_WITH_JAM.get()
-                        );
+                        
 
                         // =========================
                         // Bakery cake slices
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_CAKE_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_CAKE_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_CAKE_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_GATEAU_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BUNDT_CAKE_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.LINZER_TART_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_PIE_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART_SLICE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.PUDDING_SLICE.get()
-                        );
+                        
 
                         // =========================
                         // Bakery pastries
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CORNET.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.JAM_ROLL.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TRUFFLE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.MISSLILITU_BISCUIT.get()
-                        );
+                        
 
                         // =========================
                         // Bakery cakes
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_CAKE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_CAKE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_CAKE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BUNDT_CAKE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.LINZER_TART.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_PIE.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_TART.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.PUDDING.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_GATEAU.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART.get()
-                        );
+                        
 
                         // =========================
                         // Bakery jams
                         // =========================
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_JAM.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_JAM.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_JAM.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_JAM.get()
-                        );
+                        
 
-                        output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_JAM.get()
-                        );
+                        
                     })
                     .build());
 

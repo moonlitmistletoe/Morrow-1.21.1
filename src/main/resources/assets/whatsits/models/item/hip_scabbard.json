@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "whatsits:item/scabbard_0",
-    "layer1": "whatsits:item/hip_scabbard_1"
-  }
-}

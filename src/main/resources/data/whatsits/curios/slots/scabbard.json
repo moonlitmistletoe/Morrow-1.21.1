@@ -1,6 +1,0 @@
-{
-  "size": 1,
-  "order": 20,
-  "icon": "whatsits:slot/empty_scabbard_slot",
-  "validators": ["curios:tag"]
-}

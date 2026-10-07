@@ -1,21 +1,38 @@
 {
-  "dorime-ameno": {
+  "cake_cut": {
+    "subtitle": "sound.bakery.cake_cut",
     "sounds": [
-      {
-        "name": "whatsits:dorime-ameno",
-        "stream": true,
-        "attenuation_distance": 16
-      }
+      "bakery:cake_cut"
     ]
   },
-
-  "worldoflies": {
+  "drawer_open": {
+    "subtitle": "sound.bakery.drawer_open",
     "sounds": [
-      {
-        "name": "whatsits:worldoflies",
-        "stream": true,
-        "attenuation_distance": 16
-      }
+      "bakery:drawer_open"
+    ]
+  },
+  "drawer_close": {
+    "subtitle": "sound.bakery.drawer_close",
+    "sounds": [
+      "bakery:drawer_close"
+    ]
+  },
+  "cabinet_open": {
+    "subtitle": "sound.bakery.cabinet_open",
+    "sounds": [
+      "bakery:cabinet_open"
+    ]
+  },
+  "cabinet_close": {
+    "subtitle": "sound.bakery.cabinet_close",
+    "sounds": [
+      "bakery:cabinet_close"
+    ]
+  },
+  "cooking_pot_hit": {
+    "subtitle": "sound.bakery.cooking_pot_hit",
+    "sounds": [
+      "bakery:cooking_pot_hit"
     ]
   }
 }

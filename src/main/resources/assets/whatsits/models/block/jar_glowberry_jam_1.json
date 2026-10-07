@@ -1,8 +1,7 @@
 {
-    "parent": "whatsits:block/jar_empty_1",
-    "ambientocclusion": false,
-    "textures": {
-        "0": "whatsits:block/jar_glowberry_jam",
-        "particle": "whatsits:block/jar_glowberry_jam"
-    }
+  "parent": "bakery:block/jar_empty_1",
+  "textures": {
+    "0": "bakery:block/jar_glowberry_jam",
+    "particle": "bakery:block/jar_glowberry_jam"
+  }
 }

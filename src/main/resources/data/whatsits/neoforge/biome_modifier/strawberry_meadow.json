@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_meadow",
-  "features": "whatsits:strawberry_patch",
-  "step": "vegetal_decoration"
-}
