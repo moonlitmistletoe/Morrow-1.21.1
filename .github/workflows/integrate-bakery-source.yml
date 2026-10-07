@@ -69,6 +69,15 @@ jobs:
               if p.exists():
                   p.unlink()
 
+          # Remove Bakery blocks whose behavior still produces Bakery items, plus their item/network layers.
+          for p in list((root / "core/block").rglob("*.java")):
+              if "ObjectRegistry." in p.read_text(errors="ignore"):
+                  p.unlink()
+          for rel in ["core/block/cake", "core/network"]:
+              p = root / rel
+              if p.exists():
+                  shutil.rmtree(p)
+
           # Bakery itself is now a component of Morrow, not a second mod.
           p = root / "Bakery.java"
           p.write_text('''package net.satisfy.bakery;
@@ -196,11 +205,7 @@ jobs:
           tab = Path("src/main/java/net/moonlitmistletoe/whatsits/ModCreativeModeTabs.java")
           if tab.exists():
               t = tab.read_text()
-              start = t.find("// Bakery food")
-              if start >= 0:
-                  end = t.rfind("                    })")
-                  if end > start:
-                      t = t[:start] + t[end:]
+              t = re.sub(r'\\s*output\\.accept\\(\\s*net\\.satisfy\\.bakery\\.core\\.registry\\.ObjectRegistry\\.[A-Z0-9_]+\\.get\\(\\)\\s*\\);', '', t, flags=re.S)
               tab.write_text(t)
 
           # Remove item language entries. Block translations remain.
