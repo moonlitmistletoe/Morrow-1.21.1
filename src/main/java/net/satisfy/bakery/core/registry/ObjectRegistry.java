@@ -18,7 +18,7 @@ public final class ObjectRegistry {
             DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK);
     private static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
 
-public static final RegistrySupplier<Block> IRON_TABLE = registerWithoutItem("iron_table", () -> new TableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+
     public static void init() {
         BLOCKS.register();
     }
