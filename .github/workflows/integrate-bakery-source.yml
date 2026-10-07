@@ -69,6 +69,11 @@ jobs:
               if p.exists():
                   p.unlink()
 
+          for rel in ["core/block/CompletionistBannerBlock.java", "core/block/CompletionistWallBannerBlock.java"]:
+              p = root / rel
+              if p.exists():
+                  p.unlink()
+
           # Remove Bakery blocks whose behavior still produces Bakery items, plus their item/network layers.
           for p in list((root / "core/block").rglob("*.java")):
               if "ObjectRegistry." in p.read_text(errors="ignore"):
@@ -147,7 +152,6 @@ jobs:
           import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
           import net.satisfy.bakery.Bakery;
           import net.satisfy.bakery.core.block.*;
-          import net.satisfy.bakery.core.block.cake.*;
           import java.util.function.Supplier;
 
           public final class ObjectRegistry {
