@@ -1,0 +1,18 @@
+{
+  "name": "Slice of Apple Pie",
+  "icon": "whatsits:apple_pie_slice",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:apple_pie_slice",
+      "link_recipe": true,
+      "text": "A single slice of apple pie. It is made from the apple pie recipe and is the portion you actually eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_pie_slice",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

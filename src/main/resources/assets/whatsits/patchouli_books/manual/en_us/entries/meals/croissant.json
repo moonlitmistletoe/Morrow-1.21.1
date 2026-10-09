@@ -1,0 +1,18 @@
+{
+  "name": "Croissant",
+  "icon": "whatsits:croissant",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:croissant",
+      "link_recipe": true,
+      "text": "A flaky pastry from the Bakery collection. It is crafted through the Bakery recipe and has a small chance to grant regeneration when eaten."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:croissant",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

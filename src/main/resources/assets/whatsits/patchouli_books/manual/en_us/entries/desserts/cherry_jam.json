@@ -1,0 +1,18 @@
+{
+  "name": "Cherry Jam",
+  "icon": "whatsits:cherry_jam",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:cherry_jam",
+      "link_recipe": true,
+      "text": "Cherry jam has a recipe, but cherries themselves are currently unobtainable in survival. Until cherries can be acquired, this jam cannot normally be made."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

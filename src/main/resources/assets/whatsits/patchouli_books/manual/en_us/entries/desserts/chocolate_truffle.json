@@ -1,0 +1,18 @@
+{
+  "name": "Chocolate Truffle",
+  "icon": "whatsits:chocolate_truffle",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:chocolate_truffle",
+      "link_recipe": true,
+      "text": "A small chocolate treat with a chance to grant Absorption."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_truffle",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

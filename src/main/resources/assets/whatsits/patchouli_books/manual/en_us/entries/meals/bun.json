@@ -1,0 +1,18 @@
+{
+  "name": "Bun",
+  "icon": "whatsits:bun",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:bun",
+      "link_recipe": true,
+      "text": "A plain bun made through the Bakery recipe. It can be eaten as-is and can also be used as a base for some other foods."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bun",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

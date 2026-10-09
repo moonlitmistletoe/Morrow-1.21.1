@@ -1,0 +1,18 @@
+{
+  "name": "Jam Roll",
+  "icon": "whatsits:jam_roll",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:jam_roll",
+      "link_recipe": true,
+      "text": "A rolled pastry with jam through the middle. Craft it using the Bakery recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:jam_roll",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

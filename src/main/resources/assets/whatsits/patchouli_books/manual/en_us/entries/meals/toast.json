@@ -1,0 +1,18 @@
+{
+  "name": "Toast",
+  "icon": "whatsits:toast",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:toast",
+      "link_recipe": true,
+      "text": "Bread that has been given a bit more colour and crunch. Craft it from the Bakery recipe. It can also be placed as toast."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:toast",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

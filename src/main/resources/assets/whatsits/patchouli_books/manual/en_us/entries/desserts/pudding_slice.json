@@ -1,0 +1,18 @@
+{
+  "name": "Slice of Pudding",
+  "icon": "whatsits:pudding_slice",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:pudding_slice",
+      "link_recipe": true,
+      "text": "A slice of pudding - apparently pudding can be sliced here. Eating it can grant regeneration."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:pudding_slice",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

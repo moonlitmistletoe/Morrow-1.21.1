@@ -1,0 +1,18 @@
+{
+  "name": "Sweet Dough",
+  "icon": "whatsits:sweet_dough",
+  "category": "whatsits:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sweet_dough",
+      "link_recipe": true,
+      "text": "Sweet dough is used for a number of sweeter Bakery recipes. Craft it first, then turn it into pastries and other treats."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweet_dough",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

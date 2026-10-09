@@ -1,0 +1,18 @@
+{
+  "name": "Stuffed Cornet",
+  "icon": "whatsits:cornet",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:cornet",
+      "link_recipe": true,
+      "text": "A sweet filled pastry from the Bakery collection. Craft it through its recipe and eat it as a small dessert."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cornet",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

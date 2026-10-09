@@ -1,0 +1,17 @@
+{
+  "name": "item.whatsits.manual",
+  "landing_text": "item.whatsits.manual.landing",
+  "version": 1,
+  "creative_tab": "whatsits:whatsits",
+  "model": "whatsits:manual",
+  "use_resource_pack": true,
+  "book_texture": "patchouli:textures/gui/book_blue.png",
+  "text_color": "16383C",
+  "header_color": "167A83",
+  "link_color": "249EAE",
+  "link_hover_color": "35BFC7",
+  "progress_bar_color": "238C95",
+  "show_progress": false,
+  "show_toasts": false,
+  "i18n": true
+}

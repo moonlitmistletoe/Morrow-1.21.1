@@ -1,0 +1,18 @@
+{
+  "name": "Sandwich",
+  "icon": "whatsits:sandwich",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sandwich",
+      "link_recipe": true,
+      "text": "A straightforward sandwich made through the Bakery recipe. It is one of the simpler ways to turn several ordinary food ingredients into something more filling."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sandwich",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

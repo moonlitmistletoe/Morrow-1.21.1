@@ -1,0 +1,13 @@
+{
+  "name": "Blueberry Seeds",
+  "icon": "whatsits:blueberry_seed",
+  "category": "whatsits:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:blueberry_seed",
+      "link_recipe": false,
+      "text": "Plant these on farmland to grow blueberries. Harvesting the crop gives you more seeds as well as the berries."
+    }
+  ]
+}

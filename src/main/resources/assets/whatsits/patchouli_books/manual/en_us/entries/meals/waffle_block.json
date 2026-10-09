@@ -1,0 +1,18 @@
+{
+  "name": "Waffle",
+  "icon": "whatsits:waffle_block",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:waffle_block",
+      "link_recipe": true,
+      "text": "This is the placeable waffle form. Place waffles to make a stack, then use them as a food display rather than treating the block as a separate recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:waffle",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

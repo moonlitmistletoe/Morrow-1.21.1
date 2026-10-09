@@ -1,0 +1,18 @@
+{
+  "name": "Glowberry Jam",
+  "icon": "whatsits:glowberry_jam",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:glowberry_jam",
+      "link_recipe": true,
+      "text": "Glowberry jam in its placeable jar form. It is a topping/display item rather than a separate food item."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:glowberry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

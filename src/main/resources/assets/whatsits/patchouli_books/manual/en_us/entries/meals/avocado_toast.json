@@ -1,0 +1,18 @@
+{
+  "name": "Avocado Toast",
+  "icon": "whatsits:avocado_toast",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:avocado_toast",
+      "link_recipe": true,
+      "text": "Avocado toast is made by combining toast with avocado. The recipe exists, but the avocado itself is currently unobtainable in survival, so the finished meal is unavailable normally too."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:avocado_toast",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

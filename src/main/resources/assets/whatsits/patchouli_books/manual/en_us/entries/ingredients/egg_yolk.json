@@ -1,0 +1,13 @@
+{
+  "name": "Egg Yolk",
+  "icon": "whatsits:egg_yolk",
+  "category": "whatsits:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:egg_yolk",
+      "link_recipe": false,
+      "text": "Throw a normal chicken egg. The mod turns the thrown egg into an egg yolk, giving eggs another job besides occasionally producing a chicken. The yolk is used in several food recipes."
+    }
+  ]
+}

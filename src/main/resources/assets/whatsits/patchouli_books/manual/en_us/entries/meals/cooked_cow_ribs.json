@@ -1,0 +1,18 @@
+{
+  "name": "Cooked Cow Ribs",
+  "icon": "whatsits:cooked_cow_ribs",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:cooked_cow_ribs",
+      "link_recipe": true,
+      "text": "Cook the raw cow ribs to make these. They are the edible result of the cow-rib drop, and are considerably more useful than carrying the raw version around."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cooked_cow_ribs",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

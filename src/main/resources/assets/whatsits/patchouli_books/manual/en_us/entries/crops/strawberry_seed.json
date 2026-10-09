@@ -1,0 +1,13 @@
+{
+  "name": "Strawberry Seeds",
+  "icon": "whatsits:strawberry_seed",
+  "category": "whatsits:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_seed",
+      "link_recipe": false,
+      "text": "Plant these on farmland to grow strawberries. Mature plants give strawberries and can provide more seeds for the next crop."
+    }
+  ]
+}

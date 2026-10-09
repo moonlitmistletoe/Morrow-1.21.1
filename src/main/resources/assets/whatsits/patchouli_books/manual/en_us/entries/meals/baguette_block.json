@@ -1,0 +1,18 @@
+{
+  "name": "Baguette",
+  "icon": "whatsits:baguette_block",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:baguette_block",
+      "link_recipe": true,
+      "text": "A placeable baguette block. It is mainly decorative, letting you display the long loaf rather than carrying it around."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:baguette",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

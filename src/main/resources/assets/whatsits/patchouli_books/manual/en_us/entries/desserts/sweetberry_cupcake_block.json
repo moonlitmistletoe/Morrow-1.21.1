@@ -1,0 +1,18 @@
+{
+  "name": "Sweetberry Cupcakes",
+  "icon": "whatsits:sweetberry_cupcake_block",
+  "category": "whatsits:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sweetberry_cupcake_block",
+      "link_recipe": true,
+      "text": "A placeable sweetberry cupcake display. The edible cupcake is the food item; this block is mainly for decoration."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_cupcake_block",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

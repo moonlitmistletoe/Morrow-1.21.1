@@ -1,0 +1,18 @@
+{
+  "name": "Sunny-Side Eggs",
+  "icon": "whatsits:sunny_side_eggs",
+  "category": "whatsits:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sunny_side_eggs",
+      "link_recipe": true,
+      "text": "Another way to put egg yolks to work. The recipe produces a cooked egg dish without needing to hunt down anything unusual."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sunny_side_eggs",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}
