@@ -25,11 +25,8 @@ public abstract class PigMixin extends Animal {
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, (itemStack) -> {
             return itemStack.is(ObjectRegistry.TOMATO.get()) ||
                     itemStack.is(ObjectRegistry.STRAWBERRY.get()) ||
-                    itemStack.is(ObjectRegistry.ONION.get()) ||
                     itemStack.is(ObjectRegistry.LETTUCE.get()) ||
-                    itemStack.is(ObjectRegistry.BARLEY.get()) ||
-                    itemStack.is(ObjectRegistry.CORN.get()) ||
-                    itemStack.is(ObjectRegistry.OAT.get());
+                    itemStack.is(ObjectRegistry.CORN.get());
         }, false));
     }
 
@@ -37,11 +34,8 @@ public abstract class PigMixin extends Animal {
     private void addCustomFoodItems(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack.is(ObjectRegistry.TOMATO.get()) ||
                 stack.is(ObjectRegistry.STRAWBERRY.get()) ||
-                stack.is(ObjectRegistry.ONION.get()) ||
                 stack.is(ObjectRegistry.LETTUCE.get()) ||
-                stack.is(ObjectRegistry.BARLEY.get()) ||
-                stack.is(ObjectRegistry.CORN.get()) ||
-                stack.is(ObjectRegistry.OAT.get())) {
+                stack.is(ObjectRegistry.CORN.get())) {
             cir.setReturnValue(true);
         }
     }
