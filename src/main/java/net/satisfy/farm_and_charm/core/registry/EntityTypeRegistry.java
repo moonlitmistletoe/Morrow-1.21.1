@@ -1,7 +1,6 @@
 package net.satisfy.farm_and_charm.core.registry;
 
 import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -19,7 +18,7 @@ import java.util.HashSet;
 import java.util.function.Supplier;
 
 public class EntityTypeRegistry {
-    private static final Registrar<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(FarmAndCharm.MOD_ID, Registries.BLOCK_ENTITY_TYPE).getRegistrar();
+    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(FarmAndCharm.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(FarmAndCharm.MOD_ID, Registries.ENTITY_TYPE);
 
     public static final RegistrySupplier<BlockEntityType<StorageBlockEntity>> STORAGE_ENTITY = registerBlockEntity("storage", () -> BlockEntityType.Builder.of(StorageBlockEntity::new, StorageTypeRegistry.registerBlocks(new HashSet<>()).toArray(new Block[0])).build(null));
@@ -52,6 +51,7 @@ public class EntityTypeRegistry {
 
 
     public static void init() {
+        BLOCK_ENTITY_TYPES.register();
         ENTITY_TYPES.register();
     }
 
