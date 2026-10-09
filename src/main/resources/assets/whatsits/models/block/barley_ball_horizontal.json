@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "whatsits:block/barley_ball_top",
-    "side": "whatsits:block/barley_ball_side"
-  }
-}

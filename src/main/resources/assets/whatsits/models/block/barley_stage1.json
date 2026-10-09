@@ -1,6 +1,0 @@
-{
-  "parent": "whatsits:block/template_tall_crop",
-  "textures": {
-    "crop": "whatsits:block/barley_stage1"
-  }
-}

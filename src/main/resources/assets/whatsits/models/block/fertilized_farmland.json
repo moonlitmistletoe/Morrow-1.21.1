@@ -1,9 +1,0 @@
-{
-  "parent": "whatsits:block/template_farmland",
-  "textures": {
-    "6": "whatsits:block/fertilized_soil",
-    "9": "whatsits:block/fertilized_farmland_side",
-    "10": "whatsits:block/fertilized_farmland_top",
-    "particle": "whatsits:block/fertilized_farmland_top"
-  }
-}
