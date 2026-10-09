@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#whatsits:spawns_wild_strawberries",
-  "features": "whatsits:wild_strawberry_chance",
-  "step": "vegetal_decoration"
-}
