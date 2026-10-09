@@ -77,7 +77,6 @@ public class ModCreativeModeTabs {
                         // Pies / desserts
                         // =========================
 
-                        output.accept(ModItems.APPLE_PIE_SLICE);
                         output.accept(ModItems.CHERRY_PIE);
                         output.accept(ModItems.MOONCAKE);
                         output.accept(ModItems.STRAWBERRY_ICE_CREAM);

@@ -41,7 +41,6 @@ public class ModItems {
     public static final DeferredItem<Item> SCRAMBLED_EGGS;
     public static final DeferredItem<Item> SUNNY_SIDE_EGGS;
     public static final DeferredItem<Item> COOKED_COW_RIBS;
-    public static final DeferredItem<Item> APPLE_PIE_SLICE;
     public static final DeferredItem<Item> CHERRY_PIE;
     public static final DeferredItem<Item> MOONCAKE;
     public static final DeferredItem<Item> STRAWBERRY_ICE_CREAM;
