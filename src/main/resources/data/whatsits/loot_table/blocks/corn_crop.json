@@ -27,7 +27,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "whatsits:kernels"
+              "name": "whatsits:corn"
             }
           ]
         }
@@ -59,7 +59,7 @@
               }
             }
           ],
-          "name": "whatsits:kernels"
+          "name": "whatsits:corn"
         }
       ],
       "rolls": 1.0

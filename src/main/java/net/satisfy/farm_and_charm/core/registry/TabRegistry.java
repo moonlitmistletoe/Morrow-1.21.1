@@ -16,14 +16,8 @@ public class TabRegistry {
             .icon(() -> new ItemStack(ObjectRegistry.SUPPLY_CART.get()))
             .title(Component.translatable("creativetab.farm_and_charm.tab"))
             .displayItems((parameters, output) -> {
-                output.accept(ObjectRegistry.KERNELS.get());
                 output.accept(ObjectRegistry.CORN.get());
-                output.accept(ObjectRegistry.OAT_SEEDS.get());
-                output.accept(ObjectRegistry.OAT.get());
-                output.accept(ObjectRegistry.BARLEY_SEEDS.get());
-                output.accept(ObjectRegistry.BARLEY.get());
                 output.accept(ObjectRegistry.LETTUCE.get());
-                output.accept(ObjectRegistry.ONION.get());
                 output.accept(ObjectRegistry.WILD_NETTLE.get());
                 output.accept(ObjectRegistry.WILD_EMMER.get());
                 output.accept(ObjectRegistry.WILD_BEETROOTS.get());

@@ -20,7 +20,7 @@ public class OatCropBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ObjectRegistry.OAT_SEEDS.get();
+        return net.minecraft.world.item.Items.WHEAT_SEEDS;
     }
 
     @Override

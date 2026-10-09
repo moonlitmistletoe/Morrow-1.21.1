@@ -45,7 +45,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "whatsits:kernels",
+              "name": "whatsits:corn",
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",

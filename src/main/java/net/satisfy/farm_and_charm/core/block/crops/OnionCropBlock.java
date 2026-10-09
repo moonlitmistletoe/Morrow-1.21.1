@@ -28,7 +28,7 @@ public class OnionCropBlock extends CropBlock implements BigCropCapable {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ObjectRegistry.ONION.get();
+        return net.minecraft.world.item.Items.WHEAT_SEEDS;
     }
 
     @Override

@@ -18,7 +18,7 @@ public class BarleyCropBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ObjectRegistry.BARLEY_SEEDS.get();
+        return net.minecraft.world.item.Items.WHEAT_SEEDS;
     }
 
     @Override
