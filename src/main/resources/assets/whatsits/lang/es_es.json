@@ -111,7 +111,7 @@
   "block.bakery.waffle_block": "Gofre",
   "block.bakery.wall_cabinet": "Armario de Pared",
   "block.bakery.wall_display": "Expositor de Pared",
-  "creativetab.bakery.tab": "[Hagamos] Panadería",
+  "creativetab.bakery.tab": "Panadería",
   "effect.bakery.stuffed": "Harto",
   "effect.bakery.sweets": "Subidón de Azúcar",
   "entity.bakery.wandering_baker": "Panadero Errante",
@@ -278,5 +278,6 @@
   "tooltip.whatsits.thankyou_1": "Una recompensa por crear todos los productos horneados",
   "tooltip.whatsits.thankyou_2": "Al colocar:",
   "tooltip.whatsits.thankyou_3": "¡Gracias por jugar Panadería!",
-  "tooltip.whatsits.thankyou_4": "Otorga Resistencia en un radio de 8 bloques"
+  "tooltip.whatsits.thankyou_4": "Otorga Resistencia en un radio de 8 bloques",
+  "itemGroup.whatsits.whatsits": "Morrow"
 }
