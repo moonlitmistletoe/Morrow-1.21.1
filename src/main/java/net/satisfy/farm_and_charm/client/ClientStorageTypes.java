@@ -10,8 +10,6 @@ public class ClientStorageTypes {
     }
 
     public static void init() {
-        registerStorageType(StorageTypeRegistry.TOOL_RACK, new ToolRackRenderer());
-        registerStorageType(StorageTypeRegistry.WINDOW_SILL, new WindowSillRenderer());
         registerStorageType(StorageTypeRegistry.CHICKEN_NEST, new ChickenNestRenderer());
     }
 }
