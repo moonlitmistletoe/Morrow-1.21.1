@@ -70,7 +70,7 @@ public class TabRegistry {
                     ObjectRegistry.WAFFLE_BLOCK,
                     ObjectRegistry.MISSLILITU_BISCUIT,
                     ObjectRegistry.CHOCOLATE_TRUFFLE,
-                    ObjectRegistry.BREAD_WITH_JAM,
+                    ObjectRegistry.BREAD_WITH_JAM
             ).forEach(itemSupplier -> {
                 ItemStack itemStack = new ItemStack(itemSupplier.get(), 1);
                 if (itemStack.getCount() != 1) {
