@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "cherry_bag",
+  "group": "beetroot_bag",
   "pattern": [
     "###",
     "###",
@@ -8,7 +8,7 @@
   ],
   "key": {
     "#": {
-      "item": "morrow:cherry"
+      "item": "minecraft:beetroot"
     }
   },
   "result": {
