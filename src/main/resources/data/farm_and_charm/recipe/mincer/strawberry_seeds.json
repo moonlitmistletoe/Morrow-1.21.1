@@ -1,11 +1,11 @@
 {
-  "type": "farm_and_charm:mincer",
+  "type": "morrow:mincer",
   "ingredient": {
-    "item": "farm_and_charm:strawberry"
+    "item": "morrow:strawberry"
   },
   "recipe_type": "MEAT",
   "result": {
-    "id": "farm_and_charm:strawberry_seeds",
+    "id": "morrow:strawberry_seed",
     "count": 4
   },
   "experience": 0.2
