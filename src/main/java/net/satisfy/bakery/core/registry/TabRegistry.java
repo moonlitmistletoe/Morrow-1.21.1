@@ -66,7 +66,6 @@ public class TabRegistry {
                     ObjectRegistry.SWEETBERRY_CUPCAKE,
                     ObjectRegistry.APPLE_CUPCAKE,
                     ObjectRegistry.JAM_ROLL,
-                    ObjectRegistry.CORNET,
                     ObjectRegistry.PUDDING,
                     ObjectRegistry.WAFFLE_BLOCK,
                     ObjectRegistry.MISSLILITU_BISCUIT,
