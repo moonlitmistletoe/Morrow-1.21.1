@@ -1,0 +1,25 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "morrow:tomato"
+    },
+    {
+      "tag": "morrow:tomato"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "requireContainer": true,
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "morrow:simple_tomato_soup",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "experience": 0.35
+}
