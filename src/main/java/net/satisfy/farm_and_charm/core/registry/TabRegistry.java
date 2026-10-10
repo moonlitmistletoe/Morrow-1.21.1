@@ -16,8 +16,6 @@ public class TabRegistry {
             .icon(() -> new ItemStack(ObjectRegistry.SUPPLY_CART.get()))
             .title(Component.translatable("creativetab.farm_and_charm.tab"))
             .displayItems((parameters, output) -> {
-                output.accept(ObjectRegistry.CORN.get());
-                output.accept(ObjectRegistry.LETTUCE.get());
                 output.accept(ObjectRegistry.WILD_NETTLE.get());
                 output.accept(ObjectRegistry.WILD_EMMER.get());
                 output.accept(ObjectRegistry.WILD_BEETROOTS.get());
