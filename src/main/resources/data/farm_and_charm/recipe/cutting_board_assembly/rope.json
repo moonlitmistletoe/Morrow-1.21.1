@@ -1,19 +1,19 @@
 {
-  "type": "farm_and_charm:cutting_board_assembly",
+  "type": "morrow:cutting_board_assembly",
   "ordered": true,
   "ingredients": [
     {
       "item": "minecraft:string"
     },
     {
-      "item": "farm_and_charm:barley"
+      "item": "morrow:barley"
     },
     {
       "item": "minecraft:string"
     }
   ],
   "result": {
-    "id": "farm_and_charm:rope",
+    "id": "morrow:rope",
     "count": 6
   }
 }
