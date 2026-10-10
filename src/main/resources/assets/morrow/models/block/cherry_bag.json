@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "particle": "morrow:item/cherry",
+    "particle": "morrow:block/bag_top_beetroot",
     "north": "morrow:block/bag_side_knot",
     "east": "morrow:block/bag_side",
     "south": "morrow:block/bag_side",
     "west": "morrow:block/bag_side",
-    "up": "morrow:item/cherry",
+    "up": "morrow:block/bag_top_beetroot",
     "down": "morrow:block/bag_bottom"
   }
 }
