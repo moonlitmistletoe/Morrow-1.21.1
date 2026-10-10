@@ -2,5 +2,6 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "whatsits:block/wild_emmer_1"
-  }
+  },
+  "render_type": "minecraft:cutout"
 }
