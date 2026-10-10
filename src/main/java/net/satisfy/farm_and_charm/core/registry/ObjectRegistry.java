@@ -42,7 +42,6 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Item> STRAWBERRY = registerItem("strawberry", () -> new Item(getSettings().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> TOMATO = registerItem("tomato", () -> new Item(getSettings().food(Foods.APPLE)));
     public static final RegistrySupplier<Item> ROTTEN_TOMATO = registerItem("rotten_tomato", () -> new RottenTomatoItem(getSettings().food(Foods.POISONOUS_POTATO)));
-    public static final RegistrySupplier<Item> COMPOST = registerItem("compost", () -> new FertilizerItem(getSettings()));
     public static final RegistrySupplier<Item> STRAWBERRY_TEA_CUP = registerItem("strawberry_tea_cup", () -> new EffectJugItem(getFoodItemSettings(1, 0.05f, MobEffects.DIG_SPEED, 120, true, false), 120, true));
     public static final RegistrySupplier<Item> NETTLE_TEA_CUP = registerItem("nettle_tea_cup", () -> new EffectJugItem(getFoodItemSettings(1, 0.05f, MobEffects.HEAL, 0, true, false), 0, true));
     public static final RegistrySupplier<Item> RIBWORT_TEA_CUP = registerItem("ribwort_tea_cup", () -> new EffectJugItem(getFoodItemSettings(1, 0.05f, MobEffects.REGENERATION, 60, true, false), 60, true));
