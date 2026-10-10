@@ -1,0 +1,11 @@
+{
+  "type": "morrow:drying",
+  "ingredient": {
+    "item": "morrow:wild_tomatoes"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "minecraft:bone_meal",
+    "count": 1
+  }
+}
