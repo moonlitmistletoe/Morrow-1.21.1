@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "tag": "morrow:onion"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "result": {
+    "id": "morrow:stuffed_chicken",
+    "count": 1
+  },
+  "experience": 0.6,
+  "requiresLearning": false
+}
