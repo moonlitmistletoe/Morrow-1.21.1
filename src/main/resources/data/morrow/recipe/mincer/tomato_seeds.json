@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "morrow:tomato"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:tomato_seeds",
+    "count": 4
+  },
+  "experience": 0.2
+}
