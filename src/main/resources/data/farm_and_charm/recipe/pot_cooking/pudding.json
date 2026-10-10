@@ -12,7 +12,8 @@
     }
   ],
   "container": {
-    "id": "bakery:jar"
+    "id": "bakery:jar",
+    "count": 1
   },
   "result": {
     "id": "bakery:pudding",
