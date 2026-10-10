@@ -2,20 +2,20 @@
   "type": "bakery:jam_cooking",
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "tag": "bakery:milk"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "bakery:chocolate"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "bakery:apple_jam",
+    "id": "bakery:chocolate_jam",
     "count": 3
   },
-  "color": "#D9A441",
+  "color": "#5A3220",
   "cooking_time": 600,
   "experience": 1.0
 }
