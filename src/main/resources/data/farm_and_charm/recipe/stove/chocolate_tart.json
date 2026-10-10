@@ -1,18 +1,18 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "tag": "bakery:chocolate"
     },
     {
-      "item": "bakery:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
-      "item": "farm_and_charm:yeast"
+      "item": "morrow:yeast"
     }
   ],
   "result": {
-    "item": "bakery:chocolate_tart",
+    "item": "morrow:chocolate_tart",
     "count": 1
   },
   "experience": 0.4,

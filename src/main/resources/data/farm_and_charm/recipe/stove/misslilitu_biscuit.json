@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "item": "minecraft:red_dye"
@@ -8,12 +8,12 @@
       "item": "minecraft:white_dye"
     },
     {
-      "item": "bakery:sweet_dough"
+      "item": "morrow:sweet_dough"
     }
   ],
   "result": {
     "count": 4,
-    "id": "bakery:misslilitu_biscuit"
+    "id": "morrow:misslilitu_biscuit"
   },
   "experience": 0.2,
   "requiresLearning": false

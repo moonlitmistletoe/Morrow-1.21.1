@@ -1,8 +1,8 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
-      "item": "bakery:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 6,
-    "id": "bakery:waffle"
+    "id": "morrow:waffle"
   },
   "experience": 0.2,
   "requiresLearning": false
