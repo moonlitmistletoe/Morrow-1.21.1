@@ -1,0 +1,78 @@
+name: One-time Morrow rebrand
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  rebrand:
+    if: "!contains(github.event.head_commit.message, '[automated Morrow rebrand]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebrand namespace, packages, metadata, and references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          root = Path('.')
+          # Rewrite text files only; binary assets are preserved byte-for-byte.
+          text_ext = {'.java','.json','.toml','.properties','.gradle','.xml','.mcmeta','.txt','.cfg','.yml','.yaml','.md','.kt','.groovy','.html','.js','.css'}
+          for p in list(root.rglob('*')):
+              if not p.is_file() or '.git' in p.parts or p.suffix.lower() not in text_ext:
+                  continue
+              try:
+                  s = p.read_text(encoding='utf-8')
+              except (UnicodeDecodeError, OSError):
+                  continue
+              n = s.replace('net.moonlitmistletoe.whatsits','net.moonlitmistletoe.morrow')
+              n = n.replace('Moon\'s Whatsits','Morrow').replace('Moon’s Whatsits','Morrow')
+              n = n.replace('Whatsits','Morrow').replace('whatsits','morrow')
+              if n != s:
+                  p.write_text(n, encoding='utf-8', newline='')
+          PY
+          # Move resource namespaces and Java package tree, retaining every asset.
+          if [ -d src/main/resources/assets/whatsits ]; then
+            mkdir -p src/main/resources/assets
+            git mv src/main/resources/assets/whatsits src/main/resources/assets/morrow
+          fi
+          if [ -d src/main/resources/data/whatsits ]; then
+            mkdir -p src/main/resources/data
+            git mv src/main/resources/data/whatsits src/main/resources/data/morrow
+          fi
+          if [ -d src/main/java/net/moonlitmistletoe/whatsits ]; then
+            mkdir -p src/main/java/net/moonlitmistletoe
+            git mv src/main/java/net/moonlitmistletoe/whatsits src/main/java/net/moonlitmistletoe/morrow
+          fi
+          if [ -f src/main/java/net/moonlitmistletoe/morrow/Whatsits.java ]; then
+            git mv src/main/java/net/moonlitmistletoe/morrow/Whatsits.java src/main/java/net/moonlitmistletoe/morrow/Morrow.java
+          fi
+          if [ -f src/main/java/net/moonlitmistletoe/morrow/WhatsitsClient.java ]; then
+            git mv src/main/java/net/moonlitmistletoe/morrow/WhatsitsClient.java src/main/java/net/moonlitmistletoe/morrow/MorrowClient.java
+          fi
+          # Add cutout rendering to both Wild Emmer crop models.
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ('wild_emmer_1.json','wild_emmer_2.json'):
+              p=Path('src/main/resources/assets/morrow/models/block')/name
+              if p.exists():
+                  d=json.loads(p.read_text())
+                  d['render_type']='minecraft:cutout'
+                  p.write_text(json.dumps(d,indent=2)+'\n')
+          PY
+          # Remove this one-shot workflow from the final repository.
+          rm -f .github/workflows/one-time-morrow-rebrand.yml
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes found"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Complete Morrow mod rebrand [automated Morrow rebrand]"
+          git push origin HEAD:main
