@@ -1,0 +1,21 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "requireContainer": false,
+  "result": {
+    "id": "morrow:glowberry_jam",
+    "count": 3
+  },
+  "requiresLearning": false,
+  "experience": 1
+}
