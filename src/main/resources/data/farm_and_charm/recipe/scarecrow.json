@@ -7,17 +7,17 @@
   ],
   "key": {
     "B": {
-      "item": "farm_and_charm:barley_ball"
+      "item": "morrow:barley_ball"
     },
     "S": {
-      "item": "farm_and_charm:scarecrow"
+      "item": "morrow:scarecrow"
     },
     "I": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "id": "farm_and_charm:scarecrow",
+    "id": "morrow:scarecrow",
     "count": 2
   }
 }

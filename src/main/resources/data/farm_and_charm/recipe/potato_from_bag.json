@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "farm_and_charm:potato_bag"
+      "item": "morrow:potato_bag"
     }
   ],
   "result": {

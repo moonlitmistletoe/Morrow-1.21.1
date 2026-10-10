@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "B": {
-      "item": "farm_and_charm:barley"
+      "item": "morrow:barley"
     },
     "#": {
       "item": "minecraft:string"
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 6,
-    "id": "farm_and_charm:rope"
+    "id": "morrow:rope"
   }
 }
