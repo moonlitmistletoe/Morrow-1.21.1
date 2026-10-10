@@ -29,7 +29,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.bakery.core.registry.StorageTypeRegistry;
 import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -113,7 +112,7 @@ public class BreadBox extends StorageBlock {
 
     @Override
     public ResourceLocation type() {
-        return StorageTypeRegistry.BREADBOX;
+        return Bakery.identifier("breadbox");
     }
 
     @Override
