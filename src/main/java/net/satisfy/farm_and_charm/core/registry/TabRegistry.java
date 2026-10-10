@@ -24,6 +24,7 @@ public class TabRegistry {
                 output.accept(ObjectRegistry.CARROT_BAG.get());
                 output.accept(ObjectRegistry.POTATO_BAG.get());
                 output.accept(ObjectRegistry.BEETROOT_BAG.get());
+                output.accept(ObjectRegistry.STRAWBERRY_BAG.get());
                 output.accept(ObjectRegistry.STOVE.get());
                 output.accept(ObjectRegistry.WATER_TROUGH.get());
                 output.accept(ObjectRegistry.FEEDING_TROUGH.get());

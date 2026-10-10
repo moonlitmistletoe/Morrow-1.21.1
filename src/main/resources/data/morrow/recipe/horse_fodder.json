@@ -6,7 +6,7 @@
   ],
   "key": {
     "W": {
-      "tag": "morrow:wheat"
+      "item": "minecraft:wheat"
     },
     "A": {
       "item": "minecraft:apple"

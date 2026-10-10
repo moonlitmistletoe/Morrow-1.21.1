@@ -2,7 +2,7 @@
   "type": "morrow:cutting_board_assembly",
   "ingredients": [
     {
-      "tag": "morrow:wheat"
+      "item": "minecraft:wheat"
     },
     {
       "item": "minecraft:apple"

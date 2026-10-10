@@ -1,11 +1,11 @@
 {
-  "type": "crafting_shapeless",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "morrow:wheat"
+      "item": "minecraft:wheat"
     },
     {
-      "tag": "morrow:wheat"
+      "item": "minecraft:wheat"
     },
     {
       "item": "minecraft:carrot"
