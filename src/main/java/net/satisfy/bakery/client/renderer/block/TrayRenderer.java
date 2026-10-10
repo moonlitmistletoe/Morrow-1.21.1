@@ -24,7 +24,7 @@ public class TrayRenderer implements StorageTypeRenderer {
             if (!stack.isEmpty()) {
                 matrices.pushPose();
                 if (stack.getItem() instanceof BlockItem blockItem) {
-                    if (blockItem.getBlock() == ObjectRegistry.CRUSTY_BREAD_BLOCK.get()) {
+                    if (blockItem.getBlock() == ObjectRegistry.BUN_BLOCK.get()) {
                         matrices.translate(-0.6f, -0.5f, -1f);
                         matrices.scale(2f, 2f, 2f);
                         ClientUtil.renderBlockFromItem(blockItem, matrices, vertexConsumers, entity);
@@ -32,17 +32,17 @@ public class TrayRenderer implements StorageTypeRenderer {
                         matrices.translate(-0.6f, -0.5f, -1f);
                         matrices.scale(2f, 2f, 2f);
                         ClientUtil.renderBlockFromItem(blockItem, matrices, vertexConsumers, entity);
-                    } else if (blockItem.getBlock() == ObjectRegistry.BREAD_BLOCK.get()) {
+                    } else if (blockItem.getBlock() == ObjectRegistry.BAGUETTE_BLOCK.get()) {
                         matrices.translate(-0.6f, -0.5f, 1.0f);
                         matrices.scale(2f, 2f, 2f);
                         matrices.mulPose(Axis.YP.rotationDegrees(90.0f));
                         ClientUtil.renderBlockFromItem(blockItem, matrices, vertexConsumers, entity);
-                    } else if (blockItem.getBlock() == ObjectRegistry.BRAIDED_BREAD_BLOCK.get()) {
+                    } else if (blockItem.getBlock() == ObjectRegistry.BAGUETTE_BLOCK.get()) {
                         matrices.translate(-0.6f, -0.5f, 1.0f);
                         matrices.scale(2f, 2f, 2f);
                         matrices.mulPose(Axis.YP.rotationDegrees(90.0f));
                         ClientUtil.renderBlockFromItem(blockItem, matrices, vertexConsumers, entity);
-                    } else if (blockItem.getBlock() == ObjectRegistry.TOAST_BLOCK.get()) {
+                    } else if (blockItem.getBlock() == ObjectRegistry.BAGUETTE_BLOCK.get()) {
                         matrices.translate(-0.6f, -0.5f, 1.0f);
                         matrices.scale(2f, 2f, 2f);
                         matrices.mulPose(Axis.YP.rotationDegrees(90.0f));
