@@ -1,0 +1,56 @@
+name: Finish Morrow rebrand cleanup
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    if: "!contains(github.event.head_commit.message, '[automated Morrow cleanup]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rename every remaining path and repair registry syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          root=Path('.')
+          # Rewrite all text content, preserving binary resources.
+          exts={'.java','.json','.toml','.properties','.gradle','.xml','.mcmeta','.txt','.cfg','.yml','.yaml','.md','.kt','.groovy','.html','.js','.css'}
+          for p in list(root.rglob('*')):
+              if not p.is_file() or '.git' in p.parts or p.suffix.lower() not in exts:
+                  continue
+              try: s=p.read_text(encoding='utf-8')
+              except (UnicodeDecodeError,OSError): continue
+              n=s.replace('\\\\n', '\\n')
+              n=n.replace('CHICKEN_PARTS = registerItem( () ->','CHICKEN_PARTS = registerItem("chicken_parts", () ->')
+              n=n.replace('STRAWBERRY_BAG = registerWithItem( () ->','STRAWBERRY_BAG = registerWithItem("strawberry_bag", () ->')
+              n=n.replace('\\n                output.accept(ObjectRegistry.WILD_NETTLE', '\\n                output.accept(ObjectRegistry.WILD_NETTLE')
+              if n!=s: p.write_text(n,encoding='utf-8')
+          # Rename any remaining path component or filename containing old branding.
+          for base, dirs, files in os.walk(root, topdown=False):
+              bp=Path(base)
+              for name in files:
+                  if 'whatsits' in name or 'Whatsits' in name or 'WHATSITS' in name:
+                      old=bp/name
+                      new=bp/name.replace('Whatsits','Morrow').replace('WHATSITS','MORROW').replace('whatsits','morrow')
+                      if old!=new and not new.exists(): old.rename(new)
+              for name in dirs:
+                  if 'whatsits' in name or 'Whatsits' in name or 'WHATSITS' in name:
+                      old=bp/name
+                      new=bp/name.replace('Whatsits','Morrow').replace('WHATSITS','MORROW').replace('whatsits','morrow')
+                      if old!=new and not new.exists(): old.rename(new)
+          PY
+          git add -A
+          rm -f .github/workflows/finish-morrow-rebrand-cleanup.yml
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Finish Morrow rebrand and repair registry declarations [automated Morrow cleanup]"
+          git push origin HEAD:main
