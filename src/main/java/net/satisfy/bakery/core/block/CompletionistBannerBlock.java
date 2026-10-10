@@ -28,7 +28,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.Bakery;
 import net.satisfy.bakery.core.block.entity.CompletionistBannerEntity;
 import net.satisfy.bakery.core.registry.EntityTypeRegistry;
-import net.satisfy.bakery.core.registry.ObjectRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -82,10 +81,6 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
         Direction clickedFace = context.getClickedFace();
         if (clickedFace == Direction.UP || clickedFace == Direction.DOWN) {
             return this.defaultBlockState().setValue(ROTATION, Mth.floor((double) ((180.0f + context.getRotation()) * 16.0f / 360.0f) + 0.5) & 0xF);
-        } else {
-            if (this == ObjectRegistry.BAKERY_BANNER.get()) {
-                return ObjectRegistry.BAKERY_WALL_BANNER.get().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, clickedFace.getOpposite());
-            }
         }
         return this.defaultBlockState();
     }
