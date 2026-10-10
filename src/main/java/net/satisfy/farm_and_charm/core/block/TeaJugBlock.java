@@ -93,8 +93,6 @@ public class TeaJugBlock extends FacingBlock {
             return ObjectRegistry.STRAWBERRY_TEA_CUP.get();
         } else if (this.equals(ObjectRegistry.NETTLE_TEA.get())) {
             return ObjectRegistry.NETTLE_TEA_CUP.get();
-        } else if (this.equals(ObjectRegistry.RIBWORT_TEA.get())) {
-            return ObjectRegistry.RIBWORT_TEA_CUP.get();
         }
         return Items.AIR;
     }
