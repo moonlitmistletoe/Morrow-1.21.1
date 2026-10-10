@@ -17,5 +17,6 @@
     "id": "morrow:potato_soup",
     "count": 1
   },
-  "requiresLearning": false
+  "requiresLearning": false,
+  "experience": 0.35
 }
