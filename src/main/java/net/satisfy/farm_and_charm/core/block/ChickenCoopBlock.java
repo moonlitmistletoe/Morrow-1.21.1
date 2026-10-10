@@ -129,14 +129,6 @@ public class ChickenCoopBlock extends BaseEntityBlock {
         if (!level.isClientSide) {
             BlockEntity be = level.getBlockEntity(pos);
             if (be instanceof ChickenCoopBlockEntity coop) {
-                if (heldItem.is(ObjectRegistry.PITCHFORK.get()) && !coop.getStoredChickens().isEmpty()) {
-                    coop.releaseAllChickens();
-                    level.playSound(null, pos, SoundEvents.ANVIL_FALL, player.getSoundSource(), 1.0F, 1.1F);
-                    level.playSound(null, pos, SoundEvents.CHICKEN_HURT, player.getSoundSource(), 0.325F, 0.825F);
-                    level.playSound(null, pos, SoundEvents.BEEHIVE_EXIT, player.getSoundSource(), 0.7F, 1.1F);
-                    return ItemInteractionResult.SUCCESS;
-                }
-
                 int eggCount = coop.getEggCount();
                 if (eggCount > 0) {
                     player.addItem(Items.EGG.getDefaultInstance().copyWithCount(eggCount));
