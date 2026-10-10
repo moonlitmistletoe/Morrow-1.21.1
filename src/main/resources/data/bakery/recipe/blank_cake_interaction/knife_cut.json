@@ -1,5 +1,5 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "DOUGH",
   "ingredient": {
     "tag": "bakery:knives"

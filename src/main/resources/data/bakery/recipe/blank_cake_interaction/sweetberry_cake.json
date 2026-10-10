@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "item": "bakery:sweetberry_jam"
+    "item": "morrow:sweetberry_jam"
   },
   "result": {
     "set_block": "bakery:sweetberry_cake",

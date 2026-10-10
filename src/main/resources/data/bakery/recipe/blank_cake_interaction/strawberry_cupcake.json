@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CUPCAKE",
   "ingredient": {
-    "item": "bakery:strawberry_jam"
+    "item": "morrow:strawberry_jam"
   },
   "result": {
     "set_block": "bakery:strawberry_cupcake_block",
