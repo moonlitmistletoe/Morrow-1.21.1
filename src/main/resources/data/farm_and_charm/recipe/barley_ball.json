@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "farm_and_charm:barley"
+      "item": "morrow:barley"
     }
   },
   "result": {
-    "id": "farm_and_charm:barley_ball",
+    "id": "morrow:barley_ball",
     "count": 1
   }
 }
