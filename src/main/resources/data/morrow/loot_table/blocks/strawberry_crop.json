@@ -7,7 +7,7 @@
   ],
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -19,7 +19,7 @@
                   "block": "morrow:strawberry_crop",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "5"
+                    "age": "3"
                   }
                 }
               ],
@@ -27,21 +27,21 @@
             },
             {
               "type": "minecraft:item",
-              "name": "morrow:strawberry_seeds"
+              "name": "morrow:strawberry_seed"
             }
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "conditions": [
         {
           "block": "morrow:strawberry_crop",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "5"
+            "age": "3"
           }
         }
       ],
@@ -59,10 +59,10 @@
               }
             }
           ],
-          "name": "morrow:strawberry_seeds"
+          "name": "morrow:strawberry_seed"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }
