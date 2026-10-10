@@ -1,0 +1,11 @@
+{
+  "type": "morrow:cutting_board",
+  "ingredient": {
+    "item": "minecraft:pink_petals"
+  },
+  "result": {
+    "id": "minecraft:pink_dye",
+    "count": 2
+  },
+  "experience": 0.1
+}
