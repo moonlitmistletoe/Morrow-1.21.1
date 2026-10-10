@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "morrow:carrot_bag"
+      "item": "morrow:strawberry_bag"
     }
   ],
   "result": {
-    "id": "minecraft:carrot",
+    "id": "morrow:strawberry",
     "count": 9
   }
 }

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "grape_bag",
+  "group": "morrow_bags",
   "pattern": [
     "###",
     "###",
@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "item": "farm_and_charm:strawberry"
+      "item": "morrow:strawberry"
     }
   },
   "result": {
-    "id": "farm_and_charm:strawberry_bag",
+    "id": "morrow:strawberry_bag",
     "count": 1
   }
 }
