@@ -53,7 +53,6 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> CHERRY_BAG = registerWithItem("cherry_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> CARROT_BAG = registerWithItem("carrot_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> POTATO_BAG = registerWithItem("potato_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
-    public static final RegistrySupplier<Block> BEETROOT_BAG = registerWithItem("beetroot_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> FEEDING_TROUGH = registerWithItem("feeding_trough", () -> new FeedingTroughBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> WATER_TROUGH = registerWithItem("water_trough", () -> new WaterTroughBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD).randomTicks()));
     public static final RegistrySupplier<Block> WATER_SPRINKLER = registerWithItem("water_sprinkler", () -> new WaterSprinklerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
