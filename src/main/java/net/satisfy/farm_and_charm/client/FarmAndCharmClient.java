@@ -14,14 +14,12 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.satisfy.farm_and_charm.client.event.ClientEventHandler;
 import net.satisfy.farm_and_charm.client.gui.CookingPotGui;
 import net.satisfy.farm_and_charm.client.gui.PetBowlEditGui;
-import net.satisfy.farm_and_charm.client.gui.RoasterGui;
 import net.satisfy.farm_and_charm.client.gui.StoveGui;
 import net.satisfy.farm_and_charm.client.model.*;
 import net.satisfy.farm_and_charm.client.particle.SoupBubbleParticle;
 import net.satisfy.farm_and_charm.client.particle.SoupCookingBubbleParticle;
 import net.satisfy.farm_and_charm.client.particle.SoupSteamParticle;
 import net.satisfy.farm_and_charm.client.renderer.block.*;
-import net.satisfy.farm_and_charm.client.renderer.entity.ChairRenderer;
 import net.satisfy.farm_and_charm.client.renderer.entity.PlowCartRenderer;
 import net.satisfy.farm_and_charm.client.renderer.entity.SupplyCartRenderer;
 import net.satisfy.farm_and_charm.core.block.entity.PetBowlBlockEntity;
@@ -36,14 +34,8 @@ public class FarmAndCharmClient {
 
     public static void onInitializeClient() {
         RenderTypeRegistry.register(RenderType.cutout(), CRAFTING_BOWL.get(), WATER_SPRINKLER.get(),
-                SCARECROW.get(), STOVE.get(), MINCER.get(), WILD_RIBWORT.get(), WILD_BARLEY.get(), WILD_CARROTS.get(),
-                RIBWORT_TEA.get(), NETTLE_TEA.get(), STRAWBERRY_TEA.get(), WILD_BEETROOTS.get(), WILD_CORN.get(),
-                WILD_EMMER.get(), WILD_LETTUCE.get(), WILD_NETTLE.get(), WILD_OAT.get(), WILD_ONIONS.get(), WILD_POTATOES.get(),
-                WILD_TOMATOES.get(), WILD_STRAWBERRIES.get(), STUFFED_RABBIT.get(), STUFFED_CHICKEN.get(), FARMERS_BREAKFAST.get(),
-                ROASTED_CORN_BLOCK.get(), OAT_PANCAKE_BLOCK.get(), CORN_CROP.get(), OAT_CROP.get(), BARLEY_CROP.get(), LETTUCE_CROP.get(),
-                ONION_CROP.get(), TOMATO_CROP.get(), STRAWBERRY_CROP.get(), COOKING_POT.get(), ROASTER.get(), TOMATO_CROP_BODY.get(),
-                CHICKEN_NEST.get(), STURDY_LADDER.get(), IRON_DIVIDER.get(), CHICKEN_FENCE.get(), CATTLEGRID.get(), FEATHER_PILE.get(),
-                WHEAT_PILE.get()
+                STOVE.get(), WILD_CARROTS.get(), NETTLE_TEA.get(), STRAWBERRY_TEA.get(), WILD_BEETROOTS.get(), WILD_NETTLE.get(),
+                WILD_POTATOES.get(), CHICKEN_NEST.get(), STURDY_LADDER.get(),  FEATHER_PILE.get(), WHEAT_PILE.get()
         );
 
         ParticleProviderRegistry.register(ParticleTypeRegistry.SOUP_BUBBLE.get(), SoupBubbleParticle.Provider::new);
@@ -55,7 +47,8 @@ public class FarmAndCharmClient {
                 return -1;
             }
             return BiomeColors.getAverageWaterColor(world, pos);
-        }, WATER_TROUGH.get(), TIMBER_WELL.get());
+        }, WATER_TROUGH.get()
+        );
 
         ClientStorageTypes.init();
         ClientEventHandler.init();
