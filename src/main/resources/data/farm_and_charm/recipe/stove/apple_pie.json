@@ -1,18 +1,18 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "item": "minecraft:apple"
     },
     {
-      "item": "bakery:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "bakery:apple_pie",
+    "id": "morrow:apple_pie",
     "count": 1
   },
   "experience": 0.5,

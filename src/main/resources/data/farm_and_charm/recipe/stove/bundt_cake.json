@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "tag": "bakery:eggs"
@@ -8,11 +8,11 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "farm_and_charm:yeast"
+      "item": "morrow:yeast"
     }
   ],
   "result": {
-    "item": "bakery:bundt_cake",
+    "item": "morrow:bundt_cake",
     "count": 1
   },
   "experience": 0.4,

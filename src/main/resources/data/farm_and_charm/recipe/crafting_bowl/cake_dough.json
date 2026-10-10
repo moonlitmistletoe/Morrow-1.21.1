@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
+  "type": "morrow:crafting_bowl",
   "ingredients": [
     {
       "tag": "bakery:wheat"
@@ -15,7 +15,7 @@
     }
   ],
   "result": {
-    "id": "bakery:cake_dough",
+    "id": "morrow:cake_dough",
     "count": 12
   }
 }

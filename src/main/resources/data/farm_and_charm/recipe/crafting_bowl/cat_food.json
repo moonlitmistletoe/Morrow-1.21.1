@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
+  "type": "morrow:crafting_bowl",
   "ingredients": [
     {
       "tag": "farm_and_charm:cooked_beef"
@@ -15,7 +15,7 @@
     }
   ],
   "result": {
-    "id": "farm_and_charm:cat_food",
+    "id": "morrow:cat_food",
     "count": 6
   }
 }
