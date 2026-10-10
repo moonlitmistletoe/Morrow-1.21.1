@@ -3,5 +3,5 @@
   "group": "cherry_bag",
   "pattern": ["###", "###", "###"],
   "key": { "#": { "item": "morrow:cherry" } },
-  "result": { "id": "morrow:cherry_bag", "count": 1 }
+  "result": { "id": "farm_and_charm:cherry_bag", "count": 1 }
 }

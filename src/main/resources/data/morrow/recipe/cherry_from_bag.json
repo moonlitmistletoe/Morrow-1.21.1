@@ -1,5 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "ingredients": [{ "item": "morrow:cherry_bag" }],
+  "ingredients": [{ "item": "farm_and_charm:cherry_bag" }],
   "result": { "id": "morrow:cherry", "count": 9 }
 }
