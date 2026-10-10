@@ -1,0 +1,12 @@
+{
+  "type": "farm_and_charm:mincer",
+  "ingredient": {
+    "item": "minecraft:jungle_log"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_jungle_log",
+    "count": 1
+  },
+  "experience": 0.2
+}
