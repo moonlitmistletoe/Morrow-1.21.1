@@ -27,7 +27,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.Bakery;
 import net.satisfy.bakery.core.block.entity.CompletionistBannerEntity;
-import net.satisfy.bakery.core.registry.EntityTypeRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -104,7 +103,7 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? null : createTickerHelper(type, EntityTypeRegistry.BAKERY_BANNER.get(), (level1, pos, state1, entity) -> CompletionistBannerEntity.tick(level1, pos));
+        return null;
     }
 
     @Override
