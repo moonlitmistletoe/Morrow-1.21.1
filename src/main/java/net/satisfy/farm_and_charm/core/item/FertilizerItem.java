@@ -18,6 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
@@ -87,7 +88,7 @@ public class FertilizerItem extends Item {
 
                     serverWorld.sendParticles(ParticleTypes.HAPPY_VILLAGER, targetPos.getX() + 0.5, targetPos.getY() + 1.0, targetPos.getZ() + 0.5, 10, 0.5, 0.5, 0.5, 0.0);
                     serverWorld.sendParticles(
-                            new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ObjectRegistry.FERTILIZER.get())),
+                            new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Items.BONE_MEAL)),
                             targetPos.getX() + 0.5, targetPos.getY() + 1.0, targetPos.getZ() + 0.5,
                             125, 0.5, 0.5, 0.5, 0.0
                     );
@@ -114,7 +115,7 @@ public class FertilizerItem extends Item {
 
                 world.addParticle(ParticleTypes.HAPPY_VILLAGER, x, y, z, 0.0, 0.1, 0.0);
                 world.addParticle(
-                        new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ObjectRegistry.FERTILIZER.get())),
+                        new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Items.BONE_MEAL)),
                         x, y, z, 0.0, 0.1, 0.0
                 );
             }
