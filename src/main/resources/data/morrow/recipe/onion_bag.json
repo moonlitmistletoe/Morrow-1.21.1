@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "morrow:onion"
+    }
+  },
+  "result": {
+    "id": "morrow:onion_bag",
+    "count": 1
+  }
+}
