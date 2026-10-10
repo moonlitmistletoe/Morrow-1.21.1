@@ -14,9 +14,7 @@ public class VillagerTradeRegistryHandler {
 
     private static void registerFarmerTrades() {
         TradeRegistry.registerVillagerTrade(VillagerProfession.FARMER, 1, (entity, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 16), new ItemStack(ObjectRegistry.DUNGAREES.get(), 1), 2, 2, 0.05f));
-        TradeRegistry.registerVillagerTrade(VillagerProfession.FARMER, 1, (entity, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 12), new ItemStack(ObjectRegistry.PITCHFORK.get(), 1), 2, 2, 0.05f));
         TradeRegistry.registerVillagerTrade(VillagerProfession.FARMER, 2, (entity, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 4), new ItemStack(ObjectRegistry.FARMER_SALAD.get(), 1), 6, 5, 0.05f));
         TradeRegistry.registerVillagerTrade(VillagerProfession.FARMER, 4, (entity, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 5), new ItemStack(ObjectRegistry.COMPOST.get(), 1), 5, 15, 0.05f));
-        TradeRegistry.registerVillagerTrade(VillagerProfession.FARMER, 5, (entity, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 2), new ItemStack(ObjectRegistry.FERTILIZER.get(), 1), 24, 30, 0.05f));
     }
 }
