@@ -27,6 +27,7 @@ public class ModItems {
     public static final DeferredItem<Item> AVOCADO;
     public static final DeferredItem<Item> BLACKBERRY;
     public static final DeferredItem<Item> BLUEBERRY;
+    public static final DeferredItem<Item> STRAWBERRY;
     public static final DeferredItem<Item> CHERRY;
     public static final DeferredItem<Item> COFFEE_BEANS;
     public static final DeferredItem<Item> RAW_COW_RIBS;
@@ -91,6 +92,11 @@ public class ModItems {
         BLUEBERRY = ITEMS.register(
                 "blueberry",
                 () -> new Item(new Item.Properties().food(ModFoodProperties.BLUEBERRY))
+        );
+
+        STRAWBERRY = ITEMS.register(
+                "strawberry",
+                () -> new Item(new Item.Properties().food(net.minecraft.world.food.Foods.SWEET_BERRIES))
         );
 
         CHERRY = ITEMS.register(
