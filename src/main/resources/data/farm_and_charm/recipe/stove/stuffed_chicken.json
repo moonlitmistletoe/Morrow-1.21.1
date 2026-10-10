@@ -1,8 +1,8 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     },
     {
       "item": "minecraft:chicken"
@@ -12,7 +12,7 @@
     }
   ],
   "result": {
-    "id": "farm_and_charm:stuffed_chicken",
+    "id": "morrow:stuffed_chicken",
     "count": 1
   },
   "experience": 0.6,

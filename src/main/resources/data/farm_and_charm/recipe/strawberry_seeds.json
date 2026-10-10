@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "farm_and_charm:strawberry"
+      "item": "morrow:strawberry"
     }
   ],
   "result": {
-    "id": "farm_and_charm:strawberry_seeds",
+    "id": "morrow:strawberry_seed",
     "count": 1
   }
 }

@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "item": "minecraft:potato"
@@ -12,7 +12,7 @@
     }
   ],
   "result": {
-    "id": "farm_and_charm:potato_with_roast_meat",
+    "id": "morrow:potato_with_roast_meat",
     "count": 2
   },
   "experience": 0.5,
