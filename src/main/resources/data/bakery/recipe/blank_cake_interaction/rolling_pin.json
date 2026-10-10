@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "DOUGH",
   "ingredient": {
-    "item": "bakery:rolling_pin"
+    "item": "morrow:rolling_pin"
   },
   "result": {
     "set_stage": "FLAT",

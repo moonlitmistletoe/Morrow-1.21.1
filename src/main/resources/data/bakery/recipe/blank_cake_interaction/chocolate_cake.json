@@ -1,11 +1,11 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "item": "bakery:chocolate_truffle"
+    "item": "morrow:chocolate_truffle"
   },
   "result": {
-    "set_block": "bakery:chocolate_cake",
+    "set_block": "morrow:chocolate_cake",
     "consume_one": true,
     "sound": "minecraft:slime_block_place",
     "particles": true
