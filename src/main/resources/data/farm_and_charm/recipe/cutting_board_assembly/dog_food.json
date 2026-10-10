@@ -1,0 +1,21 @@
+{
+  "type": "morrow:cutting_board_assembly",
+  "ingredients": [
+    {
+      "tag": "morrow:cooked_beef"
+    },
+    {
+      "tag": "morrow:raw_beef"
+    },
+    {
+      "tag": "morrow:bones"
+    }
+  ],
+  "finisher": {
+    "item": "minecraft:paper"
+  },
+  "result": {
+    "id": "morrow:dog_food",
+    "count": 4
+  }
+}
