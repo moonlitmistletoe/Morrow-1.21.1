@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "morrow:barley"
+    },
+    "#": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "#B#"
+  ],
+  "result": {
+    "count": 6,
+    "id": "morrow:rope"
+  }
+}
