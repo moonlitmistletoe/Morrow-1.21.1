@@ -1,0 +1,11 @@
+{
+  "type": "morrow:drying",
+  "ingredient": {
+    "item": "minecraft:podzol"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:fertilized_soil",
+    "count": 1
+  }
+}

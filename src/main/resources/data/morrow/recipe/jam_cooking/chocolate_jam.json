@@ -1,0 +1,21 @@
+{
+  "type": "morrow:jam_cooking",
+  "ingredients": [
+    {
+      "tag": "morrow:milk"
+    },
+    {
+      "tag": "morrow:chocolate"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "morrow:chocolate_jam",
+    "count": 3
+  },
+  "color": "#5A3220",
+  "cooking_time": 600,
+  "experience": 1.0
+}

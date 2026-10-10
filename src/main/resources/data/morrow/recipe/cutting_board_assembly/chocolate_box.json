@@ -1,0 +1,24 @@
+{
+  "type": "morrow:cutting_board_assembly",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "morrow:chocolate_truffle"
+    },
+    {
+      "item": "morrow:chocolate_truffle"
+    },
+    {
+      "item": "morrow:chocolate_truffle"
+    },
+    {
+      "item": "morrow:chocolate_truffle"
+    }
+  ],
+  "result": {
+    "id": "morrow:chocolate_box",
+    "count": 1
+  }
+}

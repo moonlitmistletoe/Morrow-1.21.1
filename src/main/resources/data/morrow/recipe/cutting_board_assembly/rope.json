@@ -1,0 +1,19 @@
+{
+  "type": "morrow:cutting_board_assembly",
+  "ordered": true,
+  "ingredients": [
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "morrow:barley"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "result": {
+    "id": "morrow:rope",
+    "count": 6
+  }
+}

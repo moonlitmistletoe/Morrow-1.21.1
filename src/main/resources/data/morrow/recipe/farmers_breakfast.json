@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "morrow:bread"
+    },
+    {
+      "item": "morrow:bacon_with_eggs"
+    },
+    {
+      "item": "morrow:roasted_corn"
+    }
+  ],
+  "result": {
+    "id": "morrow:farmers_breakfast",
+    "count": 1
+  }
+}
