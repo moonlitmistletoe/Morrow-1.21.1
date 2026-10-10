@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "morrow:lettuce"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:lettuce_seeds",
+    "count": 4
+  },
+  "experience": 0.2
+}
