@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class RabbitMixin {
     @Inject(method = "isFood", at = @At("HEAD"), cancellable = true)
     private void addCustomFoodItems(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (stack.is(ObjectRegistry.STRAWBERRY.get()) ||
-                stack.is(ObjectRegistry.LETTUCE.get())) {
+        if (stack.is(ObjectRegistry.STRAWBERRY.get())) {
             cir.setReturnValue(true);
         }
     }
