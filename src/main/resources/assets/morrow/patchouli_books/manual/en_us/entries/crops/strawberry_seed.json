@@ -1,11 +1,11 @@
 {
   "name": "Strawberry Seeds",
-  "icon": "morrow:strawberry_seeds",
+  "icon": "morrow:strawberry_seed",
   "category": "morrow:crops",
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "morrow:strawberry_seeds",
+      "item": "morrow:strawberry_seed",
       "link_recipe": false,
       "text": "Plant these on farmland to grow strawberries. Mature plants give strawberries and can provide more seeds for the next crop."
     }
