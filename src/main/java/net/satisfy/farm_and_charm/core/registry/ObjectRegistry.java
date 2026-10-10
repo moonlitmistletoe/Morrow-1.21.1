@@ -36,18 +36,8 @@ public class ObjectRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(FarmAndCharm.MOD_ID, Registries.BLOCK);
     public static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
 
-    public static final RegistrySupplier<Item> FERTILIZER = registerItem("fertilizer", () -> new BoneMealItem(getSettings()));
-    public static final RegistrySupplier<Item> PITCHFORK = registerItem("pitchfork", () -> new HoeItem(Tiers.IRON, new Item.Properties().attributes(DiggerItem.createAttributes(Tiers.IRON, -1.5F, -3.4F))));
     public static final RegistrySupplier<Item> SUPPLY_CART = registerItem("supply_cart", () -> new SupplyCartItem(getSettings()));
     public static final RegistrySupplier<Item> PLOW = registerItem("plow", () -> new PlowCartItem(getSettings()));
-    public static final RegistrySupplier<Item> YEAST = registerItem("yeast", () -> new Item(getSettings()));
-    public static final RegistrySupplier<Item> BUTTER = registerItem("butter", () -> new Item(getSettings().food(Foods.CHICKEN)));
-    public static final RegistrySupplier<Item> DOUGH = registerItem("dough", () -> new Item(getSettings().food(Foods.SWEET_BERRIES)));
-    public static final RegistrySupplier<Item> RAW_PASTA = registerItem("raw_pasta", () -> new Item(getSettings().food(Foods.SWEET_BERRIES)));
-    public static final RegistrySupplier<Item> FLOUR = registerItem("flour", () -> new Item(getSettings()));
-    public static final RegistrySupplier<Item> MINCED_BEEF = registerItem("minced_beef", () -> new Item(getSettings().food(Foods.BEEF)));
-    public static final RegistrySupplier<Item> LAMB_HAM = registerItem("lamb_ham", () -> new Item(getSettings().food(Foods.MUTTON)));
-    public static final RegistrySupplier<Item> BACON = registerItem("bacon", () -> new Item(getSettings().food(Foods.PORKCHOP)));
     public static final RegistrySupplier<Item> CHICKEN_PARTS = registerItem("chicken_parts", () -> new Item(getSettings().food(Foods.CHICKEN)));
     public static final RegistrySupplier<Item> STRAWBERRY = registerItem("strawberry", () -> new Item(getSettings().food(Foods.BEETROOT)));
     public static final RegistrySupplier<Item> TOMATO = registerItem("tomato", () -> new Item(getSettings().food(Foods.APPLE)));
