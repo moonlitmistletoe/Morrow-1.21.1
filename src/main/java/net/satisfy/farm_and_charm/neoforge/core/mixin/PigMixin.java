@@ -24,18 +24,14 @@ public abstract class PigMixin extends Animal {
     private void farmAndCharm$addCustomFoodTempts(CallbackInfo ci) {
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, (itemStack) -> {
             return itemStack.is(ObjectRegistry.TOMATO.get()) ||
-                    itemStack.is(ObjectRegistry.STRAWBERRY.get()) ||
-                    itemStack.is(ObjectRegistry.LETTUCE.get()) ||
-                    itemStack.is(ObjectRegistry.CORN.get());
+                    itemStack.is(ObjectRegistry.STRAWBERRY.get());
         }, false));
     }
 
     @Inject(method = "isFood", at = @At("HEAD"), cancellable = true)
     private void addCustomFoodItems(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack.is(ObjectRegistry.TOMATO.get()) ||
-                stack.is(ObjectRegistry.STRAWBERRY.get()) ||
-                stack.is(ObjectRegistry.LETTUCE.get()) ||
-                stack.is(ObjectRegistry.CORN.get())) {
+                stack.is(ObjectRegistry.STRAWBERRY.get())) {
             cir.setReturnValue(true);
         }
     }
