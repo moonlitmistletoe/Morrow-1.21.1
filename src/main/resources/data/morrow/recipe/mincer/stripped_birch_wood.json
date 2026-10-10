@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:birch_wood"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_birch_wood",
+    "count": 1
+  },
+  "experience": 0.2
+}
