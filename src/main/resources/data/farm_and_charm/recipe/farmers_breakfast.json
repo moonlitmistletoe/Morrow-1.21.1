@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "farm_and_charm:bread"
+      "tag": "morrow:bread"
     },
     {
-      "item": "farm_and_charm:bacon_with_eggs"
+      "item": "morrow:bacon_with_eggs"
     },
     {
-      "item": "farm_and_charm:roasted_corn"
+      "item": "morrow:roasted_corn"
     }
   ],
   "result": {
-    "id": "farm_and_charm:farmers_breakfast",
+    "id": "morrow:farmers_breakfast",
     "count": 1
   }
 }

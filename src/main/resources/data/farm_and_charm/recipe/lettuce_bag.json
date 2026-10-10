@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "item": "farm_and_charm:lettuce"
+      "item": "morrow:lettuce"
     }
   },
   "result": {
-    "id": "farm_and_charm:lettuce_bag",
+    "id": "morrow:lettuce_bag",
     "count": 1
   }
 }
