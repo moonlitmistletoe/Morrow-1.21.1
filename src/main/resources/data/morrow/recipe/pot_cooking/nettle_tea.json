@@ -20,5 +20,6 @@
     "id": "morrow:nettle_tea",
     "count": 1
   },
-  "requiresLearning": false
+  "requiresLearning": false,
+  "experience": 0.35
 }
