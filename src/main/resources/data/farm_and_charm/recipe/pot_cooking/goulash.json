@@ -1,14 +1,14 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     },
     {
-      "tag": "farm_and_charm:cooked_beef"
+      "tag": "morrow:cooked_beef"
     },
     {
-      "item": "farm_and_charm:simple_tomato_soup"
+      "item": "morrow:simple_tomato_soup"
     },
     {
       "item": "minecraft:carrot"
@@ -23,7 +23,7 @@
     "count": 1
   },
   "result": {
-    "id": "farm_and_charm:goulash",
+    "id": "morrow:goulash",
     "count": 1
   },
   "requiresLearning": false,

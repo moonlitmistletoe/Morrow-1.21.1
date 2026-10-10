@@ -1,11 +1,11 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
       "item": "minecraft:potato"
     },
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     }
   ],
   "requireContainer": true,
@@ -14,7 +14,7 @@
     "count": 1
   },
   "result": {
-    "id": "farm_and_charm:potato_soup",
+    "id": "morrow:potato_soup",
     "count": 1
   },
   "requiresLearning": false,

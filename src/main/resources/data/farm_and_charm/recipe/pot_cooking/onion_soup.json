@@ -1,14 +1,14 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
-      "tag": "farm_and_charm:bread"
+      "tag": "morrow:bread"
     },
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     },
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     }
   ],
   "requireContainer": true,
@@ -17,7 +17,7 @@
     "count": 1
   },
   "result": {
-    "id": "farm_and_charm:onion_soup",
+    "id": "morrow:onion_soup",
     "count": 1
   },
   "requiresLearning": false,

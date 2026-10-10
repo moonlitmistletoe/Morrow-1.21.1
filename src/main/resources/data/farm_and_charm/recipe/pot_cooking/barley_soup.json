@@ -1,14 +1,14 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
-      "tag": "farm_and_charm:barley"
+      "tag": "morrow:barley"
     },
     {
-      "tag": "farm_and_charm:barley"
+      "tag": "morrow:barley"
     },
     {
-      "tag": "farm_and_charm:water_bottles"
+      "tag": "morrow:water_bottles"
     },
     {
       "item": "minecraft:egg"
@@ -20,7 +20,7 @@
     "count": 1
   },
   "result": {
-    "id": "farm_and_charm:barley_soup",
+    "id": "morrow:barley_soup",
     "count": 1
   },
   "requiresLearning": false,
