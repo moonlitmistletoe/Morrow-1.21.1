@@ -11,7 +11,6 @@ import net.satisfy.farm_and_charm.FarmAndCharm;
 import net.satisfy.farm_and_charm.core.block.entity.*;
 import net.satisfy.farm_and_charm.core.entity.ChairEntity;
 import net.satisfy.farm_and_charm.core.entity.PlowCartEntity;
-import net.satisfy.farm_and_charm.core.entity.RottenTomatoEntity;
 import net.satisfy.farm_and_charm.core.entity.SupplyCartEntity;
 
 import java.util.HashSet;
