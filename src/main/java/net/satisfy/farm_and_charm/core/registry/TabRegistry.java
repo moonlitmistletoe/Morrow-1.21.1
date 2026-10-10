@@ -35,6 +35,7 @@ public class TabRegistry {
                 output.accept(ObjectRegistry.CRAFTING_BOWL.get());
                 output.accept(ObjectRegistry.COOKING_POT.get());
                 output.accept(ObjectRegistry.POTATO_SOUP.get());
+                output.accept(ObjectRegistry.STRAWBERRY.get());
                 output.accept(ObjectRegistry.STRAWBERRY_TEA.get());
                 output.accept(ObjectRegistry.NETTLE_TEA.get());
                 output.accept(ObjectRegistry.STRAWBERRY_TEA_CUP.get());
