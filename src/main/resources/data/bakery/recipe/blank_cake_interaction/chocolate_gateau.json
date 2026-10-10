@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "item": "bakery:chocolate_jam"
+    "item": "morrow:chocolate_jam"
   },
   "result": {
     "set_block": "bakery:chocolate_gateau",

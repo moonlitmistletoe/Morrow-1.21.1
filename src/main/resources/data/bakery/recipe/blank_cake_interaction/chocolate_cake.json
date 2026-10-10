@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "item": "bakery:chocolate_truffle"
+    "item": "morrow:chocolate_truffle"
   },
   "result": {
     "set_block": "bakery:chocolate_cake",

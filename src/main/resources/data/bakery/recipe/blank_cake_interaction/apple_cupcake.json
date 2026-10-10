@@ -1,8 +1,8 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CUPCAKE",
   "ingredient": {
-    "item": "bakery:apple_jam"
+    "item": "morrow:apple_jam"
   },
   "result": {
     "set_block": "bakery:apple_cupcake_block",
