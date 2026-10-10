@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "tag": "morrow:eggs"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "morrow:sweet_dough"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "morrow:bundt_cake"
+  },
+  "experience": 0.4,
+  "requiresLearning": false
+}
