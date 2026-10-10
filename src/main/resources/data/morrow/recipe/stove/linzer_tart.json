@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "morrow:sweet_dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "morrow:linzer_tart"
+  },
+  "experience": 0.2,
+  "requiresLearning": false
+}
