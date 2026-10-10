@@ -19,7 +19,6 @@ public class TabRegistry {
                     ObjectRegistry.KITCHEN_SINK,
                     ObjectRegistry.BAKER_STATION,
                     ObjectRegistry.BRICK_COUNTER,
-                    ObjectRegistry.CABINET,
                     ObjectRegistry.WALL_DISPLAY,
                     ObjectRegistry.CAKE_DISPLAY,
                     ObjectRegistry.CUPCAKE_DISPLAY,
