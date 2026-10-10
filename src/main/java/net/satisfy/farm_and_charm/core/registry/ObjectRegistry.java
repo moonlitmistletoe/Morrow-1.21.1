@@ -44,7 +44,8 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Item> HORSE_FODDER = registerItem("horse_fodder", () -> new HorseFodderItem(getSettings()));
     public static final RegistrySupplier<Item> DOG_FOOD = registerItem("dog_food", () -> new DogFoodItem(getSettings()));
     public static final RegistrySupplier<Item> CHICKEN_FEED = registerItem("chicken_feed", () -> new ChickenFeedItem(getSettings()));
-    public static final RegistrySupplier<Block> WILD_EMMER = registerWithItem("wild_emmer", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS)));\n    public static final RegistrySupplier<Block> WILD_NETTLE = registerWithItem("wild_nettle", () -> new BonemealableFlowerBlock(MobEffects.REGENERATION, 1, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
+    public static final RegistrySupplier<Block> WILD_EMMER = registerWithItem("wild_emmer", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+    public static final RegistrySupplier<Block> WILD_NETTLE = registerWithItem("wild_nettle", () -> new BonemealableFlowerBlock(MobEffects.REGENERATION, 1, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final RegistrySupplier<Block> WILD_CARROTS = registerWithItem("wild_carrots", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final RegistrySupplier<Block> WILD_BEETROOTS = registerWithItem("wild_beetroots", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final RegistrySupplier<Block> WILD_POTATOES = registerWithItem("wild_potatoes", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
