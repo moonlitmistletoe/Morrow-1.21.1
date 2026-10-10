@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
       "item": "morrow:strawberry"
@@ -13,12 +13,12 @@
   ],
   "requireContainer": false,
   "result": {
-    "id": "bakery:strawberry_jam",
+    "id": "morrow:strawberry_jam",
     "count": 3
   },
   "requiresLearning": false,
   "container": {
-    "id": "bakery:jar",
+    "id": "morrow:jar",
     "count": 1
   }
 }

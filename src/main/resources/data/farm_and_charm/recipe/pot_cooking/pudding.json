@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
       "tag": "bakery:eggs"
@@ -12,11 +12,11 @@
     }
   ],
   "container": {
-    "id": "bakery:jar",
+    "id": "morrow:jar",
     "count": 1
   },
   "result": {
-    "id": "bakery:pudding",
+    "id": "morrow:pudding",
     "count": 1
   },
   "requiresLearning": false,

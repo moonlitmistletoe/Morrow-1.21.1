@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
       "item": "minecraft:sugar"
@@ -12,11 +12,11 @@
     }
   ],
   "container": {
-    "id": "bakery:jar",
+    "id": "morrow:jar",
     "count": 1
   },
   "result": {
-    "id": "bakery:chocolate_truffle",
+    "id": "morrow:chocolate_truffle",
     "count": 4
   },
   "requiresLearning": false,

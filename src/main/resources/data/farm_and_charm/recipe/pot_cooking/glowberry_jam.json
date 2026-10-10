@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:pot_cooking",
+  "type": "morrow:pot_cooking",
   "ingredients": [
     {
       "item": "minecraft:glow_berries"
@@ -13,12 +13,12 @@
   ],
   "requireContainer": false,
   "result": {
-    "id": "bakery:glowberry_jam",
+    "id": "morrow:glowberry_jam",
     "count": 3
   },
   "requiresLearning": false,
   "container": {
-    "id": "bakery:jar",
+    "id": "morrow:jar",
     "count": 1
   }
 }
