@@ -21,6 +21,7 @@ public class ModItems {
     public static final DeferredItem<Item> MOD_LOGO;
     public static final DeferredItem<Item> MANUAL;
     public static final DeferredItem<Item> BLACKBERRY_SEED;
+    public static final DeferredItem<Item> STRAWBERRY_SEED;
     public static final DeferredItem<Item> BLUEBERRY_SEED;
     public static final DeferredItem<Item> COFFEE_SEED;
     public static final DeferredItem<Item> EGG_YOLK;
@@ -69,6 +70,11 @@ public class ModItems {
                 () -> new ItemNameBlockItem((Block) ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties())
         );
 
+        STRAWBERRY_SEED = ITEMS.register(
+                "strawberry_seed",
+                () -> new ItemNameBlockItem((Block) ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties())
+        );
+
         COFFEE_SEED = ITEMS.register(
                 "coffee_seed",
                 () -> new ItemNameBlockItem((Block) ModBlocks.COFFEE_CROP.get(), new Item.Properties())
@@ -96,7 +102,7 @@ public class ModItems {
 
         STRAWBERRY = ITEMS.register(
                 "strawberry",
-                () -> new Item(new Item.Properties().food(net.minecraft.world.food.Foods.SWEET_BERRIES))
+                () -> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY))
         );
 
         CHERRY = ITEMS.register(

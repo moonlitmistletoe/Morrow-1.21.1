@@ -29,6 +29,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.BLACKBERRY_SEED);
                         output.accept(ModItems.BLUEBERRY_SEED);
+                        output.accept(ModItems.STRAWBERRY_SEED);
                         output.accept(ModItems.COFFEE_SEED);
 
                         // =========================

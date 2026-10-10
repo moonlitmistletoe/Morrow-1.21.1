@@ -10,6 +10,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<BlackberryCropBlock> BLACKBERRY_CROP;
     public static final DeferredBlock<BlueberryCropBlock> BLUEBERRY_CROP;
+    public static final DeferredBlock<StrawberryCropBlock> STRAWBERRY_CROP;
     public static final DeferredBlock<CoffeeCropBlock> COFFEE_CROP;
 
     public static void register(IEventBus eventBus) {
@@ -22,6 +23,9 @@ public class ModBlocks {
 
         BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
                 () -> new BlueberryCropBlock(Blocks.WHEAT.properties()));
+
+        STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+                () -> new StrawberryCropBlock(Blocks.WHEAT.properties()));
 
         COFFEE_CROP = BLOCKS.register("coffee_crop",
                 () -> new CoffeeCropBlock(Blocks.WHEAT.properties()));
