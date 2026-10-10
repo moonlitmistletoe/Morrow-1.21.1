@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:barley_ball"
+    }
+  ],
+  "result": {
+    "id": "morrow:barley",
+    "count": 9
+  }
+}

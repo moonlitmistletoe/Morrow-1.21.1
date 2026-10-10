@@ -1,0 +1,16 @@
+{
+  "type": "morrow:cutting_board_assembly",
+  "ordered": true,
+  "ingredients": [
+    {
+      "tag": "morrow:bread"
+    },
+    {
+      "tag": "morrow:jam"
+    }
+  ],
+  "result": {
+    "id": "morrow:bread_with_jam",
+    "count": 5
+  }
+}
