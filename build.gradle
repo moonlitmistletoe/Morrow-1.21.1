@@ -139,6 +139,10 @@ configurations {
 }
 
 dependencies {
+    // JEI recipe categories copied from the original Bakery and Farm & Charm integrations.
+    compileOnly "mezz.jei:jei-1.21.1-common-api:19.22.0.315"
+    compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.22.0.315"
+
     jarJar(
             implementation(
                     "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
