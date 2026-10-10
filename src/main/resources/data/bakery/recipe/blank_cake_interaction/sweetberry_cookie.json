@@ -1,12 +1,12 @@
 {
-  "type": "bakery:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "COOKIE",
   "ingredient": {
-    "item": "bakery:sweetberry_jam"
+    "item": "morrow:sweetberry_jam"
   },
   "result": {
-    "set_block": "bakery:sweetberry_cookie_block",
-    "give_item": "bakery:jar",
+    "set_block": "morrow:sweetberry_cookie_block",
+    "give_item": "morrow:jar",
     "consume_one": true,
     "sound": "minecraft:slime_block_place",
     "particles": true
