@@ -1,0 +1,21 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "requireContainer": false,
+  "result": {
+    "id": "morrow:strawberry_jam",
+    "count": 3
+  },
+  "requiresLearning": false,
+  "experience": 1
+}
