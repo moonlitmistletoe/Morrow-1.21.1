@@ -67,7 +67,6 @@ public class ModCreativeModeTabs {
                         // Prepared food
                         // =========================
 
-                        output.accept(ModItems.AVOCADO_TOAST);
                         output.accept(ModItems.BLACKBERRY_JAM);
                         output.accept(ModItems.BLUEBERRY_JAM);
                         output.accept(ModItems.CHERRY_JAM);

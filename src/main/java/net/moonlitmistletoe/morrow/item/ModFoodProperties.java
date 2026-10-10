@@ -94,10 +94,6 @@ public class ModFoodProperties {
 
     // Prepared foods
 
-    public static final FoodProperties AVOCADO_TOAST = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(0.7F)
-            .build();
 
     public static final FoodProperties BLACKBERRY_JAM = new FoodProperties.Builder()
             .nutrition(4)

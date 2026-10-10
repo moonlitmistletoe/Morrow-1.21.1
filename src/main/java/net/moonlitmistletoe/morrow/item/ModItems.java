@@ -36,7 +36,6 @@ public class ModItems {
     public static final DeferredItem<Item> CHERRY_JUICE;
     public static final DeferredItem<Item> COFFEE;
     public static final DeferredItem<Item> STRAWBERRY_SMOOTHIE;
-    public static final DeferredItem<Item> AVOCADO_TOAST;
     public static final DeferredItem<Item> BLACKBERRY_JAM;
     public static final DeferredItem<Item> BLUEBERRY_JAM;
     public static final DeferredItem<Item> CHERRY_JAM;
@@ -140,10 +139,6 @@ public class ModItems {
                 () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.STRAWBERRY_SMOOTHIE))
         );
 
-        AVOCADO_TOAST = ITEMS.register(
-                "avocado_toast",
-                () -> new Item(new Item.Properties().food(ModFoodProperties.AVOCADO_TOAST))
-        );
 
         BLACKBERRY_JAM = ITEMS.register(
                 "blackberry_jam",
