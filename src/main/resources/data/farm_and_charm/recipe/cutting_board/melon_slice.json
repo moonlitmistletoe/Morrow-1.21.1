@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:cutting_board",
+  "type": "morrow:cutting_board",
   "ingredient": {
     "item": "minecraft:melon"
   },
