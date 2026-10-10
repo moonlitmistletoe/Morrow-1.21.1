@@ -1,0 +1,21 @@
+{
+  "type": "morrow:crafting_bowl",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "morrow:eggs"
+    },
+    {
+      "tag": "morrow:milk"
+    }
+  ],
+  "result": {
+    "id": "morrow:cake_dough",
+    "count": 12
+  }
+}
