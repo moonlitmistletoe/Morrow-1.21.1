@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "item": "morrow:sweet_dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "morrow:eggs"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "morrow:waffle"
+  },
+  "experience": 0.2,
+  "requiresLearning": false
+}
