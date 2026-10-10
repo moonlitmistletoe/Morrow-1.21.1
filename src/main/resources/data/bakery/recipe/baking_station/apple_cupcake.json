@@ -1,14 +1,14 @@
 {
-  "type": "bakery:baking_station",
+  "type": "morrow:baking_station",
   "ingredients": [
     {
-      "item": "bakery:cake_dough"
+      "item": "morrow:cake_dough"
     },
     {
-      "item": "bakery:apple_jam"
+      "item": "morrow:apple_jam"
     }
   ],
   "result": {
-    "id": "bakery:apple_cupcake"
+    "id": "morrow:apple_cupcake"
   }
 }
