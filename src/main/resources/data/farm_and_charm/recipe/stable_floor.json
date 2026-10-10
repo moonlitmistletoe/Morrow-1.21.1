@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "farm_and_charm:packed_dirt"
+      "item": "morrow:packed_dirt"
     }
   },
   "result": {
-    "id": "farm_and_charm:stable_floor",
+    "id": "morrow:stable_floor",
     "count": 4
   }
 }

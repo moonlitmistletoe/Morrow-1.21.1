@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "farm_and_charm:corn"
+      "item": "morrow:corn"
     }
   ],
   "result": {
-    "id": "farm_and_charm:kernels",
+    "id": "morrow:kernels",
     "count": 3
   }
 }
