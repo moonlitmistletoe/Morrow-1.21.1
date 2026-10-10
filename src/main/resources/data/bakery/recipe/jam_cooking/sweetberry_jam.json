@@ -1,5 +1,5 @@
 {
-  "type": "bakery:jam_cooking",
+  "type": "morrow:jam_cooking",
   "ingredients": [
     {
       "item": "minecraft:sweet_berries"
@@ -12,7 +12,7 @@
     }
   ],
   "result": {
-    "id": "bakery:sweetberry_jam",
+    "id": "morrow:sweetberry_jam",
     "count": 3
   },
   "color": "#8E1B3A",

@@ -1,18 +1,18 @@
 {
-  "type": "bakery:jam_cooking",
+  "type": "morrow:jam_cooking",
   "ingredients": [
     {
-      "item": "farm_and_charm:strawberry"
+      "item": "morrow:strawberry"
     },
     {
-      "item": "farm_and_charm:strawberry"
+      "item": "morrow:strawberry"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "bakery:strawberry_jam",
+    "id": "morrow:strawberry_jam",
     "count": 3
   },
   "color": "#C8323C",

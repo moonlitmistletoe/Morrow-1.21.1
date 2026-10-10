@@ -1,18 +1,18 @@
 {
-  "type": "bakery:jam_cooking",
+  "type": "morrow:jam_cooking",
   "ingredients": [
     {
-      "tag": "bakery:milk"
+      "tag": "morrow:milk"
     },
     {
-      "tag": "bakery:chocolate"
+      "tag": "morrow:chocolate"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "bakery:chocolate_jam",
+    "id": "morrow:chocolate_jam",
     "count": 3
   },
   "color": "#5A3220",

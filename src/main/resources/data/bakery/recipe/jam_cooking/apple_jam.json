@@ -1,5 +1,5 @@
 {
-  "type": "bakery:jam_cooking",
+  "type": "morrow:jam_cooking",
   "ingredients": [
     {
       "item": "minecraft:apple"
@@ -12,7 +12,7 @@
     }
   ],
   "result": {
-    "id": "bakery:apple_jam",
+    "id": "morrow:apple_jam",
     "count": 3
   },
   "color": "#D9A441",
