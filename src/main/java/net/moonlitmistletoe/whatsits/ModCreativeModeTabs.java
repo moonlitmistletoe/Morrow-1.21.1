@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AVOCADO);
                         output.accept(ModItems.BLACKBERRY);
                         output.accept(ModItems.BLUEBERRY);
+                        output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.CHERRY);
                         output.accept(ModItems.COFFEE_BEANS);
                         output.accept(ModItems.RAW_COW_RIBS);
