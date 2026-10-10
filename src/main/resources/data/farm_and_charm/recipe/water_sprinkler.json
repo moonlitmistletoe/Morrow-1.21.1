@@ -10,14 +10,14 @@
       "tag": "minecraft:planks"
     },
     "B": {
-      "tag": "farm_and_charm:water_bottles"
+      "tag": "morrow:water_bottles"
     },
     "I": {
       "item": "minecraft:iron_ingot"
     }
   },
   "result": {
-    "id": "farm_and_charm:water_sprinkler",
+    "id": "morrow:water_sprinkler",
     "count": 1
   }
 }
