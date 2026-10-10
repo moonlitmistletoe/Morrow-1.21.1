@@ -1,11 +1,11 @@
 {
-  "type": "farm_and_charm:mincer",
+  "type": "morrow:mincer",
   "ingredient": {
-    "item": "farm_and_charm:tomato"
+    "item": "morrow:tomato"
   },
   "recipe_type": "MEAT",
   "result": {
-    "id": "farm_and_charm:tomato_seeds",
+    "id": "morrow:tomato_seeds",
     "count": 4
   },
   "experience": 0.2

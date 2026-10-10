@@ -2,11 +2,11 @@
   "type": "crafting_shapeless",
   "ingredients": [
     {
-      "item": "farm_and_charm:oat_ball"
+      "item": "morrow:oat_ball"
     }
   ],
   "result": {
-    "id": "farm_and_charm:oat",
+    "id": "morrow:oat",
     "count": 9
   }
 }
