@@ -1,10 +1,10 @@
 {
-  "type": "farm_and_charm:cutting_board",
+  "type": "morrow:cutting_board",
   "ingredient": {
     "item": "minecraft:chicken"
   },
   "result": {
-    "id": "farm_and_charm:chicken_parts",
+    "id": "morrow:chicken_parts",
     "count": 3
   },
   "byproducts": [

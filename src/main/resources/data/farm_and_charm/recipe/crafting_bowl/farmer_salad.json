@@ -1,21 +1,21 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
+  "type": "morrow:crafting_bowl",
   "ingredients": [
     {
-      "tag": "farm_and_charm:tomato"
+      "tag": "morrow:tomato"
     },
     {
-      "tag": "farm_and_charm:onion"
+      "tag": "morrow:onion"
     },
     {
-      "tag": "farm_and_charm:cabbage"
+      "tag": "morrow:cabbage"
     },
     {
-      "tag": "farm_and_charm:strawberry"
+      "tag": "morrow:strawberry"
     }
   ],
   "result": {
-    "id": "farm_and_charm:farmer_salad",
+    "id": "morrow:farmer_salad",
     "count": 2
   },
   "experience": 0.2
