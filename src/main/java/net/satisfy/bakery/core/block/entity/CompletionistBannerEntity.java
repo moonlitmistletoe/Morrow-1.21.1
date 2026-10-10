@@ -8,7 +8,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.satisfy.bakery.core.registry.EntityTypeRegistry;
 import net.satisfy.bakery.platform.PlatformHelper;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
 public class CompletionistBannerEntity extends BlockEntity {
 
     public CompletionistBannerEntity(BlockPos blockPos, BlockState state) {
-        super(EntityTypeRegistry.BAKERY_BANNER.get(), blockPos, state);
+        super(null, blockPos, state);
     }
 
     public static void tick(Level level, BlockPos pos) {
