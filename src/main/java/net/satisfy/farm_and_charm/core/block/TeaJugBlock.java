@@ -91,8 +91,6 @@ public class TeaJugBlock extends FacingBlock {
     private Item getTeaItem(BlockState state) {
         if (this.equals(ObjectRegistry.STRAWBERRY_TEA.get())) {
             return ObjectRegistry.STRAWBERRY_TEA_CUP.get();
-        } else if (this.equals(ObjectRegistry.NETTLE_TEA.get())) {
-            return ObjectRegistry.NETTLE_TEA_CUP.get();
         }
         return Items.AIR;
     }
