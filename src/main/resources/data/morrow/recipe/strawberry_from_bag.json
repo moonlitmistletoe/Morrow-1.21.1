@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:strawberry_bag"
+    }
+  ],
+  "result": {
+    "id": "morrow:strawberry",
+    "count": 9
+  }
+}
