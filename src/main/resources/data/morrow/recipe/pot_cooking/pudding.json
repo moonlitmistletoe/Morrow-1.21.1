@@ -1,0 +1,23 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "morrow:eggs"
+    },
+    {
+      "tag": "morrow:jam"
+    },
+    {
+      "tag": "morrow:milk"
+    }
+  ],
+  "container": {
+    "id": "morrow:jar"
+  },
+  "result": {
+    "id": "morrow:pudding",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "requireContainer": false
+}
