@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:gold_ingot"
+  },
+  "recipe_type": "METAL",
+  "result": {
+    "id": "minecraft:gold_nugget",
+    "count": 9
+  },
+  "experience": 0.2
+}
