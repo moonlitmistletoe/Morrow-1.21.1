@@ -15,11 +15,6 @@ public class StrawberryCropBlock extends CropBlock {
     }
 
     @Override
-    public int getMaxAge() {
-        return 3;
-    }
-
-    @Override
     protected Item getBaseSeedId() {
         return ModItems.STRAWBERRY_SEED.get();
     }
