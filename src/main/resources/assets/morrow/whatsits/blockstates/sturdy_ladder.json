@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "morrow:block/sturdy_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "morrow:block/sturdy_ladder"
+    },
+    "facing=south": {
+      "model": "morrow:block/sturdy_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "morrow:block/sturdy_ladder",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Coffee Beans",
+  "icon": "morrow:coffee_beans",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:coffee_beans",
+      "link_recipe": false,
+      "text": "Coffee beans are harvested from mature coffee crops. They are an ingredient rather than a food item, so eating them will not do anything."
+    }
+  ]
+}

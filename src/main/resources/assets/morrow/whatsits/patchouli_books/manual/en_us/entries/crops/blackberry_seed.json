@@ -1,0 +1,13 @@
+{
+  "name": "Blackberry Seeds",
+  "icon": "morrow:blackberry_seed",
+  "category": "morrow:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:blackberry_seed",
+      "link_recipe": false,
+      "text": "Plant these on farmland to grow blackberries. They are obtained from harvesting the blackberry crop, so once you have a patch going you can keep it going yourself."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Blueberry Jam",
+  "icon": "morrow:blueberry_jam",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:blueberry_jam",
+      "link_recipe": true,
+      "text": "Blueberry jam made from blueberries. It gives the berries another job besides being eaten on their own."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:blueberry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

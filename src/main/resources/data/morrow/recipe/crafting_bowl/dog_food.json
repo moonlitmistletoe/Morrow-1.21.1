@@ -1,0 +1,18 @@
+{
+  "type": "morrow:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "morrow:cooked_beef"
+    },
+    {
+      "tag": "morrow:raw_beef"
+    },
+    {
+      "tag": "morrow:bones"
+    }
+  ],
+  "result": {
+    "id": "morrow:dog_food",
+    "count": 4
+  }
+}

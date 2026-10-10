@@ -1,0 +1,21 @@
+{
+  "type": "morrow:crafting_bowl",
+  "ingredients": [
+    {
+      "tag": "morrow:cooked_beef"
+    },
+    {
+      "tag": "morrow:raw_fishes"
+    },
+    {
+      "tag": "morrow:raw_chicken"
+    },
+    {
+      "tag": "morrow:raw_pork"
+    }
+  ],
+  "result": {
+    "id": "morrow:cat_food",
+    "count": 6
+  }
+}

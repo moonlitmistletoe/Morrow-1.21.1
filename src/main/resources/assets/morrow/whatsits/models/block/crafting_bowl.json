@@ -1,0 +1,9 @@
+{
+  "parent": "morrow:block/crafting_bowl_main",
+  "textures": {
+    "all": "morrow:block/crafting_bowl",
+    "particle": "morrow:block/crafting_bowl",
+    "0": "morrow:block/crafting_bowl"
+  },
+  "render_type": "translucent"
+}

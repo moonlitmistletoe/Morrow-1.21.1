@@ -1,0 +1,13 @@
+{
+  "name": "Raw Cow Ribs",
+  "icon": "morrow:raw_cow_ribs",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:raw_cow_ribs",
+      "link_recipe": false,
+      "text": "Cows have a 25% chance to drop raw cow ribs when killed with a cleaver. They are not particularly appetising raw, but they can be cooked into the edible version."
+    }
+  ]
+}

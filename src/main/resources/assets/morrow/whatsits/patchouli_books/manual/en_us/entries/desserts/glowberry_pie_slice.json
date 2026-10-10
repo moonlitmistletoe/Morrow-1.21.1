@@ -1,0 +1,18 @@
+{
+  "name": "Slice of Glowberry Tart",
+  "icon": "morrow:glowberry_pie_slice",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:glowberry_pie_slice",
+      "link_recipe": true,
+      "text": "A slice of glowberry tart. It can make the eater glow for a short time."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:glowberry_pie_slice",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

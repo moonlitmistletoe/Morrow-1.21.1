@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": { "layer0": "morrow:item/strawberry_cake_slice" }
+}

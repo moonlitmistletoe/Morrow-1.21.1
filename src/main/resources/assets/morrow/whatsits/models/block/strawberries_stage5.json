@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "morrow:block/strawberries_stage5"
+  }
+}

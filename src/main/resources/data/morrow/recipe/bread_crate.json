@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " U ",
+    "_BV",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "morrow:tray"
+    },
+    "_": {
+      "item": "morrow:baguette"
+    },
+    "B": {
+      "item": "morrow:bun"
+    },
+    "V": {
+      "item": "morrow:braided_bread"
+    },
+    "U": {
+      "tag": "morrow:bread"
+    }
+  },
+  "result": {
+    "id": "morrow:bread_crate",
+    "count": 1
+  }
+}

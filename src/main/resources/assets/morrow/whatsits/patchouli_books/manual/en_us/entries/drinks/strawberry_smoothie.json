@@ -1,0 +1,18 @@
+{
+  "name": "Strawberry Smoothie",
+  "icon": "morrow:strawberry_smoothie",
+  "category": "morrow:drinks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry_smoothie",
+      "link_recipe": true,
+      "text": "A strawberry-based drink made with the recipe. It gives strawberries another use beyond simply eating them."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:strawberry_smoothie",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

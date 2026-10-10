@@ -1,0 +1,18 @@
+{
+  "name": "Apple Jam",
+  "icon": "morrow:apple_jam",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:apple_jam",
+      "link_recipe": true,
+      "text": "Apple jam in its placeable jar form. It is part of the Bakery jam system and is mainly used as a topping rather than eaten directly from the block."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:apple_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "whatsits:block/template_pile",
-  "textures": {
-    "0": "whatsits:block/feather_pile_1",
-    "particle": "whatsits:block/feather_pile_1"
-  }
-}

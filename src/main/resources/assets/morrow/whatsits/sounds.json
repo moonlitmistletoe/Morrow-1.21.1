@@ -1,0 +1,44 @@
+{
+  "cooking_pot_boiling": {
+    "subtitle": "sound.farm_and_charm.cooking_pot_boiling",
+    "sounds": [
+      "morrow:cooking_pot_boiling"
+    ]
+  },
+  "crafting_bowl_stirring": {
+    "subtitle": "sound.farm_and_charm.crafting_bowl_stirring",
+    "sounds": [
+      "morrow:crafting_bowl_stirring"
+    ]
+  },
+  "mincer_cranking": {
+    "subtitle": "sound.farm_and_charm.mincer_cranking",
+    "sounds": [
+      "morrow:mincer_cranking"
+    ]
+  },
+  "roaster_cooking": {
+    "subtitle": "sound.farm_and_charm.roaster_cooking",
+    "sounds": [
+      "morrow:roaster_cooking"
+    ]
+  },
+  "stove_crackling": {
+    "subtitle": "sound.farm_and_charm.stove_crackling",
+    "sounds": [
+      "morrow:stove_crackling"
+    ]
+  },
+  "water_sprinkler": {
+    "subtitle": "sound.farm_and_charm.water_sprinkler",
+    "sounds": [
+      "morrow:water_sprinkler"
+    ]
+  },
+  "cart_moving": {
+    "subtitle": "sound.farm_and_charm.cart_moving",
+    "sounds": [
+      "morrow:cart_moving"
+    ]
+  }
+}

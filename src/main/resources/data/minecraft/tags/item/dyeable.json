@@ -1,7 +1,7 @@
 {
   "values": [
-    "whatsits:scabbard",
-    "whatsits:weapon_holster",
-    "whatsits:hip_scabbard"
+    "morrow:scabbard",
+    "morrow:weapon_holster",
+    "morrow:hip_scabbard"
   ]
 }

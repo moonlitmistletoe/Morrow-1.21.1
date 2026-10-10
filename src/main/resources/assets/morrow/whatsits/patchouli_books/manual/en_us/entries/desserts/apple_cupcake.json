@@ -1,0 +1,18 @@
+{
+  "name": "Apple Cupcake",
+  "icon": "morrow:apple_cupcake",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:apple_cupcake",
+      "link_recipe": true,
+      "text": "An apple cupcake that can grant a short movement-speed boost when eaten."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:apple_cupcake",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

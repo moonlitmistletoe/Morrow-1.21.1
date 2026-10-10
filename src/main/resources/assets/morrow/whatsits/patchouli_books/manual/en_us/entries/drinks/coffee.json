@@ -1,0 +1,18 @@
+{
+  "name": "Coffee",
+  "icon": "morrow:coffee",
+  "category": "morrow:drinks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:coffee",
+      "link_recipe": true,
+      "text": "Brewed from coffee beans. Coffee is a drink rather than an edible ingredient, so save the beans for this."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:coffee",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

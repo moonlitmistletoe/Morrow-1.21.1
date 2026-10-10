@@ -1,0 +1,13 @@
+{
+  "name": "Bread Knife",
+  "icon": "morrow:bread_knife",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:bread_knife",
+      "link_recipe": false,
+      "text": "Craft this from the recipe provided by the mod. It is used for cutting Bakery cakes and other prepared foods. It is not edible."
+    }
+  ]
+}

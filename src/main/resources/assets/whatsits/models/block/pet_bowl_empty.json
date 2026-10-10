@@ -1,7 +1,0 @@
-{
-	"parent": "whatsits:block/template_pet_bowl",
-	"textures": {
-		"1": "whatsits:block/pet_bowl_empty",
-		"particle": "whatsits:block/pet_bowl_empty"
-	}
-}

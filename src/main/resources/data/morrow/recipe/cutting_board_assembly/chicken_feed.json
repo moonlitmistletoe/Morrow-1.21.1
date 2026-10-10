@@ -1,0 +1,18 @@
+{
+  "type": "morrow:cutting_board_assembly",
+  "ingredients": [
+    {
+      "tag": "morrow:wheat"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    }
+  ],
+  "result": {
+    "id": "morrow:chicken_feed",
+    "count": 3
+  }
+}

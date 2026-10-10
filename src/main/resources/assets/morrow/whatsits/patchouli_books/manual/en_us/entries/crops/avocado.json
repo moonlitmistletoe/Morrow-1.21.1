@@ -1,0 +1,13 @@
+{
+  "name": "Avocado",
+  "icon": "morrow:avocado",
+  "category": "morrow:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:avocado",
+      "link_recipe": false,
+      "text": "There is an avocado item in the mod, but there is currently no crop or world generation that produces it. For now, this is unobtainable through normal survival play."
+    }
+  ]
+}

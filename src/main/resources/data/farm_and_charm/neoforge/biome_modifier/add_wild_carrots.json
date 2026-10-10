@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#whatsits:spawns_wild_crops",
-  "features": "whatsits:wild_carrots_chance",
+  "biomes": "#morrow:spawns_wild_crops",
+  "features": "morrow:wild_carrots_chance",
   "step": "vegetal_decoration"
 }

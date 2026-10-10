@@ -1,0 +1,18 @@
+{
+  "name": "Cake Dough",
+  "icon": "morrow:cake_dough",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:cake_dough",
+      "link_recipe": true,
+      "text": "Cake dough is the starting point for several Bakery cakes. Craft it from its recipe, then use it as the base for further baking."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:cake_dough",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

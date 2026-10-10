@@ -1,0 +1,18 @@
+{
+  "name": "Strawberry Glazed Cookie",
+  "icon": "morrow:strawberry_glazed_cookie",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry_glazed_cookie",
+      "link_recipe": true,
+      "text": "A strawberry-glazed cookie made through the Bakery recipe. It can grant a brief regeneration effect."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:strawberry_glazed_cookie",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

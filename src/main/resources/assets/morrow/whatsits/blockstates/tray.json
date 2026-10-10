@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=east": [
+      { "model": "morrow:block/tray",  "y": 90}
+    ],
+    "facing=north": [
+      { "model": "morrow:block/tray", "weight":1 }
+    ],
+    "facing=south": [
+      { "model": "morrow:block/tray",  "y": 180}
+    ],
+    "facing=west": [
+      { "model": "morrow:block/tray",  "y": 270}
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ropes",
+      "required": false
+    },
+    {
+      "id": "morrow:rope",
+      "required": false
+    },
+    {
+      "id": "morrow:rope_knot",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rope",
+      "required": false
+    }
+  ]
+}

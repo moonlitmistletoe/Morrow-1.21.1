@@ -1,0 +1,13 @@
+{
+  "name": "Coffee Seeds",
+  "icon": "morrow:coffee_seed",
+  "category": "morrow:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:coffee_seed",
+      "link_recipe": false,
+      "text": "These are planted to grow the coffee crop. The crop produces coffee beans when mature, giving you a renewable source of beans."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "morrow:block/template_tea_stage1",
+	"textures": {
+		"0": "morrow:block/jug",
+		"tea": "morrow:block/nettle_tea",
+		"particle": "morrow:block/jug"
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Cherry Juice",
+  "icon": "morrow:cherry_juice",
+  "category": "morrow:drinks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:cherry_juice",
+      "link_recipe": true,
+      "text": "Cherry juice has a recipe, but its main ingredient, cherries, are currently unobtainable in survival. The drink therefore cannot normally be made yet."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:cherry_juice",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

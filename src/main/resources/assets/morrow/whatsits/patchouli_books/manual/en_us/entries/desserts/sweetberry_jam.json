@@ -1,0 +1,18 @@
+{
+  "name": "Sweetberry Jam",
+  "icon": "morrow:sweetberry_jam",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:sweetberry_jam",
+      "link_recipe": true,
+      "text": "Sweetberry jam in its placeable jar form. It is used as a topping and can be displayed as a jar."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:sweetberry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

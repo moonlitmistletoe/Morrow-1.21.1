@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "morrow:block/strawberry_bag",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "morrow:block/strawberry_bag"
+    },
+    "facing=south": {
+      "model": "morrow:block/strawberry_bag",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "morrow:block/strawberry_bag",
+      "y": 270
+    }
+  }
+}

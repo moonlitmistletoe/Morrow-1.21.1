@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "morrow:block/cutting_board" },
+    "facing=east": { "model": "morrow:block/cutting_board", "y": 90 },
+    "facing=south": { "model": "morrow:block/cutting_board", "y": 180 },
+    "facing=west": { "model": "morrow:block/cutting_board", "y": 270 }
+  }
+}

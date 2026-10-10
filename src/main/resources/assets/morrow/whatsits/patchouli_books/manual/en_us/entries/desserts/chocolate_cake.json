@@ -1,0 +1,18 @@
+{
+  "name": "Chocolate Cake",
+  "icon": "morrow:chocolate_cake",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:chocolate_cake",
+      "link_recipe": true,
+      "text": "A whole chocolate cake that can be placed and cut into slices."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:chocolate_cake",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

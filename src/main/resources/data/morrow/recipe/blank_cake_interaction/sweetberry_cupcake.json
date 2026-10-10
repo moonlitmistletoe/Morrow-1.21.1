@@ -1,0 +1,15 @@
+{
+  "type": "morrow:blank_cake_interaction",
+  "stage": "CUPCAKE",
+  "ingredient": {
+    "item": "morrow:sweetberry_jam"
+  },
+  "result": {
+    "set_block": "morrow:sweetberry_cupcake_block",
+    "give_item": "morrow:jar",
+    "consume_one": true,
+    "sound": "minecraft:slime_block_place",
+    "particles": true
+  },
+  "priority": 10
+}

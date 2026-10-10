@@ -1,0 +1,13 @@
+{
+  "name": "Blackberry",
+  "icon": "morrow:blackberry",
+  "category": "morrow:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:blackberry",
+      "link_recipe": false,
+      "text": "Blackberry patches generate naturally in Forest, Meadow and Taiga biomes. Mature crops can be harvested for berries and more seeds."
+    }
+  ]
+}

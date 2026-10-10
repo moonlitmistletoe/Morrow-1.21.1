@@ -1,0 +1,18 @@
+{
+  "name": "Linzer Tart",
+  "icon": "morrow:linzer_tart",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:linzer_tart",
+      "link_recipe": true,
+      "text": "A whole Linzer tart. Place it and cut it into slices rather than carrying the entire thing around."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:linzer_tart",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

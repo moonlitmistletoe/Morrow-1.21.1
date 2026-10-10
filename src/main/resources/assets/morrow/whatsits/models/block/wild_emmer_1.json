@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "morrow:block/wild_emmer_1"
+  },
+  "render_type": "minecraft:cutout"
+}

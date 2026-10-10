@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "morrow:block/carrot_bag",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "morrow:block/carrot_bag"
+    },
+    "facing=south": {
+      "model": "morrow:block/carrot_bag",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "morrow:block/carrot_bag",
+      "y": 270
+    }
+  }
+}

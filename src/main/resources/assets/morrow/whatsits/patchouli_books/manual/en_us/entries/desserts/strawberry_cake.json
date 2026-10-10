@@ -1,0 +1,18 @@
+{
+  "name": "Strawberry Cake",
+  "icon": "morrow:strawberry_cake",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry_cake",
+      "link_recipe": true,
+      "text": "A whole strawberry cake. Place it and use the Bakery interactions to take slices from it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:strawberry_cake",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

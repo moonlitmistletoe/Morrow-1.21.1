@@ -1,7 +1,7 @@
 package net.nimbu.scabbards;
 
 import com.mojang.logging.LogUtils;
-import net.moonlitmistletoe.whatsits.Whatsits;
+import net.moonlitmistletoe.morrow.Morrow;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 
 public class Scabbards {
 
-    public static final String MOD_ID = Whatsits.MOD_ID;
+    public static final String MOD_ID = Morrow.MOD_ID;
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Scabbards(IEventBus modEventBus, ModContainer modContainer) {

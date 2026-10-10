@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWA",
+    "CAW"
+  ],
+  "key": {
+    "W": {
+      "tag": "morrow:wheat"
+    },
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "C": {
+      "item": "minecraft:carrot"
+    }
+  },
+  "result": {
+    "id": "morrow:horse_fodder",
+    "count": 1
+  }
+}

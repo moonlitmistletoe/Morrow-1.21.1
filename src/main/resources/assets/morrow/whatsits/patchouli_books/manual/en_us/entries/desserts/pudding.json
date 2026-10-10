@@ -1,0 +1,18 @@
+{
+  "name": "Pudding",
+  "icon": "morrow:pudding",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:pudding",
+      "link_recipe": true,
+      "text": "A placeable pudding dessert. It can be served in the world and has edible slices."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:pudding",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

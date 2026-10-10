@@ -1,0 +1,18 @@
+{
+  "name": "Slice of Linzer Tart",
+  "icon": "morrow:linzer_tart_slice",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:linzer_tart_slice",
+      "link_recipe": true,
+      "text": "A slice of Linzer tart. Eating it can grant Luck for a while."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:linzer_tart_slice",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

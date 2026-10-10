@@ -1,0 +1,18 @@
+{
+  "name": "Glowberry Tart",
+  "icon": "morrow:glowberry_tart",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:glowberry_tart",
+      "link_recipe": true,
+      "text": "A whole glowberry tart. Its slices provide the glowing effect when eaten."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:glowberry_tart",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

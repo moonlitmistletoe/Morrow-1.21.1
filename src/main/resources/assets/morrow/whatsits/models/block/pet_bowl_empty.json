@@ -1,0 +1,7 @@
+{
+	"parent": "morrow:block/template_pet_bowl",
+	"textures": {
+		"1": "morrow:block/pet_bowl_empty",
+		"particle": "morrow:block/pet_bowl_empty"
+	}
+}

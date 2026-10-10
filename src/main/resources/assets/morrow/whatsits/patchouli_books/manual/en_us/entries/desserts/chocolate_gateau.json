@@ -1,0 +1,18 @@
+{
+  "name": "Chocolate Gateau",
+  "icon": "morrow:chocolate_gateau",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:chocolate_gateau",
+      "link_recipe": true,
+      "text": "A placeable chocolate gateau that can be cut into slices."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:chocolate_gateau",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "morrow:block/template_bag",
+  "textures": {
+    "3": "morrow:block/bag_side_knot",
+    "4": "morrow:block/bag_bottom",
+    "7": "morrow:block/bag_side",
+    "8": "morrow:block/bag_top_carrot",
+    "particle": "morrow:block/bag_top_carrot"
+  }
+}

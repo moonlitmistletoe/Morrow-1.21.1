@@ -7,7 +7,7 @@ import net.satisfy.farm_and_charm.core.registry.*;
 import net.satisfy.farm_and_charm.core.util.CartInteractionHooks;
 
 public class FarmAndCharm {
-    public static final String MOD_ID = "whatsits";
+    public static final String MOD_ID = "morrow";
 
     public static ResourceLocation identifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);

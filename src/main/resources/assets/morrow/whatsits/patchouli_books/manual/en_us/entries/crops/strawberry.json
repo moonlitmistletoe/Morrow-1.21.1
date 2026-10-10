@@ -1,0 +1,13 @@
+{
+  "name": "Strawberry",
+  "icon": "morrow:strawberry",
+  "category": "morrow:crops",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry",
+      "link_recipe": false,
+      "text": "Strawberries grow naturally in Forest, Meadow and Plains biomes. Mature plants can be harvested for strawberries and seeds."
+    }
+  ]
+}

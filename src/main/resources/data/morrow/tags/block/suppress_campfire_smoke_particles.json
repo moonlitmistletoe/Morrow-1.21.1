@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:roaster",
+    "morrow:cooking_pot",
+    {
+      "id": "bakery:small_cooking_pot",
+      "required": false
+    },
+    {
+      "id": "candlelight:cooking_pot",
+      "required": false
+    },
+    {
+      "id": "candlelight:cooking_pan",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Bread with Jam",
+  "icon": "morrow:bread_with_jam",
+  "category": "morrow:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:bread_with_jam",
+      "link_recipe": true,
+      "text": "Bread topped with jam. The recipe is a simple way to turn a loaf and a jar of something sweet into a more interesting meal."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:bread_with_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

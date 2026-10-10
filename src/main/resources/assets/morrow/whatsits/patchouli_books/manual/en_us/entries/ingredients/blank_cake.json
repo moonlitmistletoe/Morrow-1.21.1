@@ -1,0 +1,13 @@
+{
+  "name": "Cake Dough",
+  "icon": "morrow:cake_dough",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:cake_dough",
+      "link_recipe": false,
+      "text": "Crafting this gives you a plain cake base. It is used as the starting point for some of the Bakery-style cakes."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "morrow:block/template_pile",
+  "textures": {
+    "0": "morrow:block/feather_pile_0",
+    "particle": "morrow:block/feather_pile_0"
+  }
+}

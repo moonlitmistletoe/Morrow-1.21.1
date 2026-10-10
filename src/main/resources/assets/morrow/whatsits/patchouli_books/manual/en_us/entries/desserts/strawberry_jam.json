@@ -1,0 +1,18 @@
+{
+  "name": "Strawberry Jam",
+  "icon": "morrow:strawberry_jam",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry_jam",
+      "link_recipe": true,
+      "text": "Strawberry jam in its placeable jar form. It is part of the Bakery topping system and can be displayed as a jar."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:strawberry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

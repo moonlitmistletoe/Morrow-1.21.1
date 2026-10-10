@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:stove",
+    "minecraft:redstone_block",
+    "minecraft:magma_block",
+    "#minecraft:campfires",
+    {
+      "id": "farmersdelight:stove",
+      "required": false
+    },
+    {
+      "id": "meadow:stove_tiles_wood",
+      "required": false
+    }
+  ]
+}

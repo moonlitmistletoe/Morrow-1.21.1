@@ -1,0 +1,18 @@
+{
+  "name": "Sweet Dough",
+  "icon": "morrow:sweet_dough",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:sweet_dough",
+      "link_recipe": true,
+      "text": "Sweet dough is used for a number of sweeter Bakery recipes. Craft it first, then turn it into pastries and other treats."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:sweet_dough",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

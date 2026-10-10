@@ -1,0 +1,18 @@
+{
+  "name": "Strawberry Ice Cream",
+  "icon": "morrow:strawberry_ice_cream",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:strawberry_ice_cream",
+      "link_recipe": true,
+      "text": "Strawberry ice cream made through the recipe. A straightforward use for strawberries when you want something colder than a pie."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:strawberry_ice_cream",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+    }
+  ]
+}

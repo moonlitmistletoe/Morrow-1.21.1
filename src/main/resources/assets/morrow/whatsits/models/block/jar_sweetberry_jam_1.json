@@ -1,0 +1,7 @@
+{
+  "parent": "morrow:block/jar_empty_1",
+  "textures": {
+    "0": "morrow:block/jar_sweetberry_jam",
+    "particle": "morrow:block/jar_sweetberry_jam"
+  }
+}

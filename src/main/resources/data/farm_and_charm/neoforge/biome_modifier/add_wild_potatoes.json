@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#whatsits:spawns_wild_potatoes",
-  "features": "whatsits:wild_potatoes_chance",
+  "biomes": "#morrow:spawns_wild_potatoes",
+  "features": "morrow:wild_potatoes_chance",
   "step": "vegetal_decoration"
 }

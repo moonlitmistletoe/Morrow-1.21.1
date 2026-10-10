@@ -1,0 +1,11 @@
+{
+  "type": "morrow:cutting_board",
+  "ingredient": {
+    "item": "minecraft:blue_orchid"
+  },
+  "result": {
+    "id": "minecraft:light_blue_dye",
+    "count": 2
+  },
+  "experience": 0.1
+}

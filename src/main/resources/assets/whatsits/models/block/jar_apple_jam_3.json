@@ -1,7 +1,0 @@
-{
-  "parent": "whatsits:block/jar_empty_3",
-  "textures": {
-    "0": "whatsits:block/jar_apple_jam",
-    "particle": "whatsits:block/jar_apple_jam"
-  }
-}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "facing=east": [
+      {
+        "model": "morrow:block/cupcake_display",
+        "weight": 1,
+        "y": 90
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "morrow:block/cupcake_display",
+        "weight": 1
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "morrow:block/cupcake_display",
+        "weight": 1,
+        "y": 180
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "morrow:block/cupcake_display",
+        "weight": 1,
+        "y": 270
+      }
+    ]
+  }
+}

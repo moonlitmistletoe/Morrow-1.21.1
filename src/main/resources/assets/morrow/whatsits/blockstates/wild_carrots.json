@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morrow:block/wild_carrots_1",
+        "weight": 1
+      },
+      {
+        "model": "morrow:block/wild_carrots_2",
+        "weight": 1
+      },
+      {
+        "model": "morrow:block/wild_carrots_3",
+        "weight": 1
+      }
+    ]
+  }
+}

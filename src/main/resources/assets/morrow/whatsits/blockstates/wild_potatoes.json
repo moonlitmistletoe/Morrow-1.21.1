@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morrow:block/wild_potatoes",
+        "weight": 1
+      }
+    ]
+  }
+}
