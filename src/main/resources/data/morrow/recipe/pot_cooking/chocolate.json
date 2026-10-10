@@ -1,0 +1,23 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "morrow:milk"
+    }
+  ],
+  "container": {
+    "id": "morrow:jar"
+  },
+  "result": {
+    "id": "morrow:chocolate_truffle",
+    "count": 4
+  },
+  "requiresLearning": false,
+  "requireContainer": false
+}
