@@ -2,11 +2,11 @@
   "type": "crafting_shapeless",
   "ingredients": [
     {
-      "item": "farm_and_charm:corn_bag"
+      "item": "morrow:corn_bag"
     }
   ],
   "result": {
-    "id": "farm_and_charm:corn",
+    "id": "morrow:corn",
     "count": 9
   }
 }
