@@ -17,7 +17,6 @@ public class TabRegistry {
             .title(Component.translatable("creativetab.farm_and_charm.tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ObjectRegistry.WILD_NETTLE.get());
-                output.accept(ObjectRegistry.WILD_EMMER.get());
                 output.accept(ObjectRegistry.WILD_BEETROOTS.get());
                 output.accept(ObjectRegistry.WILD_POTATOES.get());
                 output.accept(ObjectRegistry.WILD_CARROTS.get());
@@ -31,14 +30,11 @@ public class TabRegistry {
                 output.accept(ObjectRegistry.CHICKEN_COOP_ITEM.get());
                 output.accept(ObjectRegistry.SUPPLY_CART.get());
                 output.accept(ObjectRegistry.PLOW.get());
-                output.accept(ObjectRegistry.TOOL_RACK.get());
                 output.accept(ObjectRegistry.CRAFTING_BOWL.get());
                 output.accept(ObjectRegistry.COOKING_POT.get());
-                output.accept(ObjectRegistry.POTATO_SOUP.get());
                 output.accept(ObjectRegistry.STRAWBERRY_TEA.get());
                 output.accept(ObjectRegistry.NETTLE_TEA.get());
                 output.accept(ObjectRegistry.STRAWBERRY_TEA_CUP.get());
-                output.accept(ObjectRegistry.NETTLE_TEA_CUP.get());
                 output.accept(ObjectRegistry.CAT_FOOD.get());
                 output.accept(ObjectRegistry.DOG_FOOD.get());
                 output.accept(ObjectRegistry.CHICKEN_FEED.get());
