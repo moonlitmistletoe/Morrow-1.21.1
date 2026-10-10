@@ -87,7 +87,7 @@ public class WaterSprinklerBlock extends BaseEntityBlock {
     public void tick(@NotNull BlockState state, ServerLevel world, BlockPos pos, @NotNull RandomSource random) {
         BlockPos.betweenClosed(pos.offset(-4, -1, -4), pos.offset(4, 1, 4)).forEach(p -> {
             BlockState bs = world.getBlockState(p);
-            if (bs.is(Blocks.FARMLAND) || bs.is(ObjectRegistry.FERTILIZED_FARM_BLOCK.get())) {
+            if (bs.is(Blocks.FARMLAND)) {
                 world.setBlock(p, bs.setValue(BlockStateProperties.MOISTURE, 7), 2);
             }
             if (bs.is(Blocks.FIRE)) {
