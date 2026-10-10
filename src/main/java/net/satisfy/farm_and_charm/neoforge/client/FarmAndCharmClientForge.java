@@ -11,7 +11,6 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 import net.satisfy.farm_and_charm.FarmAndCharm;
 import net.satisfy.farm_and_charm.client.FarmAndCharmClient;
 import net.satisfy.farm_and_charm.client.gui.CookingPotGui;
-import net.satisfy.farm_and_charm.client.gui.RoasterGui;
 import net.satisfy.farm_and_charm.client.gui.StoveGui;
 import net.satisfy.farm_and_charm.client.particle.SoupBubbleParticle;
 import net.satisfy.farm_and_charm.client.particle.SoupCookingBubbleParticle;
@@ -46,7 +45,6 @@ public class FarmAndCharmClientForge {
     public static void clientSetup(RegisterMenuScreensEvent event) {
         event.register(ScreenhandlerTypeRegistry.STOVE_SCREEN_HANDLER.get(), StoveGui::new);
         event.register(ScreenhandlerTypeRegistry.COOKING_POT_SCREEN_HANDLER.get(), CookingPotGui::new);
-        event.register(ScreenhandlerTypeRegistry.ROASTER_SCREEN_HANDLER.get(), RoasterGui::new);
     }
 
     @SubscribeEvent
