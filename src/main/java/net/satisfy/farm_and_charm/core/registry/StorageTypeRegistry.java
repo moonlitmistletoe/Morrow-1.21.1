@@ -7,13 +7,9 @@ import net.satisfy.farm_and_charm.FarmAndCharm;
 import java.util.Set;
 
 public class StorageTypeRegistry {
-    public static final ResourceLocation TOOL_RACK = FarmAndCharm.identifier("tool_rack");
-    public static final ResourceLocation WINDOW_SILL = FarmAndCharm.identifier("window_sill");
     public static final ResourceLocation CHICKEN_NEST = FarmAndCharm.identifier("chicken_nest");
 
     public static Set<Block> registerBlocks(Set<Block> blocks) {
-        blocks.add(ObjectRegistry.TOOL_RACK.get());
-        blocks.add(ObjectRegistry.WINDOW_SILL.get());
         blocks.add(ObjectRegistry.CHICKEN_NEST.get());
         return blocks;
     }
