@@ -50,6 +50,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> WILD_BEETROOTS = registerWithItem("wild_beetroots", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final RegistrySupplier<Block> WILD_POTATOES = registerWithItem("wild_potatoes", () -> new TallGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final RegistrySupplier<Block> STRAWBERRY_BAG = registerWithItem("strawberry_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
+    public static final RegistrySupplier<Block> CHERRY_BAG = registerWithItem("cherry_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> CARROT_BAG = registerWithItem("carrot_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> POTATO_BAG = registerWithItem("potato_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
     public static final RegistrySupplier<Block> BEETROOT_BAG = registerWithItem("beetroot_bag", () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL)));
