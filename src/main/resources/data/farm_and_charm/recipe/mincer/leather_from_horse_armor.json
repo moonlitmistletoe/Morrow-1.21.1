@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:leather_horse_armor"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:leather",
+    "count": 5
+  },
+  "experience": 0.2
+}
