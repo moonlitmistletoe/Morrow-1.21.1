@@ -194,7 +194,7 @@ public class RoasterBlock extends BaseEntityBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState state, BlockEntityType<T> type) {
         if (!world.isClientSide) {
             return (lvl, pos, blkState, t) -> {
-                if (t instanceof RoasterBlockEntity roastingPot) {
+                if (t instanceof  roastingPot) {
                     roastingPot.tick(lvl, pos, blkState, roastingPot);
                 }
             };
