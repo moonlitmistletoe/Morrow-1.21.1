@@ -1,0 +1,21 @@
+{
+  "type": "morrow:jam_cooking",
+  "ingredients": [
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "morrow:strawberry_jam",
+    "count": 3
+  },
+  "color": "#C8323C",
+  "cooking_time": 600,
+  "experience": 1.0
+}

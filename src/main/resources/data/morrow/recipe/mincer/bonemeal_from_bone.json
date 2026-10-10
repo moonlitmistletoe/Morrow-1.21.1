@@ -1,0 +1,12 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:bone"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "minecraft:bone_meal",
+    "count": 5
+  },
+  "experience": 0.2
+}
