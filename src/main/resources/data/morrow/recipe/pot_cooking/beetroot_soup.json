@@ -1,0 +1,16 @@
+{
+  "type": "morrow:pot_cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "result": {
+    "id": "minecraft:beetroot_soup"
+  },
+  "requiresLearning": false,
+  "requireContainer": true
+}
