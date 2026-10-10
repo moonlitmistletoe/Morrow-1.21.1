@@ -9,14 +9,13 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.satisfy.bakery.core.registry.EntityTypeRegistry;
 
 public class StreetSignBlockEntity extends BlockEntity {
     private final Component[] text = new Component[]{Component.literal(""), Component.literal(""), Component.literal("")};
     private boolean glowing = false;
 
     public StreetSignBlockEntity(BlockPos pos, BlockState state) {
-        super(EntityTypeRegistry.STREET_SIGN_BLOCK_ENTITY.get(), pos, state);
+        super(null, pos, state);
     }
 
     public Component getText(int line) {
