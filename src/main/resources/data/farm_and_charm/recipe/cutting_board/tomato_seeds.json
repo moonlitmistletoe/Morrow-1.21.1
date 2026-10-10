@@ -1,10 +1,10 @@
 {
-  "type": "farm_and_charm:cutting_board",
+  "type": "morrow:cutting_board",
   "ingredient": {
-    "item": "farm_and_charm:tomato"
+    "item": "morrow:tomato"
   },
   "result": {
-    "id": "farm_and_charm:tomato_seeds",
+    "id": "morrow:tomato_seeds",
     "count": 4
   },
   "experience": 0.1
