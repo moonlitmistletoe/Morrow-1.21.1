@@ -1,5 +1,5 @@
 {
-  "type": "morrow:pot_cooking",
+  "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
       "tag": "morrow:milk"
@@ -13,12 +13,12 @@
   ],
   "requireContainer": false,
   "result": {
-    "id": "morrow:chocolate_jam",
+    "id": "bakery:chocolate_jam",
     "count": 3
   },
   "requiresLearning": false,
   "container": {
-    "id": "morrow:jar",
+    "id": "bakery:jar",
     "count": 1
   }
 }

@@ -1,11 +1,11 @@
 {
-  "type": "morrow:pot_cooking",
+  "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "item": "morrow:strawberry"
+      "item": "minecraft:apple"
     },
     {
-      "item": "morrow:strawberry"
+      "item": "minecraft:apple"
     },
     {
       "item": "minecraft:sugar"
@@ -13,12 +13,12 @@
   ],
   "requireContainer": false,
   "result": {
-    "id": "morrow:strawberry_jam",
+    "id": "bakery:apple_jam",
     "count": 3
   },
   "requiresLearning": false,
   "container": {
-    "id": "morrow:jar",
+    "id": "bakery:jar",
     "count": 1
   }
 }
