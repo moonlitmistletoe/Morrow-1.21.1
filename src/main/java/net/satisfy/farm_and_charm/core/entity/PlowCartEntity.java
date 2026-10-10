@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.satisfy.farm_and_charm.core.block.FertilizedFarmlandBlock;
 import net.satisfy.farm_and_charm.core.registry.ObjectRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -125,10 +124,6 @@ public class PlowCartEntity extends AbstractCartEntity {
 
             if (blockState.is(Blocks.GRASS_BLOCK) || blockState.is(Blocks.DIRT)) {
                 newBlockState = Blocks.FARMLAND.defaultBlockState().setValue(FarmBlock.MOISTURE, 0);
-            } else if (blockState.is(ObjectRegistry.FERTILIZED_SOIL_BLOCK.get())) {
-                newBlockState = ObjectRegistry.FERTILIZED_FARM_BLOCK.get()
-                        .defaultBlockState()
-                        .setValue(FertilizedFarmlandBlock.MOISTURE, 0);
             }
 
             if (newBlockState != null) {
