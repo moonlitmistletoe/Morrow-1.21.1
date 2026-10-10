@@ -1,0 +1,14 @@
+{
+  "type": "bakery:blank_cake_interaction",
+  "stage": "DOUGH",
+  "ingredient": {
+    "item": "bakery:rolling_pin"
+  },
+  "result": {
+    "set_stage": "FLAT",
+    "sound": "minecraft:entity.generic.big_fall",
+    "particles": false,
+    "animation": "flatten"
+  },
+  "priority": 50
+}
