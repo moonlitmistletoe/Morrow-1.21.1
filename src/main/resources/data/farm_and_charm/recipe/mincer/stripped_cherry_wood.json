@@ -1,0 +1,12 @@
+{
+  "type": "farm_and_charm:mincer",
+  "ingredient": {
+    "item": "minecraft:cherry_wood"
+  },
+  "recipe_type": "WOOD",
+  "result": {
+    "id": "minecraft:stripped_cherry_wood",
+    "count": 1
+  },
+  "experience": 0.2
+}
