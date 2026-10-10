@@ -62,20 +62,7 @@ public class FertilizedSoilBlock extends Block {
     protected @NotNull ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
         boolean hasSugarCaneAbove = level.getBlockState(pos.above()).is(Blocks.SUGAR_CANE);
 
-        if (itemStack.getItem() == ObjectRegistry.PITCHFORK.get()) {
-            if (hasSugarCaneAbove) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-            int newSize = state.getValue(SIZE) - 1;
-            if (newSize < 0) {
-                level.removeBlock(pos, false);
-            } else {
-                level.setBlock(pos, state.setValue(SIZE, newSize), 3);
-                applyBoneMealEffect(level, pos);
-            }
-            spawnParticles(level, pos, state, false);
-            level.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-            itemStack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(itemStack));
-            return ItemInteractionResult.SUCCESS;
-        } else if (itemStack.getItem() instanceof HoeItem) {
+        if (itemStack.getItem() instanceof HoeItem) {
             if (hasSugarCaneAbove) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             int currentSize = state.getValue(SIZE);
             if (currentSize == 3) {
