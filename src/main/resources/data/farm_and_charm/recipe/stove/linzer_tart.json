@@ -1,0 +1,20 @@
+{
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "item": "farm_and_charm:strawberry"
+    },
+    {
+      "item": "bakery:sweet_dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bakery:linzer_tart"
+  },
+  "experience": 0.2,
+  "requiresLearning": false
+}
